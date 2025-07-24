@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aprenda a configurar o WhatsApp Business para vendas - Guia completo com checklist e exemplos práticos">
+    <meta name="keywords" content="WhatsApp Business, vendas, configuração, marketing digital">
+    <title>Aula 01 - WhatsApp Business para Vendas</title>
+    
+    <style>
+        /* CSS Variables para fácil manutenção */
+        :root {
+            --primary-color: #25D366;
+            --secondary-color: #128C7E;
+            --accent-color: #e91e63;
+            --text-primary: #333;
+            --text-secondary: #666;
+            --bg-light: #f5f5f5;
+            --bg-white: #ffffff;
+            --border-radius: 10px;
+            --box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        /* Reset e base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg-light);
+            line-height: 1.6;
+            color: var(--text-primary);
+        }
+        
+        /* Container responsivo */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                padding: 1.25rem;
+            }
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 2rem 1.5rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+        }
+        
+        .header h1 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            opacity: 0.9;
+        }
+        
+        /* Seções */
+        .section {
+            background: var(--bg-white);
+            padding: clamp(1.5rem, 4vw, 2rem);
+            margin-bottom: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .section h2 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        /* Alerta */
+        .alert {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            border: 1px solid #f39c12;
+            color: #8b4513;
+            padding: 1.25rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .alert-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .alert strong {
+            color: #d35400;
+        }
+        
+        /* Checklist otimizado */
+        .checklist {
+            list-style: none;
+            display: grid;
+            gap: 1rem;
+        }
+        
+        .checklist-item {
+            background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+            padding: 1.25rem;
+            border-left: 4px solid var(--primary-color);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .checklist-item:hover {
+            transform: translateX(8px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .checklist-number {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+            font-size: 0.9rem;
+        }
+        
+        .checklist-content h3 {
+            color: var(--secondary-color);
+            margin-bottom: 0.25rem;
+            font-size: 1.1rem;
+        }
+        
+        .checklist-content p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        /* WhatsApp Example */
+        .whatsapp-example {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .whatsapp-example::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        
+        .whatsapp-profile {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .whatsapp-profile-img {
+            width: 8rem;
+            height: 8rem;
+            border-radius: 50%;
+            border: 4px solid rgba(255, 255, 255, 0.9);
+            object-fit: cover;
+            flex-shrink: 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .whatsapp-profile-text h3 {
+            font-size: 1.4rem;
+            margin: 0;
+            font-weight: 600;
+        }
+        
+        .whatsapp-description {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .whatsapp-description:last-child {
+            margin-bottom: 0;
+        }
+        
+        .whatsapp-description h4 {
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .whatsapp-description p {
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+        
+        /* Catálogo otimizado */
+        .catalog {
+            background: var(--bg-white);
+            padding: clamp(2rem, 5vw, 2.5rem);
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin-top: 2rem;
+        }
+        
+        .catalog h2 {
+            color: var(--secondary-color);
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            border-bottom: none;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .product-card {
+            background: var(--bg-white);
+            border: 2px solid transparent;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: var(--box-shadow);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(18,140,126,0.2);
+            border-color: var(--primary-color);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 480px;
+            overflow: hidden;
+            position: relative;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: var(--transition);
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        
+        .product-subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .product-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .feature-tag {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+        
+        .product-tag {
+            background: linear-gradient(135deg, var(--accent-color) 0%, #c2185b 100%);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+        
+        .product-name {
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .product-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+        
+        .product-price {
+            padding-top: 1rem;
+            border-top: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .old-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 1rem;
+        }
+        
+        .new-price {
+            font-size: 1.6rem;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+        
+        /* Links otimizados */
+        .links-section h3 {
+            color: var(--secondary-color);
+            margin: 2rem 0 1rem 0;
+            font-size: 1.2rem;
+        }
+        
+        .links-section p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+        
+        .link-item {
+            display: block;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border: 2px solid #2196F3;
+            padding: 1rem 1.5rem;
+            margin-bottom: 0.75rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            color: #1976D2;
+            font-weight: 600;
+            text-decoration: none;
+            word-wrap: break-word;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .link-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .link-item:hover::before {
+            left: 100%;
+        }
+        
+        .link-item:hover {
+            background: linear-gradient(135deg, #1976D2 0%, #1565C0 100%);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(25,118,210,0.3);
+        }
+        
+        /* Estilos específicos para organização */
+        .pricing-info {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .price-list p {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+        }
+        
+        .highlight-price {
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        .payment-section {
+            margin-bottom: 2rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .payment-section:last-child {
+            border-bottom: none;
+        }
+        
+        .platform-description {
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        
+        .primary-link {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            border-color: var(--primary-color);
+            color: white;
+        }
+        
+        .primary-link:hover {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #0d7d3d 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37,211,102,0.4);
+        }
+        
+        .alternative-link {
+            background: linear-gradient(135deg, #ffc107 0%, #ffb300 100%);
+            border-color: #ffc107;
+            color: #212529;
+        }
+        
+        .alternative-link:hover {
+            background: linear-gradient(135deg, #ffb300 0%, #ff8f00 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255,193,7,0.4);
+        }
+        
+        .materials-link {
+            background: linear-gradient(135deg, #6f42c1 0%, #5a2d91 100%);
+            border-color: #6f42c1;
+            color: white;
+        }
+        
+        .materials-link:hover {
+            background: linear-gradient(135deg, #5a2d91 0%, #4c2470 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(111,66,193,0.4);
+        }
+        
+        .materials-section {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--primary-color);
+        }
+        
+        /* Estilos para seção de informações do produto */
+        .product-info-section {
+            background: var(--bg-white);
+            padding: clamp(2rem, 5vw, 2.5rem);
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .product-analysis {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        .analysis-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .highlight-card {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            border-left: 4px solid rgba(255,255,255,0.3);
+        }
+        
+        .ingredients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .ingredient-card {
+            background: var(--bg-white);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            border-top: 3px solid var(--primary-color);
+        }
+        
+        .ingredient-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .ingredient-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .ingredient-card h4 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .effectiveness-section h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .effectiveness-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .effective-card {
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .effective-card.positive {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            border-left: 4px solid #28a745;
+        }
+        
+        
+        .effective-card h4 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .effective-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .effective-card li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .effective-card li:last-child {
+            border-bottom: none;
+        }
+        
+        .market-analysis h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .comparison-table {
+            display: grid;
+            gap: 0.5rem;
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .table-header,
+        .table-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 2fr;
+            padding: 1rem;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .table-header {
+            background: var(--secondary-color);
+            color: white;
+            font-weight: bold;
+        }
+        
+        .table-row {
+            background: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .table-row:last-child {
+            border-bottom: none;
+        }
+        
+        .highlight-row {
+            background: linear-gradient(135deg, rgba(37,211,102,0.1) 0%, rgba(18,140,126,0.1) 100%);
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .popularity-section {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            border: 2px solid #f39c12;
+        }
+        
+        .popularity-section h3 {
+            color: #d35400;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+        }
+        
+        .popularity-card {
+            background: var(--bg-white);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .popularity-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: var(--border-radius);
+            border-top: 3px solid var(--primary-color);
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-item p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        
+        .testimonial-highlight {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+        
+        /* Estilos para seção de indicação */
+        .indication-section {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            border: 2px solid #2196F3;
+            margin-bottom: 2rem;
+        }
+        
+        .indication-section h3 {
+            color: #1976D2;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+        }
+        
+        .indication-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .indication-card {
+            background: var(--bg-white);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .indication-card.recommended {
+            border-left: 4px solid #4caf50;
+        }
+        
+        .indication-card.profile {
+            border-left: 4px solid #ff9800;
+        }
+        
+        .indication-card h4 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .indication-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .indication-card li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            font-size: 0.95rem;
+        }
+        
+        .indication-card li:last-child {
+            border-bottom: none;
+        }
+        
+        
+        /* Responsividade para nova seção */
+        @media (max-width: 768px) {
+            .ingredients-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .effectiveness-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .table-header,
+            .table-row {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .table-header span:not(:first-child),
+            .table-row span:not(:first-child) {
+                font-size: 0.9rem;
+            }
+            
+            .popularity-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .indication-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-image {
+                height: 300px !important;
+                min-height: 300px !important;
+                max-height: 300px !important;
+            }
+            
+            .product-image img {
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+                object-position: center !important;
+                max-width: 100% !important;
+                max-height: 100% !important;
+                transform: none !important;
+                display: block !important;
+                overflow: hidden !important;
+            }
+            
+            .product-card:hover .product-image img {
+                transform: none !important;
+            }
+        }
+        
+        /* Mobile-First Responsive Design */
+        
+        /* Base styles are mobile-first */
+        .container {
+            padding: 0.75rem;
+        }
+        
+        .header {
+            padding: 1.5rem 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section {
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .whatsapp-example {
+            padding: 1.5rem;
+        }
+        
+        .whatsapp-profile {
+            flex-direction: column;
+            text-align: center;
+            gap: 1rem;
+        }
+        
+        .whatsapp-profile-img {
+            width: 7rem;
+            height: 7rem;
+        }
+        
+        .products-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        
+        .checklist-item {
+            padding: 1rem;
+            flex-direction: column;
+            text-align: center;
+            gap: 0.75rem;
+        }
+        
+        .checklist-number {
+            width: 2rem;
+            height: 2rem;
+            font-size: 0.8rem;
+            align-self: center;
+        }
+        
+        .link-item {
+            padding: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        /* Tablet breakpoint */
+        @media (min-width: 768px) {
+            .container {
+                padding: 1.25rem;
+            }
+            
+            .header {
+                padding: 2rem 1.5rem;
+                margin-bottom: 2rem;
+            }
+            
+            .section {
+                padding: clamp(1.5rem, 4vw, 2rem);
+                margin-bottom: 2rem;
+            }
+            
+            .whatsapp-example {
+                padding: 2rem;
+            }
+            
+            .whatsapp-profile {
+                flex-direction: row;
+                text-align: left;
+                gap: 1.25rem;
+            }
+            
+            .whatsapp-profile-img {
+                width: 6.5rem;
+                height: 6.5rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 2rem;
+            }
+            
+            .checklist-item {
+                padding: 1.25rem;
+                flex-direction: row;
+                text-align: left;
+                gap: 1rem;
+            }
+            
+            .checklist-number {
+                width: 2.5rem;
+                height: 2.5rem;
+                font-size: 0.9rem;
+                align-self: flex-start;
+            }
+            
+            .link-item {
+                padding: 1rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+        
+        /* Desktop breakpoint */
+        @media (min-width: 1024px) {
+            .checklist {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+        }
+        
+        /* Responsividade das imagens dos produtos */
+        @media (max-width: 768px) {
+            .product-image {
+                height: 400px;
+            }
+            
+            .product-features {
+                gap: 0.3rem;
+            }
+            
+            .feature-tag {
+                font-size: 0.65rem;
+                padding: 0.25rem 0.6rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .product-image {
+                height: 100px !important;
+                min-height: 300px !important;
+                max-height: 300px !important;
+            }
+            
+            .indication-section {
+                padding: 1.5rem;
+            }
+            
+            .indication-card {
+                padding: 1rem;
+            }
+        }
+        
+        /* Animações */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .section {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        /* Acessibilidade */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* Focus states para acessibilidade */
+        .checklist-item:focus,
+        .link-item:focus,
+        .product-card:focus {
+            outline: 3px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🚀 WhatsApp Business</h1>
+            <p>Transforme seu perfil em uma máquina de vendas</p>
+        </header>
+
+        <div class="alert" role="alert">
+            <span class="alert-icon" aria-hidden="true">⚠️</span>
+            <div>
+                <strong>ATENÇÃO:</strong> 90% das pessoas perdem vendas por não configurar corretamente o WhatsApp Business!
+            </div>
+        </div>
+
+        <main>
+            <section class="section">
+                <h2>📋 Checklist de Configuração Essencial</h2>
+                <ul class="checklist" role="list">
+                    <li class="checklist-item" tabindex="0" role="listitem">
+                        <div class="checklist-number" aria-hidden="true">1</div>
+                        <div class="checklist-content">
+                            <h3>Foto de Perfil</h3>
+                            <p>Logo profissional ou foto que gere conexão com o cliente.</p>
+                        </div>
+                    </li>
+                    <li class="checklist-item" tabindex="0" role="listitem">
+                        <div class="checklist-number" aria-hidden="true">2</div>
+                        <div class="checklist-content">
+                            <h3>Nome Comercial</h3>
+                            <p>Seu nome + Especialista + Nome do Produto. Ex: "Júlia Oliveira - Especialista BHC".</p>
+                        </div>
+                    </li>
+                    <li class="checklist-item" tabindex="0" role="listitem">
+                        <div class="checklist-number" aria-hidden="true">3</div>
+                        <div class="checklist-content">
+                            <h3>Descrição</h3>
+                            <p>Uma descrição clara e atrativa que explica o que o produto faz e para quem é.</p>
+                        </div>
+                    </li>
+                    <li class="checklist-item" tabindex="0" role="listitem">
+                        <div class="checklist-number" aria-hidden="true">4</div>
+                        <div class="checklist-content">
+                            <h3>Mensagem de Saudação</h3>
+                            <p>Uma mensagem automática para recepcionar o cliente e gerenciar expectativas.</p>
+                        </div>
+                    </li>
+                    <li class="checklist-item" tabindex="0" role="listitem">
+                        <div class="checklist-number" aria-hidden="true">5</div>
+                        <div class="checklist-content">
+                            <h3>Catálogo de Produtos</h3>
+                            <p>Cadastre seus principais produtos com fotos, descrição e preços.</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2>📱 Exemplo Prático de Perfil Campeão</h2>
+                <div class="whatsapp-example">
+                    <div class="whatsapp-profile">
+                        <img src="https://i.imgur.com/QwBhcrq.jpg" alt="Júlia Oliveira - Especialista BHC" class="whatsapp-profile-img">
+                        <div class="whatsapp-profile-text">
+                            <h3>Júlia Oliveira - Especialista BHC</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="whatsapp-description">
+                        <h4>📝 Descrição do Perfil:</h4>
+                        <p>
+                            BHC Hair é o tratamento capilar avançado que estimula o crescimento, fortalece os fios e reduz a queda desde as primeiras semanas. Fórmula com ativos potentes, vegana, sem parabenos ou sulfatos. Resultados visíveis: mais volume, força e saúde capilar real. Ideal para homens e mulheres que buscam solução definitiva para queda, enfraquecimento ou falhas no couro cabeludo.<br><br>
+                            👉 Comece sua transformação capilar agora! Fale conosco e descubra como BHC Hair pode mudar seu cabelo.
+                        </p>
+                    </div>
+
+                    <div class="whatsapp-description">
+                        <h4>💬 Mensagem de Saudação Automática:</h4>
+                        <p>
+                            Oi minha linda! Que bom te receber por aqui. 😊<br><br>
+                            Respondo em horários específicos para manter foco total nas entregas e garantir qualidade.<br>
+                            <strong>Qual é o seu caso específico?</strong> Me conte sobre sua situação capilar para que eu possa te orientar da melhor forma possível.<br>
+                            Assim consigo te atender com a atenção que você merece.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="product-info-section">
+                <h2>🧬 Sobre o BHC Hair Premium</h2>
+                <div class="product-analysis">
+                    <div class="analysis-card highlight-card">
+                        <h3>🎯 O que é o BHC Hair?</h3>
+                        <p>Suplemento capilar com fórmula avançada que combina ingredientes cientificamente estudados para fortalecer os fios, estimular o crescimento e reduzir a queda capilar.</p>
+                    </div>
+
+                    <div class="ingredients-grid">
+                        <div class="ingredient-card">
+                            <div class="ingredient-icon">💪</div>
+                            <h4>Colágeno Verisol®</h4>
+                            <p>Estudos comprovam <strong>aumento na espessura</strong> do cabelo em 16 semanas</p>
+                        </div>
+                        <div class="ingredient-card">
+                            <div class="ingredient-icon">🔬</div>
+                            <h4>Nutricolin®</h4>
+                            <p>Silício biodisponível que <strong>estimula a queratina</strong> e reduz fragilidade</p>
+                        </div>
+                        <div class="ingredient-card">
+                            <div class="ingredient-icon">⚡</div>
+                            <h4>Biotina + Complexo B</h4>
+                            <p>Vitaminas essenciais para <strong>metabolismo capilar</strong> saudável</p>
+                        </div>
+                        <div class="ingredient-card">
+                            <div class="ingredient-icon">🛡️</div>
+                            <h4>Resveratrol</h4>
+                            <p>Antioxidante poderoso que <strong>protege contra danos</strong> dos radicais livres</p>
+                        </div>
+                    </div>
+
+                    <div class="effectiveness-section">
+                        <h3>✅ Para Quem Funciona Melhor?</h3>
+                        <div class="effectiveness-grid">
+                            <div class="effective-card positive">
+                                <h4>✅ Mais Eficaz Para:</h4>
+                                <ul>
+                                    <li>Queda por deficiência nutricional</li>
+                                    <li>Cabelos fracos e quebradiços</li>
+                                    <li>Falta de espessura e volume</li>
+                                    <li>Pessoas com dieta restritiva</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="indication-section">
+                        <h3>🎯 Para Quem é Indicado o BHC Hair?</h3>
+                        <div class="indication-grid">
+                            <div class="indication-card recommended">
+                                <h4>✅ Altamente Recomendado Para:</h4>
+                                <ul>
+                                    <li>💪 Cabelos fracos e quebradiços</li>
+                                    <li>🍃 Queda capilar por estresse ou dieta</li>
+                                    <li>📉 Falta de volume e densidade</li>
+                                    <li>🧴 Envelhecimento dos fios</li>
+                                    <li>🌱 Cabelos sem brilho e vitalidade</li>
+                                    <li>🚫 Deficiência nutricional capilar</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="indication-card profile">
+                                <h4>👥 Perfil Ideal:</h4>
+                                <ul>
+                                    <li>👩 Mulheres (foco principal)</li>
+                                    <li>🌿 Veganos e vegetarianos</li>
+                                    <li>🏃 Pessoas com vida corrida</li>
+                                    <li>👩‍💼 Profissionais estressados</li>
+                                    <li>🍽️ Quem tem dieta restritiva</li>
+                                    <li>✨ Busca por beleza natural</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="popularity-section">
+                        <h3>🔥 Produto em Alta Demanda</h3>
+                        <div class="popularity-card">
+                            <div class="popularity-stats">
+                                <div class="stat-item">
+                                    <span class="stat-number">🚀</span>
+                                    <p><strong>Mais Vendido</strong><br>Líder em vendas no segmento capilar</p>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">⭐</span>
+                                    <p><strong>Alta Aprovação</strong><br>Milhares de clientes satisfeitos</p>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">📈</span>
+                                    <p><strong>Crescimento Constante</strong><br>Demanda aumentando mensalmente</p>
+                                </div>
+                            </div>
+                            <div class="testimonial-highlight">
+                                <p>"O BHC Hair se tornou o produto mais procurado para tratamento capilar. A combinação de ingredientes premium com resultados comprovados fez dele um sucesso absoluto no mercado."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="catalog">
+                <h2>💊 Catálogo de Produtos - BHC Hair</h2>
+                <div class="products-grid">
+                    <article class="product-card" tabindex="0">
+                        <div class="product-image">
+                            <img src="https://i.imgur.com/ZCRgY8e.jpg" alt="BHC Hair - Pote 1 Mês" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">👱‍♀️ Pote 1 Mês – BHC Hair</h3>
+                            <p class="product-subtitle">Tratamento Capilar</p>
+                            <p class="product-description">
+                                Tratamento capilar intensivo para 30 dias. Estimula o crescimento, reduz a queda e fortalece os fios desde a raiz. Ideal para quem está começando sua jornada capilar.
+                            </p>
+                            <div class="product-features">
+                                <span class="feature-tag">💡 Vegano</span>
+                                <span class="feature-tag">Sem parabenos</span>
+                                <span class="feature-tag">Foco feminino</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="old-price">De R$247,00</span>
+                                <span class="new-price">R$197,00</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" tabindex="0">
+                        <span class="product-tag">O Mais Vendido</span>
+                        <div class="product-image">
+                            <img src="https://i.imgur.com/pas8POs.jpg" alt="BHC Hair - Pote 3 Meses" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">👱‍♀️ Pote 3 Meses – BHC Hair</h3>
+                            <p class="product-subtitle">Tratamento Prolongado</p>
+                            <p class="product-description">
+                                O plano ideal para resultados consistentes! 90 dias de fortalecimento, crescimento acelerado e revitalização do couro cabeludo. Indicado para casos moderados de queda ou falhas.
+                            </p>
+                            <div class="product-features">
+                                <span class="feature-tag">✨ Fórmula premium</span>
+                                <span class="feature-tag">Ativos potentes</span>
+                                <span class="feature-tag">Resultados reais</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="old-price">De R$347,00</span>
+                                <span class="new-price">R$297,00</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" tabindex="0">
+                        <div class="product-image">
+                            <img src="https://i.imgur.com/26DqnVz.jpg" alt="BHC Hair - Pote 5 Meses" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">👱‍♀️ Pote 5 Meses – BHC Hair</h3>
+                            <p class="product-subtitle">Transformação Completa</p>
+                            <p class="product-description">
+                                Tratamento completo de 150 dias para crescimento intenso, combate à queda e recuperação da densidade capilar. Indicado para quem busca transformação total.
+                            </p>
+                            <div class="product-features">
+                                <span class="feature-tag">🚀 Alta performance</span>
+                                <span class="feature-tag">Resultados comprovados</span>
+                                <span class="feature-tag">Uso contínuo</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="old-price">De R$547,00</span>
+                                <span class="new-price">R$397,00</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section links-section">
+                <h2>🔗 Links de Afiliação - BHC Hair Premium</h2>
+
+                <div class="pricing-info">
+                    <h3>💰 Preços e Descontos</h3>
+                    <div class="price-list">
+                        <p><strong>BHC Hair Premium 1 mês:</strong> de R$247,00 por <span class="highlight-price">R$197,90</span></p>
+                        <p><strong>BHC Hair Premium 3 meses:</strong> de R$347,00 por <span class="highlight-price">R$297,00</span></p>
+                        <p><strong>BHC Hair Premium 5 meses:</strong> de R$547,00 por <span class="highlight-price">R$397,00</span></p>
+                    </div>
+                </div>
+
+                <div class="payment-section">
+                    <h3>💳 Pagamento Após Entrega - Plataforma Sonhar Pay</h3>
+                    <p class="platform-description">Link onde você encontra todos os kits disponíveis:</p>
+                    <a href="https://app.sonharpay.com.br/produtos/detalhe/5154?convite=truePAD" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="link-item primary-link"
+                       aria-label="Sonhar Pay - Todos os kits BHC - Pagamento após entrega">
+                       🎯 Sonhar Pay - Todos os Kits BHC (Pagar Após Entrega)
+                    </a>
+                </div>
+
+                <div class="payment-section">
+                    <h3>⚡ Pagamento Imediato - Plataforma Sonhar Pay</h3>
+                    <a href="https://app.sonharpay.com.br/produtos/detalhe/5154?convite=truePAD" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="link-item primary-link"
+                       aria-label="Sonhar Pay - Todos os kits BHC - Pagamento imediato">
+                       💳 Sonhar Pay - Todos os Kits BHC (Pagamento Imediato)
+                    </a>
+                </div>
+
+                <div class="payment-section">
+                    <h3>🛒 Alternativa - Plataforma KeedPay (Pagar Após Entrega)</h3>
+                    <a href="https://app.keedpay.com.br/products/YUUoOzwgPuq/settings/affiliation/received-invite" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="link-item alternative-link"
+                       aria-label="KeedPay - Pagamento após entrega">
+                       🔄 KeedPay - Pagamento Após Entrega
+                    </a>
+                </div>
+
+                <div class="materials-section">
+                    <h3>📁 Materiais de Apoio</h3>
+                    <a href="https://drive.google.com/drive/folders/1ir41z6bPLvLIDqZMNpTwn8wza8jQoQoy?usp=sharing" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="link-item materials-link"
+                       aria-label="Drive com todos os conteúdos passados até o momento">
+                       📂 Drive - Com todos os conteúdos passados até o momento
+                    </a>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

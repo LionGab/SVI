@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AULA AO VIVO - SVI 🤖 | Técnicas de Atendimento de Vendas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #ffeef8 0%, #f8f4ff 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #ff6b9d 0%, #c44dbb 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(255, 107, 157, 0.3);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        .nav {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .nav a:hover {
+            background: linear-gradient(135deg, #ff6b9d, #c44dbb);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        .main {
+            padding: 3rem 0;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.4s; }
+        .section:nth-child(4) { animation-delay: 0.6s; }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #ff6b9d, #c44dbb);
+            border-radius: 2px;
+        }
+
+        /* Cards */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(255, 107, 157, 0.2);
+            border-color: #ff6b9d;
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ff6b9d, #c44dbb);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .card p {
+            color: #6c757d;
+            line-height: 1.8;
+        }
+
+        /* Step by Step */
+        .step {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 5px solid #ff6b9d;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #ff6b9d, #c44dbb);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .step h4 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        /* Audio Transcription */
+        .audio-section {
+            background: linear-gradient(135deg, #f8f9ff 0%, #fff0f8 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 2px dashed #ff6b9d;
+        }
+
+        .audio-icon {
+            display: inline-block;
+            color: #ff6b9d;
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+
+        .transcription {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            font-style: italic;
+            color: #495057;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Claude Response */
+        .claude-response {
+            background: linear-gradient(135deg, #e8f5e8 0%, #f0f8ff 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 1rem 0;
+            border-left: 4px solid #28a745;
+        }
+
+        .claude-response::before {
+            content: '🤖 Claude:';
+            display: block;
+            font-weight: bold;
+            color: #28a745;
+            margin-bottom: 1rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #ff6b9d, #c44dbb);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 107, 157, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #ff6b9d;
+            color: #ff6b9d;
+        }
+
+        .btn-outline:hover {
+            background: linear-gradient(135deg, #ff6b9d, #c44dbb);
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+
+        /* Utility Classes */
+        .text-center { text-align: center; }
+        .mb-2 { margin-bottom: 1rem; }
+        .mb-3 { margin-bottom: 1.5rem; }
+        .highlight {
+            background: linear-gradient(120deg, #ff6b9d 0%, #ff6b9d 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 40%;
+            background-position: 0 85%;
+            padding: 0 4px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>🤖 AULA AO VIVO - SVI</h1>
+            <p>Decodificando a Arte do Atendimento de Vendas de Alto Impacto</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <ul>
+                <li><a href="#introducao">Introdução</a></li>
+                <li><a href="#passo-a-passo">Passo a Passo</a></li>
+                <li><a href="#transcricoes">Transcrições</a></li>
+                <li><a href="#pratica">Prática</a></li>
+                <li><a href="#recursos">Recursos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            
+            <!-- Introdução -->
+            <section id="introducao" class="section">
+                <h2 class="section-title">💎 Análise Disruptiva: Caso BHC Premium</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon">🎯</div>
+                        <h3>O Que Vamos Analisar</h3>
+                        <p>Um roteiro de vendas real que converte leads em clientes através de técnicas psicológicas avançadas de persuasão e construção de relacionamento.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🧠</div>
+                        <h3>Metodologia SVI</h3>
+                        <p><strong>S</strong>istema de <strong>V</strong>endas <strong>I</strong>nteligente: decodificando cada elemento persuasivo, gatilho mental e estratégia de fechamento utilizada.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">⚡</div>
+                        <h3>Resultado Esperado</h3>
+                        <p>Você vai entender os "bastidores" de um atendimento de alta conversão e como adaptar essas técnicas para seu próprio negócio.</p>
+                    </div>
+                </div>
+                
+                <div class="card" style="margin-top: 2rem; background: linear-gradient(135deg, #fff3e0 0%, #fce4ec 100%); border-left: 5px solid #ff6b9d;">
+                    <h3 style="color: #d81b60;">🔍 O Caso Estudado</h3>
+                    <p><strong>Produto:</strong> BHC Premium (suplemento para cabelo, pele e unhas)</p>
+                    <p><strong>Vendedora:</strong> Victória Leal</p>
+                    <p><strong>Canal:</strong> WhatsApp</p>
+                    <p><strong>Estratégia:</strong> Pagamento na entrega + Garantia de 90 dias + Acompanhamento personalizado</p>
+                    <p><strong>Ticket Médio:</strong> R$ 297,00 a R$ 397,00</p>
+                </div>
+            </section>
+
+            <!-- Passo a Passo com Claude -->
+            <section id="passo-a-passo" class="section">
+                <h2 class="section-title">🤖 Decodificação SVI: Passo a Passo</h2>
+                
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <h4>PROMPT INICIAL: Analisando a Saudação</h4>
+                    <p><strong>Comando enviado ao Claude:</strong></p>
+                    <div class="claude-response">
+                        Analise esta saudação de vendas e identifique todos os gatilhos psicológicos, elementos de persuasão e estratégias de construção de confiança utilizados:
+
+                        "Oiê, minha linda, tudo bem? Que prazer em falar com você. Eu sou a Victória Leal, responsável pelo seu atendimento de hoje, tá? E eu quero te deixar tranquila, você só paga o tratamento depois que o entregador colocar o produto na sua mão, tá? A gente faz assim pra garantir a sua segurança, porque infelizmente tem muita gente caindo em golpe na internet."
+
+                        Forneça insights sobre:
+                        1. Elementos de rapport
+                        2. Estratégias de redução de objeções
+                        3. Posicionamento de autoridade
+                        4. Gatilhos de confiança
+                    </div>
+                    
+                    <p><strong>Análise do Claude:</strong></p>
+                    <div class="claude-response">
+                        <strong>🎯 ANÁLISE DISRUPTIVA DA SAUDAÇÃO:</strong><br><br>
+                        
+                        <strong>1. RAPPORT INSTANTÂNEO:</strong><br>
+                        • "Oiê, minha linda" - Linguagem afetiva e próxima<br>
+                        • "Que prazer em falar com você" - Demonstra interesse genuíno<br>
+                        • Cria conexão emocional antes de qualquer apresentação<br><br>
+                        
+                        <strong>2. AUTORIDADE SUTIL:</strong><br>
+                        • "Eu sou a Victória Leal, responsável pelo seu atendimento" - Define liderança<br>
+                        • Personaliza o atendimento (não é um robô, é uma pessoa específica)<br><br>
+                        
+                        <strong>3. DESTRUIÇÃO DE OBJEÇÕES PREVENTIVA:</strong><br>
+                        • "Você só paga depois que o entregador colocar na sua mão" - Remove o medo de golpe<br>
+                        • Antecipa a principal objeção antes mesmo de ser mencionada<br><br>
+                        
+                        <strong>4. SOCIAL PROOF REVERSO:</strong><br>
+                        • "Muita gente caindo em golpe" - Usa problemas do mercado como diferencial<br>
+                        • Posiciona a empresa como diferente e confiável
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <h4>PROMPT DE APROFUNDAMENTO: Apresentação do Produto</h4>
+                    <p><strong>Comando de follow-up:</strong></p>
+                    <div class="claude-response">
+                        Agora analise esta apresentação do produto e identifique as técnicas de storytelling, credibilidade internacional e ancoragem de valor:
+
+                        "Ah, entendi, minha linda. O nome do nosso produto é o BHC Premium. É um tratamento natural que já é sucesso na Europa, nos Estados Unidos. Você vai tomar duas cápsulas por dia, uma em jejum pela manhã e a outra antes de dormir, tá? Isso garante uma absorção rápida e eficaz no seu corpo. Ele interrompe a queda, acelera o crescimento do cabelo em até nove vezes mais, fortalece os fios finos e ralos..."
+
+                        Analise especificamente:
+                        1. Técnicas de credibilidade
+                        2. Especificidades que geram confiança
+                        3. Benefícios vs. características
+                        4. Linguagem de autoridade científica
+                    </div>
+                    
+                    <p><strong>Análise avançada do Claude:</strong></p>
+                    <div class="claude-response">
+                        <strong>🧬 ANATOMIA DA APRESENTAÇÃO:</strong><br><br>
+                        
+                        <strong>1. CREDIBILIDADE INTERNACIONAL:</strong><br>
+                        • "Já é sucesso na Europa, nos Estados Unidos" - Social proof geográfico<br>
+                        • Implica superioridade por ser aceito em mercados "mais exigentes"<br><br>
+                        
+                        <strong>2. ESPECIFICIDADE TÉCNICA:</strong><br>
+                        • "Duas cápsulas, uma em jejum, outra antes de dormir" - Detalhamento profissional<br>
+                        • "Absorção rápida e eficaz" - Linguagem científica<br><br>
+                        
+                        <strong>3. PROMESSAS MENSURÁVEIS:</strong><br>
+                        • "Até nove vezes mais" - Número específico cria ancoragem<br>
+                        • "Em poucas semanas" - Timeline definida<br><br>
+                        
+                        <strong>4. SOLUÇÃO COMPLETA:</strong><br>
+                        • Não vende apenas um produto, vende uma transformação total<br>
+                        • "Mata o problema na raiz" - Linguagem definitiva
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <h4>PROMPT ESTRATÉGICO: Tratamento de Objeções</h4>
+                    <p><strong>Comando específico:</strong></p>
+                    <div class="claude-response">
+                        Analise esta estratégia de tratamento de objeções e como ela transforma ceticismo em confiança:
+
+                        "Sei que você já deve estar aí se perguntando, pensando, né? Mas, Vitória, eu já provei vários outros produtos e nada funcionou. Mas calma que eu vou te explicar... É por isso que nenhum outro produto funcionou pra você antes. Porque nenhum deles possui mais de 22 componentes poderosos na sua fórmula."
+
+                        Identifique:
+                        1. Como antecipa objeções
+                        2. Técnicas de diferenciação
+                        3. Uso de autoridade científica
+                        4. Reposicionamento da falha anterior
+                    </div>
+                    
+                    <p><strong>Desconstrução masterclass:</strong></p>
+                    <div class="claude-response">
+                        <strong>🎭 MASTERCLASS EM TRATAMENTO DE OBJEÇÕES:</strong><br><br>
+                        
+                        <strong>1. ANTECIPAÇÃO EMPÁTICA:</strong><br>
+                        • "Sei que você já deve estar se perguntando" - Demonstra que entende o cliente<br>
+                        • Cria um ambiente seguro para dúvidas<br><br>
+                        
+                        <strong>2. REFRAME DA EXPERIÊNCIA PASSADA:</strong><br>
+                        • "É por isso que nenhum outro funcionou" - Transforma falha em validação<br>
+                        • Não critica tentativas anteriores, as usa como prova da necessidade<br><br>
+                        
+                        <strong>3. DIFERENCIAÇÃO TÉCNICA:</strong><br>
+                        • "22 componentes poderosos" - Especificidade que impressiona<br>
+                        • Cria superioridade técnica tangível<br><br>
+                        
+                        <strong>4. VALIDAÇÃO CIENTÍFICA:</strong><br>
+                        • Explica o "porquê" científico das falhas anteriores<br>
+                        • Posiciona como especialista, não vendedora
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-number">4</span>
+                    <h4>PROMPT FINAL: Estratégia de Fechamento</h4>
+                    <p><strong>Análise do fechamento:</strong></p>
+                    <div class="claude-response">
+                        Analise esta estratégia de fechamento e como ela combina urgência, escassez e apelo emocional:
+
+                        "Essa é a sua chance de ouro, e esses valores incríveis que eu te passei são válidos somente pra hoje, tá bom? Muitas vezes a gente se dedica pros filhos, esposo, pra casa, que a gente acaba esquecendo de cuidar de nós mesmos, não é verdade? Mas chega uma hora que é preciso você dar um basta nisso e priorizar você mesma."
+
+                        Identifique os elementos de:
+                        1. Urgência temporal
+                        2. Apelo emocional
+                        3. Reposicionamento de prioridades
+                        4. Call-to-action implícito
+                    </div>
+                    
+                    <p><strong>Dissecação do fechamento:</strong></p>
+                    <div class="claude-response">
+                        <strong>💎 ANATOMIA DO FECHAMENTO PERFEITO:</strong><br><br>
+                        
+                        <strong>1. URGÊNCIA LEGÍTIMA:</strong><br>
+                        • "Chance de ouro" + "somente pra hoje" - Cria pressão temporal<br>
+                        • "Quando voltar, valores já vão ter mudado" - Consequência clara<br><br>
+                        
+                        <strong>2. APELO EMOCIONAL PROFUNDO:</strong><br>
+                        • "Se dedica pros filhos, esposo, casa" - Identifica com a realidade<br>
+                        • "Esquece de cuidar de si" - Toca na dor real<br><br>
+                        
+                        <strong>3. REFRAME DE PRIORIDADES:</strong><br>
+                        • "Dar um basta" - Linguagem de empoderamento<br>
+                        • "Priorizar você mesma" - Transforma compra em autocuidado<br><br>
+                        
+                        <strong>4. FECHAMENTO COLABORATIVO:</strong><br>
+                        • "Vamos dar esse passo juntas?" - Parceria, não pressão<br>
+                        • Remove a sensação de "ser vendida"
+                    </div>
+                </div>
+            </section>
+
+            <!-- Transcrições de Áudio -->
+            <section id="transcricoes" class="section">
+                <h2 class="section-title">🎙️ Scripts Completos - BHC Premium</h2>
+                
+                <div class="audio-section">
+                    <h4><span class="audio-icon">🔊</span> ÁUDIO 1: Saudação + Quebra de Objeções</h4>
+                    <div class="transcription">
+                        <p>"Oiê, minha linda, tudo bem? Que prazer em falar com você. Eu sou a Victória Leal, responsável pelo seu atendimento de hoje, tá? E eu quero te deixar tranquila, você só paga o tratamento depois que o entregador colocar o produto na sua mão, tá? A gente faz assim pra garantir a sua segurança, porque infelizmente tem muita gente caindo em golpe na internet. Agora me conta uma coisa, qual é o seu maior incômodo hoje? É com o seu cabelo, com a sua pele, com as suas unhas? Me explica rapidinho qual é o problema, pra eu ver se o nosso tratamento é mesmo indicado pra você, tá?"</p>
+                    </div>
+                    <div style="background: #e8f5e8; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                        <strong>💡 INSIGHTS SVI:</strong> Rapport + Credibilidade + Quebra de objeção preventiva + Qualificação do lead
+                    </div>
+                </div>
+
+                <div class="audio-section">
+                    <h4><span class="audio-icon">🔊</span> ÁUDIO 2: Apresentação do Produto</h4>
+                    <div class="transcription">
+                        <p>"Ah, entendi, minha linda. Olha, já tô anotando todo o seu caso aqui, tá? E fica tranquila, porque o nosso tratamento realmente vai te ajudar. Você encontrou a solução certa, tá? O nome do nosso produto é o BHC Premium. É um tratamento natural que já é sucesso na Europa, nos Estados Unidos. Você vai tomar duas cápsulas por dia, uma em jejum pela manhã e a outra antes de dormir, tá? Isso garante uma absorção rápida e eficaz no seu corpo. E o que ele faz? Ele interrompe a queda, acelera o crescimento do cabelo em até nove vezes mais, fortalece os fios finos e ralos, melhora muito a aparência da pele e ainda fortalece as unhas fracas e quebradiças. Ele também previne os fios brancos se você ainda não tiver. Ou seja, ele mata o problema na raiz. Em poucas semanas você já sente o resultado. E o melhor, não precisa usar pra sempre, tá?"</p>
+                    </div>
+                    <div style="background: #e8f5e8; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                        <strong>💡 INSIGHTS SVI:</strong> Validação + Credibilidade internacional + Especificidade técnica + Benefícios múltiplos + Timeline definida
+                    </div>
+                </div>
+
+                <div class="audio-section">
+                    <h4><span class="audio-icon">🔊</span> ÁUDIO 3: Diferenciais e Autoridade</h4>
+                    <div class="transcription">
+                        <p>"Sei que você já deve estar aí se perguntando, pensando, né? Mas, Vitória, eu já provei vários outros produtos e nada funcionou. Mas calma que eu vou te explicar. Sabe essas receitinhas caseiras que se vê muito aí na internet? Elas simplesmente não funcionam. E como especialista em cabelos, eu vou te explicar o porquê. Se você tem problemas com cabelo e unha, deve saber que o trans-resveratrol, o colágeno hidrolisado, a vitamina K2, o ácido fólico, eles ajudam em tudo isso que eu te falei, não é mesmo? Porém, essas vitaminas, nos alimentos naturais, a quantidade é muito baixa. (...) Além disso, o nosso BHC possui mais de 22 componentes na sua fórmula. E esses componentes estão com a dosagem ideal pra realmente fazer efeito no seu organismo."</p>
+                    </div>
+                    <div style="background: #e8f5e8; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                        <strong>💡 INSIGHTS SVI:</strong> Antecipação de objeções + Diferenciação técnica + Autoridade científica + Prova social com pesquisas
+                    </div>
+                </div>
+
+                <div class="audio-section">
+                    <h4><span class="audio-icon">🔊</span> ÁUDIO 4: Credibilidade e Garantia</h4>
+                    <div class="transcription">
+                        <p>"Olha, eu mandei aqui em cima algumas fotos e vídeos das nossas clientes, tá bom? Eu mandei também a documentação da Anvisa pra te mostrar tudo certinho que nós somos uma empresa séria. A gente realmente preza pela segurança e o bem-estar dos nossos clientes. E pra você fazer uma compra ainda mais segura e mais confiante, como eu já te falei, você só faz o pagamento depois que receber o tratamento em casa. Mas além disso, eu vou te dar 90 dias de garantia se você não gostar dos resultados. É isso mesmo. Mas assim, com 20, 25 dias de uso, eu garanto que você já vai começar a perceber os efeitos e os benefícios no seu organismo, tá bom?"</p>
+                    </div>
+                    <div style="background: #e8f5e8; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                        <strong>💡 INSIGHTS SVI:</strong> Prova social visual + Credibilidade regulatória + Reversão de risco + Timeline de resultados
+                    </div>
+                </div>
+
+                <div class="audio-section">
+                    <h4><span class="audio-icon">🔊</span> ÁUDIO 5-8: Acompanhamento + Preços + Fechamento</h4>
+                    <div class="transcription">
+                        <p><strong>Acompanhamento:</strong> "Durante o tratamento eu vou precisar estar te acompanhando. A gente vai fazer um acompanhamento aqui mesmo pelo WhatsApp. Eu não vou vender pra você e depois simplesmente sumir, tá?"</p>
+                        <br>
+                        <p><strong>Preços:</strong> "Cada frasco custa R$197,00 fora da oferta. Mas somente hoje você vai estar pagando: 3 meses por R$297,00 ou 5 meses por R$397,00. Mais de 50% de desconto!"</p>
+                        <br>
+                        <p><strong>Fechamento:</strong> "Essa é a sua chance de ouro, esses valores são válidos somente pra hoje. Muitas vezes a gente se dedica pros filhos, esposo, pra casa, que acaba esquecendo de cuidar de nós mesmos. Mas chega uma hora que é preciso dar um basta nisso e priorizar você mesma. Vamos dar esse passo juntas?"</p>
+                    </div>
+                    <div style="background: #e8f5e8; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                        <strong>💡 INSIGHTS SVI:</strong> Valor agregado + Urgência + Escassez + Apelo emocional + Fechamento colaborativo
+                    </div>
+                </div>
+            </section>
+
+            <!-- Exercícios Práticos -->
+            <section id="pratica" class="section">
+                <h2 class="section-title">💪 Implementação SVI</h2>
+                
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon">🎭</div>
+                        <h3>Mapeamento de Objeções</h3>
+                        <p>Liste as 5 principais objeções do seu nicho e crie respostas preventivas usando a técnica "antecipação empática" da Victória.</p>
+                        <button class="btn btn-outline">Mapear Objeções</button>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">🧬</div>
+                        <h3>Sua Saudação SVI</h3>
+                        <p>Adapte a fórmula: Rapport + Nome + Autoridade + Quebra de objeção preventiva + Qualificação para seu produto.</p>
+                        <button class="btn btn-outline">Criar Saudação</button>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">⚡</div>
+                        <h3>Fechamento Emocional</h3>
+                        <p>Identifique a "dor profunda" do seu cliente e crie um fechamento que combine urgência + apelo emocional + call-to-action colaborativo.</p>
+                        <button class="btn btn-outline">Desenvolver Fechamento</button>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 2rem; background: linear-gradient(135deg, #f3e5f5 0%, #e1f5fe 100%);">
+                    <h3 style="color: #6a1b9a;">🎯 DESAFIO FINAL</h3>
+                    <p><strong>Crie seu próprio roteiro completo usando a metodologia SVI:</strong></p>
+                    <ul style="margin-left: 2rem; margin-top: 1rem;">
+                        <li>✅ Saudação com quebra de objeção preventiva</li>
+                        <li>✅ Apresentação com credibilidade + especificidade</li>
+                        <li>✅ Tratamento de objeções por antecipação</li>
+                        <li>✅ Prova social + garantias</li>
+                        <li>✅ Fechamento emocional + urgência</li>
+                    </ul>
+                    <div style="margin-top: 1rem;">
+                        <button class="btn">Aceitar Desafio</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recursos Extras -->
+            <section id="recursos" class="section">
+                <h2 class="section-title">🎁 Arsenal SVI</h2>
+                
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon">📋</div>
+                        <h3>Templates SVI</h3>
+                        <p>Scripts prontos adaptáveis para diferentes nichos: saúde, beleza, consultoria, infoprodutos e e-commerce.</p>
+                        <a href="#" class="btn">Download</a>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">🧠</div>
+                        <h3>Mapa de Gatilhos</h3>
+                        <p>Infográfico com os 15 gatilhos mentais mais poderosos identificados no caso BHC Premium.</p>
+                        <a href="#" class="btn">Ver Mapa</a>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">⚡</div>
+                        <h3>Prompts Claude</h3>
+                        <p>Comandos prontos para analisar seus próprios roteiros e otimizar conversões usando IA.</p>
+                        <a href="#" class="btn">Copiar Prompts</a>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 2rem; background: linear-gradient(135deg, #fff8e1 0%, #f3e5f5 100%); border-left: 5px solid #ff9800;">
+                    <h3 style="color: #e65100;">🚀 BÔNUS EXCLUSIVO</h3>
+                    <p><strong>Análise SVI Personalizada:</strong></p>
+                    <p>Envie seu roteiro atual e receba uma análise completa usando a metodologia SVI, com sugestões específicas de otimização para seu nicho.</p>
+                    <div style="margin-top: 1rem;">
+                        <a href="#" class="btn" style="background: linear-gradient(135deg, #ff9800, #f57c00);">Solicitar Análise</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action -->
+            <div class="text-center mb-3">
+                <h3 class="mb-2">Pronta para dominar a metodologia SVI? 🤖</h3>
+                <p class="mb-3">Transforme suas conversas em vendas usando as técnicas que acabou de aprender!</p>
+                <a href="#" class="btn">Implementar SVI Agora</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 - AULA AO VIVO SVI 🤖 | Decodificando vendas de alto impacto</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling para navegação
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Highlight da navegação ativa
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.nav a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.style.background = '';
+                link.style.color = '';
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.style.background = 'linear-gradient(135deg, #ff6b9d, #c44dbb)';
+                    link.style.color = 'white';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

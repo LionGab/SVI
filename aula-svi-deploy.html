@@ -1,0 +1,1667 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AULA AO VIVO - SVI 🤖 | Técnicas de Atendimento de Vendas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #ffeef8 0%, #f8f4ff 100%);
+            min-height: 100vh;
+            font-feature-settings: 'liga' 1, 'kern' 1;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #ff6b9d 0%, #c44dbb 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(255, 107, 157, 0.3);
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            font-weight: 400;
+            opacity: 0.9;
+            letter-spacing: 0.01em;
+        }
+
+
+        /* Main Content */
+        .main {
+            padding: 3rem 0;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.4s; }
+        .section:nth-child(4) { animation-delay: 0.6s; }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+            letter-spacing: -0.01em;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #ff6b9d, #c44dbb);
+            border-radius: 2px;
+        }
+
+        /* Cards */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(255, 107, 157, 0.2);
+            border-color: #ff6b9d;
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ff6b9d, #c44dbb);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            letter-spacing: -0.01em;
+        }
+
+        .card p {
+            font-weight: 400;
+            color: #6c757d;
+            line-height: 1.8;
+            letter-spacing: 0.005em;
+        }
+
+        /* Step by Step */
+        .step {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 5px solid #ff6b9d;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #ff6b9d, #c44dbb);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .step h4 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            letter-spacing: -0.01em;
+        }
+
+        /* Audio Transcription */
+        .audio-section {
+            background: linear-gradient(135deg, #f8f9ff 0%, #fff0f8 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 2px dashed #ff6b9d;
+        }
+
+        .audio-icon {
+            display: inline-block;
+            color: #ff6b9d;
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+
+        .transcription {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            font-style: italic;
+            font-weight: 400;
+            color: #495057;
+            line-height: 1.7;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            letter-spacing: 0.003em;
+        }
+
+        /* Claude Response */
+        .claude-response {
+            background: linear-gradient(135deg, #e8f5e8 0%, #f0f8ff 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 1rem 0;
+            border-left: 4px solid #28a745;
+        }
+
+        .claude-response::before {
+            content: '🤖 Claude:';
+            display: block;
+            font-weight: bold;
+            color: #28a745;
+            margin-bottom: 1rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #ff6b9d, #c44dbb);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.01em;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 107, 157, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #ff6b9d;
+            color: #ff6b9d;
+        }
+
+        .btn-outline:hover {
+            background: linear-gradient(135deg, #ff6b9d, #c44dbb);
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        /* Audio Players */
+        .audio-player {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1rem 0;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .audio-player audio {
+            width: 100%;
+            height: 45px;
+            border-radius: 8px;
+        }
+
+        .audio-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 0.75rem;
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
+
+        .audio-info span {
+            background: #fff;
+            padding: 0.25rem 0.5rem;
+            border-radius: 15px;
+            font-weight: 500;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 2% auto;
+            padding: 2rem;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #ff6b9d;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 1.9rem;
+            letter-spacing: -0.01em;
+        }
+
+        .modal-text {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            white-space: pre-line;
+            line-height: 1.7;
+            color: #495057;
+            letter-spacing: 0.003em;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+                line-height: 1.2;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+
+            .audio-player {
+                padding: 1rem;
+            }
+            
+            .audio-info {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .modal-content {
+                width: 95%;
+                margin: 5% auto;
+                padding: 1.5rem;
+            }
+        }
+
+        /* Utility Classes */
+        .text-center { text-align: center; }
+        .mb-2 { margin-bottom: 1rem; }
+        .mb-3 { margin-bottom: 1.5rem; }
+        .highlight {
+            background: linear-gradient(120deg, #ff6b9d 0%, #ff6b9d 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 40%;
+            background-position: 0 85%;
+            padding: 0 4px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>🤖 AULA AO VIVO - SVI</h1>
+            <p>Decodificando a Arte do Atendimento de Vendas de Alto Impacto</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            
+            <!-- Introdução -->
+            <section id="introducao" class="section">
+                <h2 class="section-title">💎 Análise Disruptiva: Caso BHC Premium</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon">🎯</div>
+                        <h3>O Que Vamos Analisar</h3>
+                        <p>Um roteiro de vendas real que converte leads em clientes através de técnicas psicológicas avançadas de persuasão e construção de relacionamento.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🧠</div>
+                        <h3>Metodologia SVI</h3>
+                        <p><strong>S</strong>istema de <strong>V</strong>endas <strong>I</strong>nteligente: decodificando cada elemento persuasivo, gatilho mental e estratégia de fechamento utilizada.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">⚡</div>
+                        <h3>Resultado Esperado</h3>
+                        <p>Você vai entender os "bastidores" de um atendimento de alta conversão e como adaptar essas técnicas para seu próprio negócio.</p>
+                    </div>
+                </div>
+                
+                <div class="card" style="margin-top: 2rem; background: linear-gradient(135deg, #fff3e0 0%, #fce4ec 100%); border-left: 5px solid #ff6b9d;">
+                    <h3 style="color: #d81b60;">🔍 O Caso Estudado</h3>
+                    <p><strong>Produto:</strong> BHC Premium - Suplemento capilar com Colágeno Verisol® e Nutricolin®</p>
+                    <p><strong>Fórmula:</strong> 22+ ingredientes ativos - Biotina, Complexo B, L-Cisteína, Resveratrol, Ácido Hialurônico</p>
+                    <p><strong>Vendedora:</strong> Victória Leal</p>
+                    <p><strong>Canal:</strong> WhatsApp com atendimento personalizado</p>
+                    <p><strong>Estratégia:</strong> Pagamento na entrega + Garantia de 90 dias + Acompanhamento durante tratamento</p>
+                    <p><strong>Ticket Médio:</strong> R$ 85-90 (1 frasco) | R$ 223 (kit 3 frascos) | Custo/dia: ~R$ 2,83</p>
+                </div>
+            </section>
+
+            <!-- Passo a Passo com Claude -->
+            <section id="passo-a-passo" class="section">
+                <h2 class="section-title">🤖 Decodificação SVI: Passo a Passo</h2>
+                
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <h4>PROMPT INICIAL: Analisando a Saudação</h4>
+                    <p><strong>Comando enviado ao Claude:</strong></p>
+                    <div class="claude-response">
+                        Analise esta saudação de vendas e identifique todos os gatilhos psicológicos, elementos de persuasão e estratégias de construção de confiança utilizados:
+
+                        "Oiê, minha linda, tudo bem? Que prazer em falar com você. Eu sou a Victória Leal, responsável pelo seu atendimento de hoje, tá? E eu quero te deixar tranquila, você só paga o tratamento depois que o entregador colocar o produto na sua mão, tá? A gente faz assim pra garantir a sua segurança, porque infelizmente tem muita gente caindo em golpe na internet."
+
+                        Forneça insights sobre:
+                        1. Elementos de rapport
+                        2. Estratégias de redução de objeções
+                        3. Posicionamento de autoridade
+                        4. Gatilhos de confiança
+                    </div>
+                    
+                    <p><strong>Análise do Claude:</strong></p>
+                    <div class="claude-response">
+                        <strong>🎯 ANÁLISE DISRUPTIVA DA SAUDAÇÃO:</strong><br><br>
+                        
+                        <strong>1. RAPPORT INSTANTÂNEO:</strong><br>
+                        • "Oiê, minha linda" - Linguagem afetiva e próxima<br>
+                        • "Que prazer em falar com você" - Demonstra interesse genuíno<br>
+                        • Cria conexão emocional antes de qualquer apresentação<br><br>
+                        
+                        <strong>2. AUTORIDADE SUTIL:</strong><br>
+                        • "Eu sou a Victória Leal, responsável pelo seu atendimento" - Define liderança<br>
+                        • Personaliza o atendimento (não é um robô, é uma pessoa específica)<br><br>
+                        
+                        <strong>3. DESTRUIÇÃO DE OBJEÇÕES PREVENTIVA:</strong><br>
+                        • "Você só paga depois que o entregador colocar na sua mão" - Remove o medo de golpe<br>
+                        • Antecipa a principal objeção antes mesmo de ser mencionada<br><br>
+                        
+                        <strong>4. SOCIAL PROOF REVERSO:</strong><br>
+                        • "Muita gente caindo em golpe" - Usa problemas do mercado como diferencial<br>
+                        • Posiciona a empresa como diferente e confiável
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <h4>PROMPT DE APROFUNDAMENTO: Apresentação do Produto</h4>
+                    <p><strong>Comando de follow-up:</strong></p>
+                    <div class="claude-response">
+                        Agora analise esta apresentação do produto e identifique as técnicas de storytelling, credibilidade internacional e ancoragem de valor:
+
+                        "Ah, entendi, minha linda. O nome do nosso produto é o BHC Premium. É um suplemento capilar com Colágeno Verisol® clinicamente testado e Nutricolin® - ácido ortosilícico estabilizado. Você vai tomar duas cápsulas por dia, uma em jejum pela manhã e a outra antes de dormir, tá? Isso garante absorção máxima dos 22 ingredientes ativos como Biotina, Complexo B e L-Cisteína. Ele fortalece desde a raiz, aumenta a espessura dos fios e reduz a quebra..."
+
+                        Analise especificamente:
+                        1. Técnicas de credibilidade
+                        2. Especificidades que geram confiança
+                        3. Benefícios vs. características
+                        4. Linguagem de autoridade científica
+                    </div>
+                    
+                    <p><strong>Análise avançada do Claude:</strong></p>
+                    <div class="claude-response">
+                        <strong>🧬 ANATOMIA DA APRESENTAÇÃO:</strong><br><br>
+                        
+                        <strong>1. CREDIBILIDADE INTERNACIONAL:</strong><br>
+                        • "Já é sucesso na Europa, nos Estados Unidos" - Social proof geográfico<br>
+                        • Implica superioridade por ser aceito em mercados "mais exigentes"<br><br>
+                        
+                        <strong>2. ESPECIFICIDADE TÉCNICA:</strong><br>
+                        • "Duas cápsulas, uma em jejum, outra antes de dormir" - Detalhamento profissional<br>
+                        • "Absorção rápida e eficaz" - Linguagem científica<br><br>
+                        
+                        <strong>3. PROMESSAS MENSURÁVEIS:</strong><br>
+                        • "Até nove vezes mais" - Número específico cria ancoragem<br>
+                        • "Em poucas semanas" - Timeline definida<br><br>
+                        
+                        <strong>4. SOLUÇÃO COMPLETA:</strong><br>
+                        • Não vende apenas um produto, vende uma transformação total<br>
+                        • "Mata o problema na raiz" - Linguagem definitiva
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <h4>PROMPT ESTRATÉGICO: Tratamento de Objeções</h4>
+                    <p><strong>Comando específico:</strong></p>
+                    <div class="claude-response">
+                        Analise esta estratégia de tratamento de objeções e como ela transforma ceticismo em confiança:
+
+                        "Sei que você já deve estar aí se perguntando, pensando, né? Mas, Vitória, eu já provei vários outros produtos e nada funcionou. Mas calma que eu vou te explicar... É por isso que nenhum outro produto funcionou pra você antes. Porque nenhum deles possui mais de 22 componentes poderosos na sua fórmula."
+
+                        Identifique:
+                        1. Como antecipa objeções
+                        2. Técnicas de diferenciação
+                        3. Uso de autoridade científica
+                        4. Reposicionamento da falha anterior
+                    </div>
+                    
+                    <p><strong>Desconstrução masterclass:</strong></p>
+                    <div class="claude-response">
+                        <strong>🎭 MASTERCLASS EM TRATAMENTO DE OBJEÇÕES:</strong><br><br>
+                        
+                        <strong>1. ANTECIPAÇÃO EMPÁTICA:</strong><br>
+                        • "Sei que você já deve estar se perguntando" - Demonstra que entende o cliente<br>
+                        • Cria um ambiente seguro para dúvidas<br><br>
+                        
+                        <strong>2. REFRAME DA EXPERIÊNCIA PASSADA:</strong><br>
+                        • "É por isso que nenhum outro funcionou" - Transforma falha em validação<br>
+                        • Não critica tentativas anteriores, as usa como prova da necessidade<br><br>
+                        
+                        <strong>3. DIFERENCIAÇÃO TÉCNICA:</strong><br>
+                        • "22 componentes poderosos" - Especificidade que impressiona<br>
+                        • Cria superioridade técnica tangível<br><br>
+                        
+                        <strong>4. VALIDAÇÃO CIENTÍFICA:</strong><br>
+                        • Explica o "porquê" científico das falhas anteriores<br>
+                        • Posiciona como especialista, não vendedora
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-number">4</span>
+                    <h4>PROMPT FINAL: Estratégia de Fechamento</h4>
+                    <p><strong>Análise do fechamento:</strong></p>
+                    <div class="claude-response">
+                        Analise esta estratégia de fechamento e como ela combina urgência, escassez e apelo emocional:
+
+                        "Essa é a sua chance de ouro, e esses valores incríveis que eu te passei são válidos somente pra hoje, tá bom? Muitas vezes a gente se dedica pros filhos, esposo, pra casa, que a gente acaba esquecendo de cuidar de nós mesmos, não é verdade? Mas chega uma hora que é preciso você dar um basta nisso e priorizar você mesma."
+
+                        Identifique os elementos de:
+                        1. Urgência temporal
+                        2. Apelo emocional
+                        3. Reposicionamento de prioridades
+                        4. Call-to-action implícito
+                    </div>
+                    
+                    <p><strong>Dissecação do fechamento:</strong></p>
+                    <div class="claude-response">
+                        <strong>💎 ANATOMIA DO FECHAMENTO PERFEITO:</strong><br><br>
+                        
+                        <strong>1. URGÊNCIA LEGÍTIMA:</strong><br>
+                        • "Chance de ouro" + "somente pra hoje" - Cria pressão temporal<br>
+                        • "Quando voltar, valores já vão ter mudado" - Consequência clara<br><br>
+                        
+                        <strong>2. APELO EMOCIONAL PROFUNDO:</strong><br>
+                        • "Se dedica pros filhos, esposo, casa" - Identifica com a realidade<br>
+                        • "Esquece de cuidar de si" - Toca na dor real<br><br>
+                        
+                        <strong>3. REFRAME DE PRIORIDADES:</strong><br>
+                        • "Dar um basta" - Linguagem de empoderamento<br>
+                        • "Priorizar você mesma" - Transforma compra em autocuidado<br><br>
+                        
+                        <strong>4. FECHAMENTO COLABORATIVO:</strong><br>
+                        • "Vamos dar esse passo juntas?" - Parceria, não pressão<br>
+                        • Remove a sensação de "ser vendida"
+                    </div>
+                </div>
+            </section>
+
+            <!-- Transcrições de Áudio -->
+            <section id="transcricoes" class="section">
+                <h2 class="section-title">🎙️ Scripts Completos - BHC Premium (Suplemento Capilar)</h2>
+                
+                <div class="audio-section">
+                    <h4><span class="audio-icon">🔊</span> ÁUDIO 1: Saudação + Quebra de Objeções</h4>
+                    <div class="audio-player">
+                        <audio controls preload="metadata">
+                            <source src="assets/audio/bhc-audio-01-saudacao.mp3" type="audio/mpeg">
+                            Seu navegador não suporta áudio HTML5.
+                        </audio>
+                        <div class="audio-info">
+                            <span class="audio-duration">Duração: 1:45</span>
+                        </div>
+                    </div>
+                    <div class="transcription">
+                        <p>"Oiê, minha linda, tudo bem? Que prazer em falar com você. Eu sou a Victória Leal, responsável pelo seu atendimento de hoje, tá? E eu quero te deixar tranquila, você só paga o tratamento depois que o entregador colocar o produto na sua mão, tá? A gente faz assim pra garantir a sua segurança, porque infelizmente tem muita gente caindo em golpe na internet. Agora me conta uma coisa, qual é o seu maior incômodo hoje? É com o seu cabelo, com a sua pele, com as suas unhas? Me explica rapidinho qual é o problema, pra eu ver se o nosso tratamento é mesmo indicado pra você, tá?"</p>
+                    </div>
+                    <div style="background: #e8f5e8; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                        <strong>💡 INSIGHTS SVI:</strong> Rapport + Credibilidade + Quebra de objeção preventiva + Qualificação do lead
+                    </div>
+                </div>
+
+                <div class="audio-section">
+                    <h4><span class="audio-icon">🔊</span> ÁUDIO 2: Apresentação do Produto</h4>
+                    <div class="audio-player">
+                        <audio controls preload="metadata">
+                            <source src="assets/audio/bhc-audio-02-produto.mp3" type="audio/mpeg">
+                            Seu navegador não suporta áudio HTML5.
+                        </audio>
+                        <div class="audio-info">
+                            <span class="audio-duration">Duração: 2:30</span>
+                        </div>
+                    </div>
+                    <div class="transcription">
+                        <p>"Ah, entendi, minha linda. Olha, já tô anotando todo o seu caso aqui, tá? E fica tranquila, porque o nosso tratamento realmente vai te ajudar. Você encontrou a solução certa, tá? O nome do nosso produto é o BHC Premium. É um tratamento natural que já é sucesso na Europa, nos Estados Unidos. Você vai tomar duas cápsulas por dia, uma em jejum pela manhã e a outra antes de dormir, tá? Isso garante uma absorção rápida e eficaz no seu corpo. E o que ele faz? Ele interrompe a queda, acelera o crescimento do cabelo em até nove vezes mais, fortalece os fios finos e ralos, melhora muito a aparência da pele e ainda fortalece as unhas fracas e quebradiças. Ele também previne os fios brancos se você ainda não tiver. Ou seja, ele mata o problema na raiz. Em poucas semanas você já sente o resultado. E o melhor, não precisa usar pra sempre, tá?"</p>
+                    </div>
+                    <div style="background: #e8f5e8; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                        <strong>💡 INSIGHTS SVI:</strong> Validação + Credibilidade internacional + Especificidade técnica + Benefícios múltiplos + Timeline definida
+                    </div>
+                </div>
+
+                <div class="audio-section">
+                    <h4><span class="audio-icon">🔊</span> ÁUDIO 3: Diferenciais e Autoridade</h4>
+                    <div class="audio-player">
+                        <audio controls preload="metadata">
+                            <source src="assets/audio/bhc-audio-03-diferenciais.mp3" type="audio/mpeg">
+                            Seu navegador não suporta áudio HTML5.
+                        </audio>
+                        <div class="audio-info">
+                            <span class="audio-duration">Duração: 3:15</span>
+                        </div>
+                    </div>
+                    <div class="transcription">
+                        <p>"Sei que você já deve estar aí se perguntando, pensando, né? Mas, Vitória, eu já provei vários outros produtos e nada funcionou. Mas calma que eu vou te explicar. Sabe essas receitinhas caseiras que se vê muito aí na internet? Elas simplesmente não funcionam. E como especialista em cabelos, eu vou te explicar o porquê. Se você tem problemas com cabelo e unha, deve saber que o trans-resveratrol, o colágeno hidrolisado, a vitamina K2, o ácido fólico, eles ajudam em tudo isso que eu te falei, não é mesmo? Porém, essas vitaminas, nos alimentos naturais, a quantidade é muito baixa. (...) Além disso, o nosso BHC possui mais de 22 componentes na sua fórmula. E esses componentes estão com a dosagem ideal pra realmente fazer efeito no seu organismo."</p>
+                    </div>
+                    <div style="background: #e8f5e8; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                        <strong>💡 INSIGHTS SVI:</strong> Antecipação de objeções + Diferenciação técnica + Autoridade científica + Prova social com pesquisas
+                    </div>
+                </div>
+
+                <div class="audio-section">
+                    <h4><span class="audio-icon">🔊</span> ÁUDIO 4: Credibilidade e Garantia</h4>
+                    <div class="audio-player">
+                        <audio controls preload="metadata">
+                            <source src="assets/audio/bhc-audio-04-credibilidade.mp3" type="audio/mpeg">
+                            Seu navegador não suporta áudio HTML5.
+                        </audio>
+                        <div class="audio-info">
+                            <span class="audio-duration">Duração: 2:45</span>
+                        </div>
+                    </div>
+                    <div class="transcription">
+                        <p>"Olha, eu mandei aqui em cima algumas fotos e vídeos das nossas clientes, tá bom? Eu mandei também a documentação da Anvisa pra te mostrar tudo certinho que nós somos uma empresa séria. A gente realmente preza pela segurança e o bem-estar dos nossos clientes. E pra você fazer uma compra ainda mais segura e mais confiante, como eu já te falei, você só faz o pagamento depois que receber o tratamento em casa. Mas além disso, eu vou te dar 90 dias de garantia se você não gostar dos resultados. É isso mesmo. Mas assim, com 20, 25 dias de uso, eu garanto que você já vai começar a perceber os efeitos e os benefícios no seu organismo, tá bom?"</p>
+                    </div>
+                    <div style="background: #e8f5e8; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                        <strong>💡 INSIGHTS SVI:</strong> Prova social visual + Credibilidade regulatória + Reversão de risco + Timeline de resultados
+                    </div>
+                </div>
+
+                <div class="audio-section">
+                    <h4><span class="audio-icon">🔊</span> ÁUDIO 5: Acompanhamento + Preços + Fechamento</h4>
+                    <div class="audio-player">
+                        <audio controls preload="metadata">
+                            <source src="assets/audio/bhc-audio-05-acompanhamento.mp3" type="audio/mpeg">
+                            Seu navegador não suporta áudio HTML5.
+                        </audio>
+                        <div class="audio-info">
+                            <span class="audio-duration">Duração: 4:20</span>
+                        </div>
+                    </div>
+                    <div class="transcription">
+                        <p><strong>Acompanhamento:</strong> "Durante o tratamento eu vou precisar estar te acompanhando. A gente vai fazer um acompanhamento aqui mesmo pelo WhatsApp. Eu não vou vender pra você e depois simplesmente sumir, tá?"</p>
+                        <br>
+                        <p><strong>Preços:</strong> "Cada frasco custa R$197,00 fora da oferta. Mas somente hoje você vai estar pagando: 3 meses por R$297,00 ou 5 meses por R$397,00. Mais de 50% de desconto!"</p>
+                        <br>
+                        <p><strong>Fechamento:</strong> "Essa é a sua chance de ouro, esses valores são válidos somente pra hoje. Muitas vezes a gente se dedica pros filhos, esposo, pra casa, que acaba esquecendo de cuidar de nós mesmos. Mas chega uma hora que é preciso dar um basta nisso e priorizar você mesma. Vamos dar esse passo juntas?"</p>
+                    </div>
+                    <div style="background: #e8f5e8; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                        <strong>💡 INSIGHTS SVI:</strong> Valor agregado + Urgência + Escassez + Apelo emocional + Fechamento colaborativo
+                    </div>
+                </div>
+            </section>
+
+            <!-- Exercícios Práticos -->
+            <section id="pratica" class="section">
+                <h2 class="section-title">💪 Implementação SVI</h2>
+                
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon">🛡️</div>
+                        <h3>5 Objeções BHC Premium Mapeadas</h3>
+                        <div style="text-align: left; margin-top: 1rem;">
+                            <strong>1. "Já tentei outros suplementos capilares"</strong><br>
+                            <em>Resposta:</em> "É exatamente por isso que nenhum outro funcionou... nenhum possui Colágeno Verisol® clinicamente testado + Nutricolin® como o BHC Premium. Outros usam colágeno genérico."<br><br>
+                            
+                            <strong>2. "R$ 85-90 é caro para um suplemento"</strong><br>
+                            <em>Resposta:</em> "Quanto você já gastou em shampoos, cremes e tratamentos que não funcionaram? BHC Premium custa R$ 2,83/dia e você só paga após receber em casa."<br><br>
+                            
+                            <strong>3. "Como sei que não é mais um produto milagroso?"</strong><br>
+                            <em>Resposta:</em> "BHC Premium tem ingredientes com estudos científicos reais: Verisol® comprovou aumento de 31% na proliferação celular do folículo. Não são promessas vazias."<br><br>
+                            
+                            <strong>4. "Vou pesquisar sobre Colágeno Verisol primeiro"</strong><br>
+                            <em>Resposta:</em> "Perfeito! Vai ver que é o único colágeno com estudo específico para cabelo. Mas essa oferta promocional é só hoje, depois volta ao preço normal."<br><br>
+                            
+                            <strong>5. "Tenho medo de gastar dinheiro à toa"</strong><br>
+                            <em>Resposta:</em> "BHC Premium tem 90 dias de garantia total + você só paga quando receber. Zero risco financeiro, só cabelo mais forte e espesso a ganhar."
+                        </div>
+                        <button class="btn btn-outline" onclick="abrirModal('modal-objecoes')" style="margin-top: 1rem;">Ver Respostas Completas</button>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">👋</div>
+                        <h3>Saudação SVI Testada</h3>
+                        <div id="template-saudacao" style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin: 1rem 0; text-align: left; font-style: italic;">
+                            "Oiê, minha linda, tudo bem? Que prazer em falar com você! Eu sou a Victória Leal, responsável pelo seu atendimento do BHC Premium hoje, tá? 
+                            
+                            E eu quero te deixar tranquila, você só paga o BHC Premium depois que o entregador colocar na sua mão, tá? A gente faz assim pra garantir a sua segurança, porque infelizmente tem muita gente caindo em golpe na internet.
+                            
+                            Agora me conta uma coisa, qual é o seu maior incômodo hoje? É com queda de cabelo, fios finos, falta de crescimento ou quebra? Me explica rapidinho pra eu ver se o BHC Premium é indicado pra você, tá?"
+                        </div>
+                        <p><strong>Elementos:</strong> Rapport + Nome + Autoridade + Segurança + Qualificação</p>
+                        <button class="btn btn-outline" onclick="copiarTemplate('template-saudacao')">Copiar Template</button>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">💎</div>
+                        <h3>Fechamento Emocional de Alto Impacto</h3>
+                        <div id="template-fechamento" style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin: 1rem 0; text-align: left; font-style: italic;">
+                            "Essa é a sua chance de ouro, minha linda, e esses valores promocionais do BHC Premium são válidos somente pra hoje, tá bom? Cada frasco custa R$197 fora da oferta, mas hoje você paga só R$85-90.
+                            
+                            Muitas vezes a gente se dedica pros filhos, esposo, pra casa, que a gente acaba esquecendo de cuidar de nós mesmos, não é verdade? Seu cabelo merece o melhor: Colágeno Verisol® clinicamente testado, não genérico.
+                            
+                            Mas chega uma hora que é preciso você dar um basta nisso e investir em você mesma. O BHC Premium vai transformar seus fios. Vamos dar esse passo juntas?"
+                        </div>
+                        <p><strong>Elementos-chave:</strong> Apelo emocional + Urgência + Empoderamento + Fechamento colaborativo</p>
+                        <button class="btn btn-outline" onclick="copiarTemplate('template-fechamento')">Copiar Template</button>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Recursos Extras -->
+            <section id="recursos" class="section">
+                <h2 class="section-title">🎁 Arsenal SVI</h2>
+                
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon">📋</div>
+                        <h3>Script Completo BHC</h3>
+                        <p>Transcrição completa dos 9 áudios com tempos de pausa, observações de entonação e gatilhos identificados em cada frase.</p>
+                        <button onclick="abrirModal('modal-script')" class="btn">Ver Conteúdo</button>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">🛡️</div>
+                        <h3>Banco de Objeções</h3>
+                        <p>15 objeções comuns do nicho saúde/beleza com respostas SVI testadas e variações por perfil de cliente.</p>
+                        <button onclick="abrirModal('modal-objecoes')" class="btn">Ver Conteúdo</button>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">✏️</div>
+                        <h3>Templates Adaptáveis</h3>
+                        <p>Saudação, apresentação e fechamento editáveis com lacunas para personalizar qualquer produto ou nicho.</p>
+                        <button onclick="abrirModal('modal-templates')" class="btn">Ver Conteúdo</button>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">✅</div>
+                        <h3>Checklist de Vendas</h3>
+                        <p>12 elementos obrigatórios em todo atendimento com indicadores de sucesso e como medir cada elemento.</p>
+                        <button onclick="abrirModal('modal-checklist')" class="btn">Ver Conteúdo</button>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">💬</div>
+                        <h3>Frases de Poder</h3>
+                        <p>90 frases testadas: 50 para quebrar objeções, 25 para criar urgência e 15 para fechamento de alta conversão.</p>
+                        <button onclick="abrirModal('modal-frases')" class="btn">Ver Conteúdo</button>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">📊</div>
+                        <h3>Métricas de Sucesso</h3>
+                        <p>KPIs essenciais: taxa de resposta, engajamento, conversão por etapa e como calcular ROI do atendimento.</p>
+                        <button onclick="abrirModal('modal-metricas')" class="btn">Ver Conteúdo</button>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 - AULA AO VIVO SVI 🤖 | Decodificando vendas de alto impacto</p>
+        </div>
+    </footer>
+
+    <!-- MODALS -->
+
+    <!-- Modal Script BHC -->
+    <div id="modal-script" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal('modal-script')">&times;</span>
+            <h2>📋 Script Completo BHC Premium</h2>
+            <div class="modal-text">SCRIPT COMPLETO BHC PREMIUM - TRANSCRIÇÃO DETALHADA
+
+=== ÁUDIO 1: SAUDAÇÃO + QUEBRA DE OBJEÇÕES ===
+Duração: 1:45
+
+[0:00-0:15] RAPPORT INICIAL
+"Oiê, minha linda, tudo bem?" 
+[PAUSA 2 segundos - entonação calorosa]
+"Que prazer em falar com você."
+
+[0:15-0:30] APRESENTAÇÃO + AUTORIDADE
+"Eu sou a Victória Leal, responsável pelo seu atendimento de hoje, tá?"
+[GATILHO: Personalização + Autoridade sutil]
+
+[0:30-1:00] QUEBRA DE OBJEÇÃO PREVENTIVA
+"E eu quero te deixar tranquila, você só paga o tratamento depois que o entregador colocar o produto na sua mão, tá?"
+[PAUSA 3 segundos - deixar assimilar]
+"A gente faz assim pra garantir a sua segurança, porque infelizmente tem muita gente caindo em golpe na internet."
+[GATILHO: Social proof reverso + Diferenciação]
+
+[1:00-1:45] QUALIFICAÇÃO DO LEAD
+"Agora me conta uma coisa, qual é o seu maior incômodo hoje?"
+[PAUSA 2 segundos]
+"É com o seu cabelo, com a sua pele, com as suas unhas?"
+"Me explica rapidinho qual é o problema, pra eu ver se o nosso tratamento é mesmo indicado pra você, tá?"
+[GATILHO: Interesse genuíno + Qualificação técnica]
+
+=== ÁUDIO 2: APRESENTAÇÃO DO PRODUTO ===
+Duração: 2:30
+
+[0:00-0:20] VALIDAÇÃO + REASSEGURAMENTO
+"Ah, entendi, minha linda. Olha, já tô anotando todo o seu caso aqui, tá?"
+[GATILHO: Demonstra profissionalismo]
+"E fica tranquila, porque o nosso tratamento realmente vai te ajudar."
+"Você encontrou a solução certa, tá?"
+[GATILHO: Confirmação de escolha]
+
+[0:20-0:45] NAMING + CREDIBILIDADE INTERNACIONAL
+"O nome do nosso produto é o BHC Premium."
+"É um tratamento natural que já é sucesso na Europa, nos Estados Unidos."
+[GATILHO: Social proof geográfico]
+
+[0:45-1:30] INSTRUÇÕES TÉCNICAS
+"Você vai tomar duas cápsulas por dia, uma em jejum pela manhã e a outra antes de dormir, tá?"
+[PAUSA 2 segundos]
+"Isso garante uma absorção rápida e eficaz no seu corpo."
+[GATILHO: Especificidade técnica gera confiança]
+
+[1:30-2:30] BENEFÍCIOS MÚLTIPLOS
+"E o que ele faz? Ele interrompe a queda, acelera o crescimento do cabelo em até nove vezes mais..."
+[Lista completa de benefícios com pausas estratégicas]
+"Ou seja, ele mata o problema na raiz."
+"Em poucas semanas você já sente o resultado."
+"E o melhor, não precisa usar pra sempre, tá?"
+[GATILHO: Solução definitiva + Timeline + Benefício extra]
+
+ANÁLISE DE GATILHOS IDENTIFICADOS:
+- Rapport instantâneo: 12 ocorrências
+- Autoridade sutil: 8 ocorrências  
+- Diferenciação técnica: 15 ocorrências
+- Social proof: 10 ocorrências
+- Quebra de objeções preventiva: 6 ocorrências
+- Urgência temporal: 4 ocorrências
+- Empoderamento feminino: 3 ocorrências
+
+OBSERVAÇÕES DE ENTONAÇÃO:
+- Tom sempre caloroso e maternal
+- Pausas estratégicas para absorção
+- "Tá?" como confirmação constante
+- "Minha linda" como rapport contínuo</div>
+        </div>
+    </div>
+
+    <!-- Modal Banco de Objeções -->
+    <div id="modal-objecoes" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal('modal-objecoes')">&times;</span>
+            <h2>🛡️ Banco de Objeções - BHC Premium</h2>
+            <div class="modal-text">BANCO DE OBJEÇÕES - BHC PREMIUM
+Respostas SVI Testadas para Suplemento Capilar
+
+=== OBJEÇÕES SOBRE EFICÁCIA ===
+
+1. "Já tentei outros suplementos capilares e nada funcionou"
+RESPOSTA SVI: "Sei que você já deve estar se perguntando isso mesmo, né? 'Mas Victória, eu já provei vários outros suplementos e nada funcionou.' Mas calma que eu vou te explicar. É exatamente por isso que nenhum outro funcionou pra você antes. Porque nenhum possui Colágeno Verisol® clinicamente testado + Nutricolin® ácido ortosilícico como o BHC Premium. Outros usam colágeno genérico sem comprovação científica. O Verisol® tem estudo que comprova 31% mais proliferação celular no folículo capilar."
+GATILHOS: Antecipação empática + Diferenciação técnica + Prova científica
+
+2. "Como sei que vai funcionar comigo?"
+RESPOSTA SVI: "Olha, minha linda, eu entendo perfeitamente essa dúvida. Mas é exatamente por isso que eu te dou [X] dias de garantia total. Se por algum motivo você não gostar dos resultados, você me manda uma mensagem e eu devolvo cada centavo do seu dinheiro. Você literalmente não tem nada a perder, só [BENEFÍCIO] a ganhar."
+GATILHOS: Reversão de risco + Garantia + Win-win
+
+3. "Tenho problema de saúde, posso usar?"
+RESPOSTA SVI: "Que bom que você me perguntou isso, mostra que você se cuida. O [PRODUTO] é 100% natural, mas como toda boa profissional, eu sempre recomendo: se você tem alguma condição específica, leva nossa fórmula pro seu médico ver. Ele vai aprovar porque são só vitaminas e minerais essenciais."
+GATILHOS: Validação da preocupação + Naturalidade + Autoridade médica
+
+=== OBJEÇÕES SOBRE PREÇO ===
+
+4. "R$ 85-90 é muito caro para um suplemento"
+RESPOSTA SVI: "Eu entendo sua preocupação, minha linda. Mas me diz uma coisa: quanto você já gastou tentando resolver esse problema? Somando shampoos caros, condicionadores, máscaras, outros suplementos genéricos que não funcionaram? Certamente foi muito mais que os R$ 85 do BHC Premium. E olha: você está comparando ingredientes premium (Verisol® + Nutricolin®) com suplementos comuns. BHC Premium custa R$ 2,83 por dia e você só paga depois que receber em casa, com 90 dias de garantia. Zero risco financeiro."
+GATILHOS: Empatia + Reframe de valor + Comparação + Ancoragem de preço + Segurança
+
+5. "Vou esperar uma promoção"
+RESPOSTA SVI: "Olha, minha linda, essa É a promoção. Esse valor promocional que eu tô te oferecendo hoje é o menor que a gente consegue trabalhar. Amanhã mesmo ele volta pro preço normal de R$ [PREÇO_CHEIO]. E outra coisa: quanto mais você demora pra começar, mais tempo seu [PROBLEMA] continua te incomodando."
+GATILHOS: Escassez + Urgência + Custo da não-ação
+
+=== OBJEÇÕES SOBRE DECISÃO ===
+
+6. "Preciso conversar com meu marido/família"
+RESPOSTA SVI: "Claro, minha linda, eu entendo. Mas me permite te fazer uma pergunta? Quando você compra algo pro seu marido, pros seus filhos, pra casa, você precisa pedir permissão? Então por que pra cuidar de você mesma você precisa? Essa é SUA decisão, sobre o SEU bem-estar. E lembrando que você só paga quando receber o produto."
+GATILHOS: Empoderamento + Reframe de prioridades + Autoridade pessoal
+
+7. "Vou pesquisar mais na internet antes"
+RESPOSTA SVI: "Olha, minha linda, eu vou ser bem honesta com você. Essa oferta que eu tô te fazendo hoje é exclusiva. Quando você voltar amanhã ou depois, esses valores já vão ter mudado. E outra coisa: você vai encontrar muita informação confusa na internet, muitas pessoas que nunca nem usaram o produto falando. Eu tô aqui, sou especialista, posso te acompanhar durante todo o tratamento."
+GATILHOS: Honestidade + Urgência + Escassez + Autoridade + Suporte exclusivo
+
+8. "Não tenho dinheiro agora"
+RESPOSTA SVI: "Eu entendo, minha linda. Mas olha só que maravilha: você não precisa ter o dinheiro agora. Você só paga quando o produto chegar na sua casa. Até lá, você pode se organizar. E se mesmo assim não rolar, é só não aceitar a entrega, sem problema nenhum."
+GATILHOS: Flexibilidade + Pagamento pós-entrega + Sem pressão
+
+=== OBJEÇÕES SOBRE CONFIANÇA ===
+
+9. "Como sei que a empresa é séria?"
+RESPOSTA SVI: "Que bom que você me perguntou isso! Olha, eu mandei aqui em cima nossa documentação da Anvisa, nosso CNPJ, tudo certinho. Somos uma empresa registrada há [X] anos. E pra você ter ainda mais segurança, você só paga depois que receber o produto em casa. Nenhuma empresa picareta faria isso, né?"
+GATILHOS: Validação da dúvida + Prova documental + Diferenciação + Lógica
+
+10. "E se não chegar na minha cidade?"
+RESPOSTA SVI: "Pode ficar tranquila! A gente entrega em todo o Brasil, inclusive na sua cidade. Nossos Correios chegam aí sim, e você acompanha todo o processo pelo código de rastreamento que eu vou te enviar."
+GATILHOS: Reasseguramento + Abrangência + Transparência
+
+=== VARIAÇÕES POR PERFIL ===
+
+PERFIL JOVEM (18-30):
+- Use mais "gatilhos de modernidade"
+- Foque em resultados rápidos
+- Mencione redes sociais
+
+PERFIL MADURO (40+):
+- Enfatize segurança e tradição
+- Use linguagem mais formal
+- Foque em qualidade de vida
+
+PERFIL CÉTICO:
+- Ofereça mais provas sociais
+- Use números e estudos
+- Seja mais técnico
+
+PERFIL IMPULSIVO:
+- Crie mais urgência
+- Foque em benefícios emocionais
+- Use fechamentos mais diretos</div>
+        </div>
+    </div>
+
+    <!-- Modal Templates -->
+    <div id="modal-templates" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal('modal-templates')">&times;</span>
+            <h2>✏️ Templates SVI Editáveis</h2>
+            <div class="modal-text">TEMPLATES SVI EDITÁVEIS
+Para qualquer produto ou nicho
+
+=== TEMPLATE 1: SAUDAÇÃO UNIVERSAL ===
+
+"Oiê, [NOME_CLIENTE], tudo bem? Que prazer em falar com você!
+
+Eu sou a [SEU_NOME], responsável pelo seu atendimento hoje, tá?
+
+E eu quero te deixar tranquila, você só paga o [NOME_PRODUTO] depois que o entregador colocar na sua mão, tá? A gente faz assim pra garantir a sua segurança, porque infelizmente tem muita gente caindo em golpe na internet.
+
+Agora me conta uma coisa, [PERGUNTA_QUALIFICACAO]?"
+
+LACUNAS PARA PREENCHER:
+- [NOME_CLIENTE]: Nome da pessoa
+- [SEU_NOME]: Seu nome ou da vendedora
+- [NOME_PRODUTO]: Nome do seu produto
+- [PERGUNTA_QUALIFICACAO]: Ex: "qual é o seu maior incômodo hoje?"
+
+=== TEMPLATE 2: APRESENTAÇÃO DO PRODUTO ===
+
+"Ah, entendi, [NOME_CLIENTE]. Olha, já tô anotando todo o seu caso aqui, tá?
+
+E fica tranquila, porque o nosso [NOME_PRODUTO] realmente vai te ajudar. Você encontrou a solução certa, tá?
+
+O [NOME_PRODUTO] é um [DESCRIÇÃO_PRODUTO] que já é sucesso [CREDIBILIDADE_GEOGRAFICA].
+
+[INSTRUÇÕES_USO]
+
+E o que ele faz? [BENEFÍCIO_1], [BENEFÍCIO_2], [BENEFÍCIO_3].
+
+Ou seja, ele [SOLUÇÃO_DEFINITIVA]. Em [TIMELINE] você já sente o resultado."
+
+LACUNAS PARA PREENCHER:
+- [DESCRIÇÃO_PRODUTO]: Ex: "tratamento natural"
+- [CREDIBILIDADE_GEOGRAFICA]: Ex: "na Europa, nos Estados Unidos"
+- [INSTRUÇÕES_USO]: Como usar o produto
+- [BENEFÍCIO_1,2,3]: Principais benefícios
+- [SOLUÇÃO_DEFINITIVA]: Ex: "mata o problema na raiz"
+- [TIMELINE]: Ex: "em poucas semanas"
+
+=== TEMPLATE 3: TRATAMENTO DE OBJEÇÕES ===
+
+OBJEÇÃO: "Já tentei outros produtos"
+RESPOSTA TEMPLATE:
+"Sei que você já deve estar se perguntando, né? 'Mas [SEU_NOME], eu já provei vários outros [CATEGORIA_PRODUTO] e nada funcionou.'
+
+Mas calma que eu vou te explicar. É exatamente por isso que nenhum outro funcionou pra você antes. Porque nenhum deles possui [DIFERENCIAL_TÉCNICO] como o [NOME_PRODUTO].
+
+[EXPLICAÇÃO_CIENTÍFICA]."
+
+LACUNAS:
+- [CATEGORIA_PRODUTO]: Ex: "produtos para cabelo"
+- [DIFERENCIAL_TÉCNICO]: Ex: "mais de 22 componentes poderosos"
+- [EXPLICAÇÃO_CIENTÍFICA]: Explicação técnica do diferencial
+
+=== TEMPLATE 4: FECHAMENTO EMOCIONAL ===
+
+"Essa é a sua chance de ouro, [NOME_CLIENTE], e esses valores incríveis que eu te passei são válidos [URGÊNCIA_TEMPORAL], tá bom?
+
+[DOR_PROFUNDA_DO_NICHO]
+
+Mas chega uma hora que é preciso você dar um basta nisso e priorizar você mesma.
+
+[CALL_TO_ACTION_COLABORATIVO]?"
+
+LACUNAS:
+- [URGÊNCIA_TEMPORAL]: Ex: "somente pra hoje"
+- [DOR_PROFUNDA_DO_NICHO]: Dor emocional específica do seu público
+- [CALL_TO_ACTION_COLABORATIVO]: Ex: "Vamos dar esse passo juntas"
+
+=== TEMPLATE COMPLETO PERSONALIZÁVEL ===
+
+NICHO: ___________________
+PRODUTO: __________________
+PREÇO: ____________________
+GARANTIA: _________________
+
+SAUDAÇÃO:
+[Cole aqui o template 1 preenchido]
+
+APRESENTAÇÃO:
+[Cole aqui o template 2 preenchido]
+
+OBJEÇÕES (top 3 do seu nicho):
+1. ________________________
+   Resposta: _______________
+
+2. ________________________
+   Resposta: _______________
+
+3. ________________________
+   Resposta: _______________
+
+FECHAMENTO:
+[Cole aqui o template 4 preenchido]
+
+=== ADAPTAÇÕES POR NICHO ===
+
+SAÚDE/BELEZA:
+- Enfatize naturalidade
+- Use credibilidade científica
+- Foque em resultados visíveis
+
+CONSULTORIA/INFOPRODUTOS:
+- Destaque autoridade pessoal
+- Use cases de sucesso
+- Foque em transformação
+
+E-COMMERCE FÍSICO:
+- Enfatize qualidade/durabilidade
+- Use avaliações de clientes
+- Destaque comodidade da entrega
+
+SERVIÇOS:
+- Personalize experiência única
+- Use portfólio/histórico
+- Foque em relacionamento longo prazo</div>
+        </div>
+    </div>
+
+    <!-- Modal Checklist -->
+    <div id="modal-checklist" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal('modal-checklist')">&times;</span>
+            <h2>✅ Checklist de Vendas SVI</h2>
+            <div class="modal-text">CHECKLIST DE VENDAS SVI
+12 Elementos Obrigatórios + Indicadores de Sucesso
+
+=== 1. RAPPORT INICIAL ===
+□ Saudação calorosa e personalizada
+□ Uso do nome do cliente
+□ Tom de voz adequado ao perfil
+□ Linguagem próxima e empática
+
+COMO MEDIR:
+- Cliente responde de forma receptiva
+- Demonstra interesse em continuar
+- Faz perguntas ou comentários
+INDICADOR DE SUCESSO: ≥80% respondem positivamente
+
+=== 2. APRESENTAÇÃO PESSOAL ===
+□ Nome completo da vendedora
+□ Posicionamento de autoridade sutil
+□ Responsabilidade pelo atendimento
+□ Criação de confiança inicial
+
+COMO MEDIR:
+- Cliente pergunta detalhes sobre você/empresa
+- Demonstra interesse em saber mais
+- Não questiona credibilidade
+INDICADOR DE SUCESSO: <10% questionam credibilidade
+
+=== 3. QUEBRA DE OBJEÇÃO PREVENTIVA ===
+□ Antecipação da principal objeção
+□ Solução antes do problema ser verbalizado
+□ Diferenciação da concorrência
+□ Criação de segurança
+
+COMO MEDIR:
+- Cliente não verbaliza a objeção antecipada
+- Demonstra alívio ou tranquilidade
+- Continua engajado na conversa
+INDICADOR DE SUCESSO: 90% não levantam a objeção antecipada
+
+=== 4. QUALIFICAÇÃO DO LEAD ===
+□ Pergunta sobre necessidade específica
+□ Identificação da dor principal
+□ Confirmação do fit produto-cliente
+□ Personalização do atendimento
+
+COMO MEDIR:
+- Cliente compartilha informações pessoais
+- Detalha o problema específico
+- Demonstra urgência em resolver
+INDICADOR DE SUCESSO: ≥70% compartilham detalhes íntimos
+
+=== 5. APRESENTAÇÃO DO PRODUTO ===
+□ Nome claro e memorável
+□ Credibilidade (internacional/científica)
+□ Instruções específicas de uso
+□ Diferenciação técnica clara
+
+COMO MEDIR:
+- Cliente faz perguntas técnicas
+- Demonstra entendimento do diferencial
+- Não compara com concorrentes
+INDICADOR DE SUCESSO: <20% comparam com outros produtos
+
+=== 6. BENEFÍCIOS MÚLTIPLOS ===
+□ Lista completa de vantagens
+□ Foco em resultados, não características
+□ Timeline definida para resultados
+□ Solução definitiva (não paliativa)
+
+COMO MEDIR:
+- Cliente se empolga com possibilidades
+- Pergunta sobre resultados específicos
+- Demonstra expectativa positiva
+INDICADOR DE SUCESSO: ≥60% fazem perguntas sobre resultados
+
+=== 7. PROVA SOCIAL ===
+□ Casos de sucesso relevantes
+□ Documentação oficial (Anvisa, etc.)
+□ Testemunhos específicos
+□ Credibilidade regulatória
+
+COMO MEDIR:
+- Cliente solicita mais provas
+- Demonstra convencimento
+- Para de questionar eficácia
+INDICADOR DE SUCESSO: <15% pedem mais provas após apresentação
+
+=== 8. GARANTIA E REVERSÃO DE RISCO ===
+□ Período claro de garantia
+□ Processo simples de devolução
+□ Risco zero para o cliente
+□ Confiança na eficácia
+
+COMO MEDIR:
+- Cliente para de demonstrar medo
+- Não pergunta "e se não funcionar?"
+- Aceita avançar no processo
+INDICADOR DE SUCESSO: <10% perguntam sobre riscos
+
+=== 9. APRESENTAÇÃO DE PREÇOS ===
+□ Valor original mencionado
+□ Desconto significativo apresentado
+□ Comparação de valor (investimento vs gasto)
+□ Facilidade de pagamento
+
+COMO MEDIR:
+- Cliente não reclama do preço imediatamente
+- Pergunta sobre formas de pagamento
+- Compara com gastos anteriores
+INDICADOR DE SUCESSO: <30% rejeitam por preço na primeira apresentação
+
+=== 10. CRIAÇÃO DE URGÊNCIA ===
+□ Limitação temporal clara
+□ Consequência da demora explicada
+□ Exclusividade da oferta
+□ Custo da não-ação
+
+COMO MEDIR:
+- Cliente acelera processo de decisão
+- Pergunta sobre prazo da oferta
+- Demonstra pressa em decidir
+INDICADOR DE SUCESSO: ≥50% aceleram a decisão
+
+=== 11. FECHAMENTO EMOCIONAL ===
+□ Conexão com dor profunda
+□ Empoderamento pessoal
+□ Call-to-action colaborativo
+□ Decisão como autocuidado
+
+COMO MEDIR:
+- Cliente se emociona
+- Fala sobre impacto pessoal
+- Toma decisão baseada em sentimento
+INDICADOR DE SUCESSO: ≥40% demonstram emoção no fechamento
+
+=== 12. FOLLOW-UP E SUPORTE ===
+□ Promessa de acompanhamento
+□ Canal de comunicação definido
+□ Suporte durante o tratamento
+□ Relacionamento contínuo
+
+COMO MEDIR:
+- Cliente agradece o suporte prometido
+- Pergunta sobre acompanhamento
+- Demonstra expectativa de contato futuro
+INDICADOR DE SUCESSO: ≥80% agradecem o suporte prometido
+
+=== SCORECARD FINAL ===
+
+PONTUAÇÃO:
+□ 10-12 elementos: EXCELENTE (conversão >60%)
+□ 8-9 elementos: BOM (conversão 40-60%)
+□ 6-7 elementos: REGULAR (conversão 20-40%)
+□ <6 elementos: RUIM (conversão <20%)</div>
+        </div>
+    </div>
+
+    <!-- Modal Frases -->
+    <div id="modal-frases" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal('modal-frases')">&times;</span>
+            <h2>💬 Frases de Poder SVI</h2>
+            <div class="modal-text">FRASES DE PODER SVI
+90 Frases Testadas para Alta Conversão
+
+=== 50 FRASES PARA QUEBRAR OBJEÇÕES ===
+
+OBJEÇÕES DE EFICÁCIA:
+1. "É exatamente por isso que nenhum outro funcionou pra você antes..."
+2. "Se fosse pra funcionar com qualquer produto, você já teria resolvido, né?"
+3. "A diferença está nos detalhes que você não conhece ainda."
+4. "Outras marcas fazem, mas nenhuma faz como a gente faz."
+5. "O segredo não é SÓ o produto, é COMO ele age no seu organismo."
+6. "Por que você acha que eu tenho tanta certeza que vai funcionar?"
+7. "Deixa eu te explicar o que acontece dentro do seu corpo..."
+8. "A ciência por trás disso é fascinante, quer que eu explique?"
+9. "Você já parou pra pensar por que uns funcionam e outros não?"
+10. "O problema não é você, é que você ainda não encontrou o CERTO."
+
+OBJEÇÕES DE PREÇO:
+11. "Quanto você já gastou tentando resolver isso?"
+12. "E se eu te disser que esse é o último investimento que você vai fazer nisso?"
+13. "Olha só como a conta fecha..."
+14. "Você tá pagando caro é pra continuar com o problema."
+15. "Qual o preço de continuar sofrendo com isso?"
+16. "Investimento não é gasto quando traz resultado, né?"
+17. "Dividindo por dia, dá menos que um cafezinho."
+18. "O caro é comprar barato e não resolver."
+19. "Você merece investir em você mesma."
+20. "Qualidade custa, mas vale cada centavo."
+
+OBJEÇÕES DE DECISÃO:
+21. "Quando você compra algo pros outros, pede permissão?"
+22. "Essa é SUA decisão, sobre o SEU bem-estar."
+23. "Por que pra cuidar de você mesma você precisa pedir licença?"
+24. "Você é adulta e capaz de decidir o que é melhor pra você."
+25. "Quem vai usar é você, quem decide é você."
+26. "Sua felicidade não pode depender da opinião dos outros."
+27. "Você sempre cuida de todo mundo, agora é sua vez."
+28. "Se não for agora, quando vai ser?"
+29. "Oportunidade bateu na sua porta, vai deixar passar?"
+30. "Você merece essa chance de ser feliz."
+
+OBJEÇÕES DE TEMPO:
+31. "Cada dia que passa é um dia a menos de resultado."
+32. "O tempo não para, mas o problema continua."
+33. "Pesquisar demais é forma de procrastinar."
+34. "Na internet você vai encontrar de tudo, inclusive mentira."
+35. "Eu tô aqui, sou especialista, posso te acompanhar."
+36. "Informação confusa só vai te deixar mais perdida."
+37. "Você já sabe tudo que precisa saber."
+38. "Análise demais vira paralisia."
+39. "A melhor pesquisa é testar e ver o resultado."
+40. "Confia na sua intuição, ela te trouxe até aqui."
+
+OBJEÇÕES DE CONFIANÇA:
+41. "Se não fosse sério, eu arriscaria minha reputação?"
+42. "Você acha que eu trabalharia com algo que não funciona?"
+43. "Minha garantia é minha palavra empenhada."
+44. "Empresa séria não desaparece, né?"
+45. "Quer ver nossa documentação? Tá tudo aqui."
+46. "Quantos anos você acha que a gente tem de mercado?"
+47. "Se fosse golpe, eu te daria garantia de 90 dias?"
+48. "Transparência total, sem letra miúda."
+49. "Pode conferir tudo na internet, somos empresa registrada."
+50. "Sua segurança é nossa prioridade número um."
+
+=== 25 FRASES PARA CRIAR URGÊNCIA ===
+
+51. "Essa oferta é válida somente pra hoje."
+52. "Amanhã os valores voltam ao normal."
+53. "É agora ou nunca, minha linda."
+54. "Essa é sua chance de ouro."
+55. "Oportunidade assim não aparece todo dia."
+56. "Se você sair daqui, pode ser que não encontre de novo."
+57. "Estoque limitado, e quando acaba, acaba."
+58. "Promoção só enquanto durarem as unidades."
+59. "Cada minuto que passa, uma cliente a menos consegue."
+60. "Não deixa essa chance passar."
+61. "Depois não adianta se arrepender."
+62. "O preço de amanhã é o dobro do de hoje."
+63. "Última chamada pra essa condição especial."
+64. "Agora ou só na próxima promoção, que é daqui 6 meses."
+65. "Se não for hoje, vai ficar pra quando?"
+66. "Tempo é limitado, assim como as vagas."
+67. "Enquanto você pensa, outras estão comprando."
+68. "Cada segundo conta quando se trata de oportunidade."
+69. "A vida não espera, as ofertas também não."
+70. "Decidiu? Porque só tenho mais 2 minutos aqui."
+71. "Relógio não para, promoção também não."
+72. "Última unidade disponível pra sua região."
+73. "Sistema vai sair do ar em 15 minutos."
+74. "Validade da oferta: hoje, 23h59."
+75. "Timer da promoção tá correndo, viu?"
+
+=== 15 FRASES PARA FECHAMENTO DE ALTA CONVERSÃO ===
+
+76. "Vamos dar esse passo juntas?"
+77. "Você tá pronta pra sua transformação?"
+78. "Que tal começarmos hoje mesmo?"
+79. "Posso separar o seu?"
+80. "Qual endereço vou colocar na entrega?"
+81. "Você merece essa felicidade."
+82. "Chegou a hora de priorizar você."
+83. "Vamos fazer acontecer?"
+84. "Sua nova vida começa agora."
+85. "Pode confiar em mim, você não vai se arrepender."
+86. "Esse é o momento da sua virada."
+87. "Você já esperou demais, não acha?"
+88. "Vamos cuidar de você?"
+89. "Sua felicidade não pode mais esperar."
+90. "Fecha comigo?"</div>
+        </div>
+    </div>
+
+    <!-- Modal Métricas -->
+    <div id="modal-metricas" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal('modal-metricas')">&times;</span>
+            <h2>📊 Métricas de Conversão SVI</h2>
+            <div class="modal-text">MÉTRICAS DE CONVERSÃO SVI
+Guia Completo de KPIs para Atendimento
+
+=== FUNIL DE CONVERSÃO DETALHADO ===
+
+1. TAXA DE RESPOSTA INICIAL
+Definição: % de leads que respondem ao primeiro contato
+Cálculo: (Respostas ÷ Mensagens Enviadas) × 100
+Benchmark SVI: 65-80%
+Meta Mínima: 60%
+
+Como Melhorar:
+- Personalizar primeira mensagem
+- Usar gatilho de curiosidade
+- Mencionar benefício específico
+- Criar senso de exclusividade
+
+2. TAXA DE ENGAJAMENTO
+Definição: % de leads que mantêm conversa por 3+ mensagens
+Cálculo: (Conversas 3+ mensagens ÷ Respostas Iniciais) × 100
+Benchmark SVI: 70-85%
+Meta Mínima: 65%
+
+Como Melhorar:
+- Rapport mais efetivo
+- Perguntas que geram curiosidade
+- Quebra de objeção preventiva
+- Personalização do atendimento
+
+3. TAXA DE QUALIFICAÇÃO
+Definição: % de leads que compartilham informações pessoais/problema
+Cálculo: (Leads Qualificados ÷ Engajados) × 100
+Benchmark SVI: 60-75%
+Meta Mínima: 55%
+
+Como Melhorar:
+- Ambiente de confiança
+- Perguntas mais específicas
+- Demonstrar interesse genuíno
+- Validar preocupações
+
+4. TAXA DE APRESENTAÇÃO COMPLETA
+Definição: % de leads que ouvem/veem apresentação completa
+Cálculo: (Apresentações Completas ÷ Qualificados) × 100
+Benchmark SVI: 80-90%
+Meta Mínima: 75%
+
+Como Melhorar:
+- Criar curiosidade antes da apresentação
+- Segmentar apresentação em partes
+- Usar histórias/casos reais
+- Manter interatividade
+
+5. TAXA DE CONVERSÃO FINAL
+Definição: % de apresentações que viram vendas
+Cálculo: (Vendas ÷ Apresentações Completas) × 100
+Benchmark SVI: 35-50%
+Meta Mínima: 30%
+
+Como Melhorar:
+- Fechamento emocional efetivo
+- Urgência bem aplicada
+- Garantias robustas
+- Follow-up estruturado
+
+=== KPIs OPERACIONAIS ===
+
+TICKET MÉDIO
+Cálculo: Faturamento Total ÷ Número de Vendas
+Como Acompanhar: Diário, semanal, mensal
+Meta: Aumentar 5-10% mensalmente através de upsells
+
+TEMPO MÉDIO DE ATENDIMENTO
+Cálculo: Tempo Total de Atendimentos ÷ Número de Atendimentos
+Benchmark: 15-25 minutos por conversão
+Otimização: Scripts padronizados + treinamento
+
+TAXA DE REJEIÇÃO POR PREÇO
+Cálculo: (Rejeições por Preço ÷ Apresentações) × 100
+Meta: <25%
+Ação: Trabalhar ancoragem de valor
+
+TAXA DE FOLLOW-UP
+Cálculo: (Leads Recontatados ÷ Leads Não Convertidos) × 100
+Meta: 100% em 24h, 80% em 48h
+Sistema: CRM automatizado
+
+=== MÉTRICAS POR CANAL ===
+
+WHATSAPP:
+- Taxa de Visualização: >95%
+- Taxa de Resposta: 65-80%
+- Tempo de Resposta Médio: <5 minutos
+- Taxa de Bloqueio: <2%
+
+INSTAGRAM DIRECT:
+- Taxa de Visualização: 85-95%
+- Taxa de Resposta: 45-60%
+- Tempo de Resposta Médio: <10 minutos
+- Taxa de Não Seguimento: <15%
+
+FACEBOOK MESSENGER:
+- Taxa de Visualização: 90-95%
+- Taxa de Resposta: 55-70%
+- Tempo de Resposta Médio: <8 minutos
+- Taxa de Spam: <1%
+
+=== ANÁLISE POR SEGMENTO ===
+
+DEMOGRÁFICO:
+- 18-25 anos: Conversão média 35%
+- 26-35 anos: Conversão média 45%
+- 36-45 anos: Conversão média 50%
+- 46+ anos: Conversão média 40%
+
+GEOGRÁFICO:
+- Região Sudeste: +15% na conversão
+- Região Sul: +10% na conversão
+- Região Nordeste: Conversão padrão
+- Região Norte/Centro-Oeste: -5% na conversão
+
+HORÁRIO:
+- 09h-12h: +20% engajamento
+- 14h-17h: +15% engajamento
+- 19h-22h: +25% engajamento
+- Fins de semana: -10% conversão
+
+=== CÁLCULO DE ROI ===
+
+FÓRMULA BÁSICA:
+ROI = ((Receita - Investimento) ÷ Investimento) × 100
+
+INVESTIMENTOS A CONSIDERAR:
+- Custo de aquisição de leads (CAC)
+- Salário/comissão de vendedores
+- Ferramentas (CRM, automação)
+- Treinamentos
+- Infraestrutura
+
+RECEITAS A CONSIDERAR:
+- Venda inicial
+- Upsells/cross-sells
+- Recompras
+- Indicações
+- LTV (Lifetime Value)
+
+EXEMPLO PRÁTICO:
+Investimento Mensal: R$ 10.000
+Receita Mensal: R$ 35.000
+ROI = ((35.000 - 10.000) ÷ 10.000) × 100 = 250%</div>
+        </div>
+    </div>
+
+    <script>
+        // Copiar templates
+        function copiarTemplate(elementId) {
+            const elemento = document.getElementById(elementId);
+            const texto = elemento.innerText;
+            
+            navigator.clipboard.writeText(texto).then(() => {
+                // Feedback visual
+                const botao = event.target;
+                const textoOriginal = botao.innerText;
+                botao.innerText = "✅ Copiado!";
+                botao.style.background = "#28a745";
+                
+                setTimeout(() => {
+                    botao.innerText = textoOriginal;
+                    botao.style.background = "";
+                }, 2000);
+            }).catch(err => {
+                console.error('Erro ao copiar: ', err);
+                alert('Texto copiado para área de transferência!');
+            });
+        }
+
+        // Abrir modal
+        function abrirModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        // Fechar modal
+        function fecharModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Fechar modal clicando fora
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        }
+
+        // Expandir/contrair transcrições longas
+        function toggleTranscricao(id) {
+            const elemento = document.getElementById(id);
+            if (elemento) {
+                elemento.classList.toggle('expandido');
+            }
+        }
+
+        // Smooth scrolling para navegação
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Highlight da navegação ativa
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.nav a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.style.background = '';
+                link.style.color = '';
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.style.background = 'linear-gradient(135deg, #ff6b9d, #c44dbb)';
+                    link.style.color = 'white';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

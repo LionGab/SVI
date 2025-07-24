@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📱 Facebook Ads para WhatsApp - Guia Definitivo</title>
+    <style>
+        /* Reset e Configurações Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Variáveis de Cores Modernas */
+        :root {
+            --azul-facebook: #1877f2;
+            --azul-escuro: #0d47a1;
+            --verde-whatsapp: #25d366;
+            --verde-claro: #e8f5e8;
+            --roxo-moderno: #6c5ce7;
+            --laranja-destaque: #fd79a8;
+            --amarelo-suave: #fdcb6e;
+            --cinza-texto: #2d3436;
+            --cinza-medio: #636e72;
+            --cinza-claro: #f8f9fa;
+            --branco: #ffffff;
+            --sombra-suave: 0 4px 20px rgba(0,0,0,0.08);
+            --sombra-hover: 0 8px 30px rgba(0,0,0,0.15);
+            --gradiente-principal: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradiente-sucesso: linear-gradient(135deg, #00b09b 0%, #96c93d 100%);
+            --gradiente-alerta: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+        }
+
+        /* Fonte e Corpo Principal */
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: var(--cinza-texto);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            font-size: 16px;
+        }
+
+        /* Container Principal */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--branco);
+            box-shadow: var(--sombra-suave);
+            min-height: 100vh;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        /* Header Moderno */
+        header {
+            background: var(--gradiente-principal);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        header h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            opacity: 0.95;
+            position: relative;
+            z-index: 2;
+            font-weight: 300;
+        }
+
+        /* Indicador de Progresso Moderno */
+        .progress-container {
+            background: var(--branco);
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 1px solid #e9ecef;
+            box-shadow: var(--sombra-suave);
+        }
+
+        .progress-wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .progress-bar {
+            background: #e9ecef;
+            height: 12px;
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .progress-fill {
+            background: var(--gradiente-sucesso);
+            height: 100%;
+            width: 0%;
+            border-radius: 20px;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: var(--cinza-medio);
+        }
+
+        .progress-badge {
+            background: var(--gradiente-principal);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Navegação Sticky Moderna */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--cinza-texto);
+            padding: 12px 20px;
+            border-radius: 30px;
+            background: var(--cinza-claro);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 500;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 2px solid transparent;
+        }
+
+        nav a:hover {
+            background: var(--azul-facebook);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: var(--sombra-hover);
+            border-color: var(--azul-facebook);
+        }
+
+        nav a.active {
+            background: var(--gradiente-principal);
+            color: white;
+            box-shadow: var(--sombra-hover);
+        }
+
+        /* Seções de Conteúdo */
+        .content-section {
+            padding: 80px 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .content-section:nth-child(even) {
+            background: var(--cinza-claro);
+        }
+
+        /* Títulos Modernos */
+        h2 {
+            background: var(--gradiente-principal);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            font-weight: 800;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 25px;
+        }
+
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--gradiente-sucesso);
+            border-radius: 2px;
+        }
+
+        h3 {
+            color: var(--azul-facebook);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        /* Cards Modernos */
+        .info-box {
+            background: var(--branco);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 35px 0;
+            box-shadow: var(--sombra-suave);
+            border: 1px solid rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .info-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradiente-principal);
+        }
+
+        .info-box:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--sombra-hover);
+        }
+
+        /* Boxes de Status */
+        .tip-box {
+            background: var(--verde-claro);
+            border: 1px solid var(--verde-whatsapp);
+            border-left: 5px solid var(--verde-whatsapp);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            position: relative;
+            padding-left: 70px;
+            font-weight: 500;
+        }
+
+        .tip-box::before {
+            content: "💡";
+            position: absolute;
+            left: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 28px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
+            border: 1px solid #fc8181;
+            border-left: 5px solid #e53e3e;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            position: relative;
+            padding-left: 70px;
+            font-weight: 500;
+        }
+
+        .warning-box::before {
+            content: "⚠️";
+            position: absolute;
+            left: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 28px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+
+        .success-box {
+            background: linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%);
+            border: 1px solid var(--verde-whatsapp);
+            border-left: 5px solid var(--verde-whatsapp);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            position: relative;
+            padding-left: 70px;
+            font-weight: 500;
+        }
+
+        .success-box::before {
+            content: "✅";
+            position: absolute;
+            left: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 28px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+
+        /* Steps Modernos */
+        .steps-container {
+            counter-reset: step-counter;
+            margin: 40px 0;
+        }
+
+        .step-item {
+            background: var(--branco);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 25px 0;
+            position: relative;
+            padding-left: 90px;
+            box-shadow: var(--sombra-suave);
+            transition: all 0.3s ease;
+            counter-increment: step-counter;
+            border: 2px solid transparent;
+        }
+
+        .step-item:hover {
+            transform: translateX(10px);
+            box-shadow: var(--sombra-hover);
+            border-color: var(--azul-facebook);
+        }
+
+        .step-item::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: var(--gradiente-principal);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .step-item h4 {
+            color: var(--azul-facebook);
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .step-item p {
+            color: var(--cinza-medio);
+            line-height: 1.6;
+        }
+
+        .step-item ul {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .step-item ul li {
+            margin: 8px 0;
+            color: var(--cinza-medio);
+        }
+
+        /* Botões Modernos */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            margin: 25px 15px 25px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            transform: translate(-50%, -50%);
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary {
+            background: var(--gradiente-principal);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+        }
+
+        .btn-whatsapp {
+            background: var(--gradiente-sucesso);
+            color: white;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+        }
+
+        /* Checklist Moderno */
+        .checklist {
+            background: var(--branco);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: var(--sombra-suave);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .checklist h3 {
+            margin-bottom: 30px;
+            color: var(--azul-facebook);
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            margin: 15px 0;
+            background: var(--cinza-claro);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .checklist-item:hover {
+            background: #e3f2fd;
+            transform: translateX(10px);
+            border-color: var(--azul-facebook);
+        }
+
+        .checklist-item input[type="checkbox"] {
+            width: 24px;
+            height: 24px;
+            margin-right: 20px;
+            cursor: pointer;
+            accent-color: var(--azul-facebook);
+            border-radius: 4px;
+        }
+
+        .checklist-item label {
+            cursor: pointer;
+            flex: 1;
+            font-weight: 500;
+            color: var(--cinza-texto);
+            transition: all 0.3s ease;
+        }
+
+        .checklist-item input[type="checkbox"]:checked + label {
+            text-decoration: line-through;
+            color: var(--cinza-medio);
+            opacity: 0.7;
+        }
+
+        .checklist-item input[type="checkbox"]:checked {
+            transform: scale(1.1);
+        }
+
+        /* Elementos de Destaque */
+        .highlight {
+            background: linear-gradient(120deg, var(--amarelo-suave) 0%, var(--amarelo-suave) 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 40%;
+            background-position: 0 85%;
+            padding: 3px 6px;
+            font-weight: 600;
+            border-radius: 4px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Caixas de Analogia */
+        .analogy-box {
+            background: linear-gradient(135deg, #e8f4ff 0%, #b3d9ff 100%);
+            border: 1px solid #4dabf7;
+            border-left: 5px solid #228be6;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            position: relative;
+            padding-left: 70px;
+            font-weight: 500;
+        }
+
+        .analogy-box::before {
+            content: "🏠";
+            position: absolute;
+            left: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 28px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+
+        /* Caixas de "E se...?" */
+        .faq-box {
+            background: linear-gradient(135deg, #fff9e6 0%, #ffe066 30%);
+            border: 1px solid #ffd43b;
+            border-left: 5px solid #fab005;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            position: relative;
+            padding-left: 70px;
+            font-weight: 500;
+        }
+
+        .faq-box::before {
+            content: "❓";
+            position: absolute;
+            left: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 28px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+
+        /* Responsividade Aprimorada */
+        @media (max-width: 768px) {
+            .content-section {
+                padding: 50px 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+
+            nav a {
+                width: 280px;
+                justify-content: center;
+                font-size: 0.95rem;
+            }
+
+            .step-item {
+                padding-left: 80px;
+            }
+
+            .step-item::before {
+                width: 45px;
+                height: 45px;
+                left: 20px;
+                font-size: 1.1rem;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                margin: 15px auto;
+                display: flex;
+            }
+
+            .progress-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .tip-box,
+            .warning-box,
+            .success-box,
+            .analogy-box,
+            .faq-box {
+                padding: 20px;
+                padding-left: 60px;
+            }
+
+            .tip-box::before,
+            .warning-box::before,
+            .success-box::before,
+            .analogy-box::before,
+            .faq-box::before {
+                left: 20px;
+                font-size: 24px;
+            }
+        }
+
+        /* Animações de Entrada */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Loading States */
+        .loading {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        /* Footer Moderno */
+        footer {
+            background: var(--gradiente-principal);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+            animation: rotate 25s linear infinite reverse;
+        }
+
+        footer h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        footer p {
+            position: relative;
+            z-index: 2;
+            opacity: 0.9;
+        }
+
+        /* Micro-interações */
+        .micro-interaction {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .micro-interaction:hover {
+            transform: scale(1.02);
+        }
+
+        .micro-interaction:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Header Moderno -->
+        <header>
+            <h1>📱 Facebook Ads para WhatsApp</h1>
+            <p>O mapa definitivo para transformar medo em vendas reais</p>
+        </header>
+
+        <!-- Indicador de Progresso -->
+        <div class="progress-container">
+            <div class="progress-wrapper">
+                <h3>Sua Jornada de Transformação</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressBar" style="width: 8%;"></div>
+                </div>
+                <div class="progress-info">
+                    <span id="currentStatus">Preparando sua mente empreendedora</span>
+                    <div class="progress-badge" id="progressBadge">Corajosa</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navegação -->
+        <nav>
+            <ul>
+                <li><a href="#introducao" class="micro-interaction">🏠 Sua Transformação</a></li>
+                <li><a href="#o-que-e" class="micro-interaction">🧠 Entenda o Poder</a></li>
+                <li><a href="#pilares" class="micro-interaction">🏗️ Os 3 Alicerces</a></li>
+                <li><a href="#pagina" class="micro-interaction">📄 Sua Identidade</a></li>
+                <li><a href="#business-manager" class="micro-interaction">🏢 Seu Escritório Digital</a></li>
+                <li><a href="#conta-anuncios" class="micro-interaction">💳 Sua Carteira Digital</a></li>
+                <li><a href="#configurar-whatsapp" class="micro-interaction">⚙️ Sua Loja Virtual</a></li>
+                <li><a href="#regras" class="micro-interaction">📋 Lei da Segurança</a></li>
+                <li><a href="#checklist" class="micro-interaction">✅ Missão Cumprida</a></li>
+            </ul>
+        </nav>
+
+        <!-- Seção 1: Introdução -->
+        <section id="introducao" class="content-section fade-in">
+            <h2>Bem-vinda à sua revolução digital!</h2>
+            
+            <div class="info-box micro-interaction">
+                <h3>🎯 Por que esta aula vai mudar sua vida financeira?</h3>
+                <p>Você está cansada de <span class="highlight">depender apenas do "boca a boca"</span> e quer que seus produtos apareçam na tela de quem realmente quer comprar, certo?</p>
+                
+                <p><strong>Esse medo do Facebook Ads acaba hoje!</strong> Não porque vamos fingir que é simples, mas porque você vai entender exatamente o que cada botão faz e por que ele existe.</p>
+                
+                <p>Se você consegue usar WhatsApp para vender, você já domina 80% do que precisa. Falta apenas <strong>um mapa claro</strong> para não se perder no caminho.</p>
+            </div>
+
+            <div class="analogy-box">
+                <strong>Pense assim:</strong> Hoje você vai construir sua loja digital na avenida mais movimentada do mundo. O Facebook Ads é como se você pudesse escolher exatamente quem passa na frente da sua vitrine - apenas pessoas que têm interesse no seu produto e dinheiro para comprar.
+            </div>
+
+            <div class="success-box">
+                <strong>Nossa Promessa Honesta:</strong> Em 60 minutos você terá sua estrutura do Facebook Ads montada, testada e conectada ao WhatsApp. Não vamos prometer milagres, mas sim uma base sólida para seus primeiros resultados.
+            </div>
+
+            <div class="text-center">
+                <button class="btn btn-primary" onclick="updateProgress(18, 'Mentalidade preparada para o sucesso', 'Determinada')">
+                    🚀 Estou pronta para minha transformação!
+                </button>
+            </div>
+        </section>
+
+        <!-- Seção 2: O que é Facebook Ads -->
+        <section id="o-que-e" class="content-section fade-in">
+            <h2>O que é Facebook Ads e por que ele pode multiplicar suas vendas?</h2>
+            
+            <div class="analogy-box">
+                <h3>🏪 Imagine sua vida de vendas antes e depois:</h3>
+                <p><strong>ANTES:</strong> Você é como uma vendedora na praça da cidade gritando "Olha o creme anti-idade!" para 1000 pessoas que passam. Mas só 3 têm interesse e apenas 1 tem dinheiro para comprar.</p>
+                
+                <p><strong>DEPOIS (com Facebook Ads):</strong> Você conversa diretamente com 100 mulheres que já pesquisaram "como diminuir rugas" nos últimos 7 dias, têm entre 35-50 anos, moram na sua cidade e compraram cosméticos online no último mês.</p>
+                
+                <p><strong>Resultado:</strong> Em vez de vender para 1 de 1000, você vende para 20 de 100!</p>
+            </div>
+
+            <div class="info-box micro-interaction">
+                <h3>💡 O segredo está na SEGMENTAÇÃO</h3>
+                <p>O Facebook sabe quase tudo sobre seus usuários: idade, interesses, comportamento de compra, localização e até quando estão mais propensos a comprar.</p>
+                
+                <p><strong>Por que isso é revolucionário para você?</strong> Porque permite mostrar seu anúncio SOMENTE para quem tem o perfil perfeito do seu cliente ideal. Acabou a perda de dinheiro com quem nunca vai comprar!</p>
+            </div>
+
+            <div class="warning-box">
+                <strong>ALERTA MÁXIMO: O erro que quebra empreendedoras!</strong> O botão "Impulsionar" do Instagram é uma armadilha! Ele mostra seu anúncio para qualquer pessoa, desperdiçando seu dinheiro. É como panfletar na rua sem critério. O Facebook Ads profissional é 10x mais inteligente e econômico.
+            </div>
+
+            <div class="faq-box">
+                <strong>E se eu não entender de tecnologia?</strong> Não precisa! O Facebook Ads foi feito para pessoas comuns venderem. Se você consegue postar no Instagram, consegue criar anúncios profissionais. A diferença é ter o roteiro certo.
+            </div>
+
+            <div class="text-center">
+                <button class="btn btn-primary" onclick="updateProgress(28, 'Entendendo o poder da ferramenta', 'Estrategista')">
+                    Próximo: Como construir minha base →
+                </button>
+            </div>
+        </section>
+
+        <!-- Seção 3: Os 3 Pilares -->
+        <section id="pilares" class="content-section fade-in">
+            <h2>Os 3 Alicerces do seu império digital</h2>
+            
+            <div class="analogy-box">
+                <h3>🏗️ Pense na construção de uma casa:</h3>
+                <p>Você não começa pelo telhado, certo? Primeiro faz a fundação, depois as paredes, só então o telhado. No Facebook Ads é igual!</p>
+                
+                <p>Sua estrutura tem 3 alicerces fundamentais. <strong>Se um estiver errado, toda sua estratégia desmorona</strong> - e você perde dinheiro sem entender o porquê.</p>
+            </div>
+
+            <div class="info-box micro-interaction">
+                <h3>🎯 Por que esta ordem é sagrada?</h3>
+                <p>Cada pilar depende do anterior. É impossível criar uma Conta de Anúncios sem Business Manager, e o Business Manager precisa de uma Página. <strong>Pular etapas = retrabalho e frustração!</strong></p>
+            </div>
+
+            <div class="steps-container">
+                <div class="step-item micro-interaction">
+                    <h4>📄 Pilar 1: A Página no Facebook (Sua Identidade)</h4>
+                    <p><strong>Por que é crucial:</strong> É como o CNPJ da sua empresa na internet. Sem ela, o Facebook não confia em você para anunciar. Mesmo que você só venda no Instagram, precisa da Página no Facebook.</p>
+                    <p><strong>Analogia:</strong> É como ter uma loja física - você precisa de um endereço oficial para as autoridades te respeitarem.</p>
+                </div>
+                
+                <div class="step-item micro-interaction">
+                    <h4>🏢 Pilar 2: O Business Manager (Seu Escritório Digital)</h4>
+                    <p><strong>Por que 99% das iniciantes erram aqui:</strong> Tentam criar anúncios direto do perfil pessoal. É como tentar abrir uma empresa usando seu CPF em vez do CNPJ!</p>
+                    <p><strong>Analogia:</strong> Pense no Business Manager como um cofre digital que guarda seus ativos mais importantes: sua Página, Instagram e principalmente sua Conta de Anúncios (seu dinheiro). Seu perfil pessoal tem apenas a "chave" desse cofre.</p>
+                </div>
+                
+                <div class="step-item micro-interaction">
+                    <h4>💳 Pilar 3: A Conta de Anúncios (Sua Carteira Digital)</h4>
+                    <p><strong>Por que é o mais crítico:</strong> Se você errar o fuso horário ou moeda aqui, NÃO TEM COMO CORRIGIR depois! Terá que criar nova conta, o que pode gerar bloqueios.</p>
+                    <p><strong>Analogia:</strong> É como abrir uma conta bancária empresarial - você define se vai operar em Real ou Dólar. Uma vez definido, não muda mais!</p>
+                </div>
+            </div>
+
+            <div class="success-box">
+                <strong>🎉 Micro-Vitória:</strong> Você agora entende por que 90% das empreendedoras desistem - elas pulam etapas! Você não vai cometer esse erro. Faremos os 3 pilares na ordem correta, e cada conquista será celebrada!
+            </div>
+
+            <div class="text-center">
+                <button class="btn btn-primary" onclick="updateProgress(38, 'Arquiteta digital preparada', 'Construtora')">
+                    Vamos construir nosso império! →
+                </button>
+            </div>
+        </section>
+
+        <!-- Seção 4: Criando a Página -->
+        <section id="pagina" class="content-section fade-in">
+            <h2>Primeiro Pilar: Construindo sua identidade digital</h2>
+            
+            <div class="analogy-box">
+                <h3>🏪 Por que a Página é como sua fachada comercial:</h3>
+                <p>Quando alguém vê seu anúncio e quer saber se você é confiável, a primeira coisa que faz é clicar na sua Página. É ali que decide se vai ou não abrir conversa no WhatsApp.</p>
+                
+                <p><strong>Uma Página bem feita = credibilidade instantânea.</strong> Uma Página mal feita = cliente desconfiado que não compra.</p>
+            </div>
+
+            <div class="warning-box">
+                <strong>ERRO FATAL que pode derrubar seu negócio:</strong> NUNCA use seu perfil pessoal para vender! Perfil = você como pessoa física. Página = sua empresa. Misturar os dois pode resultar em bloqueio permanente e perda de todos os dados!
+            </div>
+
+            <div class="steps-container">
+                <div class="step-item micro-interaction">
+                    <h4>Abra seu Facebook pessoal</h4>
+                    <p><strong>Por que começar aqui:</strong> A Página nasce "filha" do seu perfil pessoal. Você será a administradora principal.</p>
+                    <p>💻 Use computador ou celular - ambos funcionam perfeitamente.</p>
+                </div>
+                
+                <div class="step-item micro-interaction">
+                    <h4>Encontre o menu "Páginas"</h4>
+                    <p><strong>No computador:</strong> Menu à esquerda → ícone da bandeirinha laranja → "Páginas"</p>
+                    <p><strong>No celular:</strong> Menu hamburger (≡) → "Páginas"</p>
+                </div>
+                
+                <div class="step-item micro-interaction">
+                    <h4>Clique em "+ Criar nova Página"</h4>
+                    <p><strong>Visual:</strong> Botão azul no canto superior esquerdo da tela.</p>
+                    <p><strong>Se não aparecer:</strong> Tente atualizar a página (F5) ou trocar de navegador.</p>
+                </div>
+                
+                <div class="step-item micro-interaction">
+                    <h4>Preencha os dados estratégicos</h4>
+                    <ul>
+                        <li><strong>Nome da Página:</strong> Nome comercial da sua loja (igual ao WhatsApp Business)</li>
+                        <li><strong>Categoria:</strong> Seja específica! Ex: "Produtos de beleza" ou "Loja de cosméticos"</li>
+                        <li><strong>Descrição:</strong> Uma frase que resume o que você vende e para quem</li>
+                    </ul>
+                    <p><strong>Dica de ouro:</strong> Use palavras que suas clientes pesquisam no Google!</p>
+                </div>
+                
+                <div class="step-item micro-interaction">
+                    <h4>Clique em "Criar Página"</h4>
+                    <p><strong>Importante:</strong> Não se preocupe com fotos e posts agora. O essencial é ter a estrutura criada.</p>
+                </div>
+            </div>
+
+            <div class="faq-box">
+                <strong>E se der erro na criação?</strong> Principais causas: nome já existe (mude ligeiramente) ou categoria muito genérica (seja mais específica). Tente novamente com ajustes pequenos.
+            </div>
+
+            <div class="success-box">
+                <strong>🎉 PARABÉNS! Primeiro pilar construído!</strong> Sua identidade digital oficial está criada. Mesmo simples, ela já te diferencia de 70% das vendedoras que usam perfil pessoal para negócios.
+            </div>
+
+            <div class="text-center">
+                <button class="btn btn-primary" onclick="updateProgress(52, 'Identidade digital criada com sucesso!', 'Empresária')">
+                    Próximo: Meu escritório digital →
+                </button>
+            </div>
+        </section>
+
+        <!-- Seção 5: Business Manager -->
+        <section id="business-manager" class="content-section fade-in">
+            <h2>Segundo Pilar: Construindo seu escritório digital</h2>
+            
+            <div class="analogy-box">
+                <h3>🏢 Pense no Business Manager como o "CNPJ digital" da sua empresa:</h3>
+                <p>É um cofre ultra-seguro que guarda seus ativos mais importantes: sua Página, conta do Instagram e, principalmente, sua Conta de Anúncios (seu dinheiro). Seu perfil pessoal tem apenas a "chave" desse cofre, mas não se mistura com ele.</p>
+                
+                <p><strong>Por que isso protege você:</strong> Se algo acontecer com seu perfil pessoal, seus anúncios e dados comerciais continuam seguros no Business Manager.</p>
+            </div>
+
+            <div class="warning-box">
+                <strong>⚠️ ATENÇÃO MÁXIMA! Esta é a etapa onde 99% das iniciantes cometem erros fatais!</strong> Um erro aqui pode resultar em conta bloqueada permanentemente. Vamos fazer devagar e com precisão cirúrgica.
+            </div>
+
+            <div class="steps-container">
+                <div class="step-item micro-interaction">
+                    <h4>Abra uma NOVA aba do navegador</h4>
+                    <p><strong>Por que nova aba:</strong> Não faça isso dentro do Facebook normal. O Business Manager é um ambiente separado.</p>
+                    <p><strong>Se aparecer erro:</strong> Limpe cache do navegador ou use aba anônima.</p>
+                </div>
+                
+                <div class="step-item micro-interaction">
+                    <h4>Digite exatamente: business.facebook.com/overview</h4>
+                    <p><strong>Crítico:</strong> Digite na barra de endereço, não no Google! Qualquer letra errada te leva para lugar errado.</p>
+                    <p><strong>Visual esperado:</strong> Página azul com "Gerencie sua presença comercial no Facebook"</p>
+                </div>
+                
+                <div class="step-item micro-interaction">
+                    <h4>Clique em "Criar conta"</h4>
+                    <p><strong>Localização:</strong> Botão azul destacado na página.</p>
+                    <p><strong>Se pedir login:</strong> Use o mesmo Facebook onde criou a Página.</p>
+                </div>
+                
+                <div class="step-item micro-interaction">
+                    <h4>Preencha com dados REAIS e PRECISOS</h4>
+                    <ul>
+                        <li><strong>Nome da empresa:</strong> Mesmo nome da Página</li>
+                        <li><strong>Seu nome completo:</strong> Exatamente como no documento</li>
+                        <li><strong>E-mail profissional:</strong> Use seu melhor e-mail (não pode mudar depois!)</li>
+                    </ul>
+                    <p><strong>Por que dados reais:</strong> O Facebook pode pedir verificação. Dados falsos = bloqueio imediato.</p>
+                </div>
+                
+                <div class="step-item micro-interaction">
+                    <h4>⚠️ PASSO CRÍTICO: CONFIRME O E-MAIL IMEDIATAMENTE!</h4>
+                    <p><strong>Importância:</strong> Se não confirmar em 24h, sua conta fica limitada e pode ser bloqueada.</p>
+                    <p><strong>Onde chegar:</strong> Verifique caixa de entrada E spam. O e-mail vem de "facebookmail.com"</p>
+                    <p><strong>E se não chegou:</strong> Clique em "Reenviar e-mail" na tela do Business Manager.</p>
+                </div>
+            </div>
+
+            <div class="faq-box">
+                <strong>E se aparecer "Esta conta já existe"?</strong> Significa que você já tem um Business Manager vinculado ao seu Facebook. Clique em "Fazer login" em vez de "Criar conta". Isso é normal e não é problema!
+            </div>
+
+            <div class="tip-box">
+                <strong>Entenda o poder do que você criou:</strong> Agora você tem um escritório digital profissional que separa totalmente sua vida pessoal da empresarial. Grandes empresas como Nike e Coca-Cola usam a mesma estrutura que você acabou de criar!
+            </div>
+
+            <div class="success-box">
+                <strong>🎉 Segundo pilar finalizado com maestria!</strong> Você agora tem sua central de comando empresarial. Este é o momento que você oficialmente deixa de ser "vendedora informal" para se tornar "empresária digital"!
+            </div>
+
+            <div class="text-center">
+                <button class="btn btn-primary" onclick="updateProgress(68, 'Escritório digital estabelecido!', 'CEO Digital')">
+                    Próximo: Minha carteira digital →
+                </button>
+            </div>
+        </section>
+
+        <!-- Seção 6: Conta de Anúncios -->
+        <section id="conta-anuncios" class="content-section fade-in">
+            <h2>Terceiro Pilar: Sua carteira digital profissional</h2>
+            
+            <div class="analogy-box">
+                <h3>💳 A Conta de Anúncios é como abrir uma conta bancária empresarial:</h3>
+                <p>Imagine que você vai ao banco abrir conta para sua empresa. O gerente pergunta: "Vai operar em Real ou Dólar?" e "Qual o fuso horário dos seus relatórios?"</p>
+                
+                <p><strong>Depois que você responde e assina, não muda mais!</strong> É exatamente assim com a Conta de Anúncios. Por isso vamos fazer com precisão de cirurgião.</p>
+            </div>
+
+            <div class="steps-container">
+                <div class="step-item micro-interaction">
+                    <h4>No Business Manager, clique em "Configurações"</h4>
+                    <p><strong>Localização:</strong> Menu à esquerda, ícone da engrenagem (⚙️)</p>
+                    <p><strong>Visual:</strong> Última opção do menu lateral</p>
+                </div>
+                
+                <div class="step-item micro-interaction">
+                    <h4>Encontre "Contas de Anúncios"</h4>
+                    <p><strong>Localização:</strong> Na seção "Contas" do menu esquerdo</p>
+                    <p><strong>Se não aparecer:</strong> Clique em "Contas" primeiro, depois em "Contas de Anúncios"</p>
+                </div>
+                
+                <div class="step-item micro-interaction">
+                    <h4>Clique em "Adicionar" → "Criar nova conta de anúncios"</h4>
+                    <p><strong>Visual:</strong> Botão azul "Adicionar" no canto superior direito</p>
+                    <p><strong>Escolha:</strong> "Criar nova conta de anúncios" (não "Solicitar acesso")</p>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <strong>🚨 ALERTA CRÍTICO! A próxima tela não tem "Ctrl+Z"!</strong> Se você errar fuso horário ou moeda, NÃO existe forma de corrigir. Você teria que criar uma nova conta, o que pode gerar bloqueios do Facebook. Respire fundo, leia duas vezes antes de clicar!
+            </div>
+
+            <div class="steps-container">
+                <div class="step-item micro-interaction">
+                    <h4>Nome da conta de anúncios</h4>
+                    <p><strong>Sugestão:</strong> "Anúncios [Nome da sua empresa]" - simples e organizativo</p>
+                    <p><strong>Exemplo:</strong> "Anúncios Bella Cosméticos"</p>
+                </div>
+                
+                <div class="step-item micro-interaction">
+                    <h4>⚠️ FUSO HORÁRIO - ATENÇÃO MÁXIMA!</h4>
+                    <p><strong>O que vem selecionado:</strong> Provavelmente "(GMT-08:00) Pacific Time (US & Canada)"</p>
+                    <p><strong>O que você DEVE escolher:</strong> "(GMT-03:00) Brasília" ou "(GMT-03:00) São Paulo"</p>
+                    <p><strong>Por que é crucial:</strong> Todos os seus relatórios e estatísticas seguirão este horário. Errar significa nunca entender quando seus anúncios performam melhor.</p>
+                </div>
+                
+                <div class="step-item micro-interaction">
+                    <h4>🚨 MOEDA - DECISÃO IRREVERSÍVEL!</h4>
+                    <p><strong>O que vem selecionado:</strong> Provavelmente "USD - Dólar americano"</p>
+                    <p><strong>O que você DEVE escolher:</strong> "BRL - Real brasileiro"</p>
+                    <p><strong>Por que é fundamental:</strong> Se deixar em Dólar, o Facebook converte sua cobrança todos os dias pela cotação dele (sempre desfavorável). Em Real, você tem controle total dos gastos e pode calcular seu lucro real.</p>
+                </div>
+                
+                <div class="step-item micro-interaction">
+                    <h4>Uso da conta: "Minha empresa" → Clique em "Criar"</h4>
+                    <p><strong>Por que "Minha empresa":</strong> Você é a dona dos anúncios</p>
+                    <p><strong>Forma de pagamento:</strong> Pode adicionar depois, não se preocupe agora</p>
+                </div>
+            </div>
+
+            <div class="faq-box">
+                <strong>E se eu escolhi fuso horário errado sem querer?</strong> Infelizmente não tem correção. Você precisará criar uma nova conta de anúncios. Por isso insistimos tanto neste cuidado - queremos evitar essa frustração!
+            </div>
+
+            <div class="success-box">
+                <strong>🎊 INCRÍVEL! Você conseguiu passar pela parte mais técnica!</strong> A parte mais difícil e temida do Facebook Ads está completamente finalizada. Agora você tem uma estrutura profissional que empresas de milhões usam. A base do seu império digital está sólida como rocha!
+            </div>
+
+            <div class="text-center">
+                <button class="btn btn-primary" onclick="updateProgress(82, 'Estrutura principal solidificada!', 'Arquiteta Master')">
+                    Próximo: Preparar minha loja virtual →
+                </button>
+            </div>
+        </section>
+
+        <!-- Seção 7: Configurar WhatsApp Business -->
+        <section id="configurar-whatsapp" class="content-section fade-in">
+            <h2>Configurando sua loja virtual no WhatsApp</h2>
+            
+            <div class="analogy-box">
+                <h3>🏪 Seu WhatsApp Business é sua loja virtual:</h3>
+                <p>Imagine que você montou uma loja física linda na avenida mais movimentada da cidade (Facebook Ads). As pessoas veem sua vitrine e se interessam. Mas quando entram na loja para comprar, encontram tudo bagunçado, sem nome, sem preços...</p>
+                
+                <p><strong>É exatamente isso que acontece quando seu WhatsApp está mal configurado!</strong> Você paga caro para atrair clientes e os perde por falta de profissionalismo na "porta de entrada".</p>
+            </div>
+
+            <div class="warning-box">
+                <strong>A regra dos 7 segundos no WhatsApp:</strong> Quando alguém vem do seu anúncio e abre seu WhatsApp, tem apenas 7 segundos para decidir se você é confiável ou se vai procurar outro vendedor. Cada detalhe conta!
+            </div>
+
+            <div class="info-box micro-interaction">
+                <h3>📱 Por que o WhatsApp Business é obrigatório:</h3>
+                <p><strong>WhatsApp comum = amador.</strong> WhatsApp Business = profissional. A diferença não está só nas ferramentas, mas na percepção que o cliente tem de você.</p>
+                
+                <p>Clientes pagam mais para quem transmite segurança e organização. É psicologia pura!</p>
+            </div>
+
+            <div class="steps-container">
+                <div class="step-item micro-interaction">
+                    <h4>🖼️ Foto de Perfil Estratégica</h4>
+                    <p><strong>Por que é crucial:</strong> É a primeira impressão visual. Uma foto ruim pode acabar com a venda antes mesmo da conversa começar.</p>
+                    <p><strong>Opção 1:</strong> Logo da sua marca (transmite profissionalismo)</p>
+                    <p><strong>Opção 2:</strong> Sua foto profissional segurando o produto (transmite confiança e humaniza)</p>
+                    <p><strong>Evite:</strong> Fotos pessoais, paisagens ou genéricas demais</p>
+                </div>
+                
+                <div class="step-item micro-interaction">
+                    <h4>📝 Nome Comercial Consistente</h4>
+                    <p><strong>Regra de ouro:</strong> Exatamente igual ao da Página do Facebook. Nada de apelidos, sobrenomes ou emojis excessivos.</p>
+                    <p><strong>Por que é importante:</strong> O cliente viu seu anúncio com um nome e chegou no WhatsApp. Se os nomes forem diferentes, ele desconfia e vai embora.</p>
+                    <p><strong>Exemplo bom:</strong> "Bella Cosméticos"</p>
+                    <p><strong>Exemplo ruim:</strong> "Jú da Bella 💄❤️"</p>
+                </div>
+                
+                <div class="step-item micro-interaction">
+                    <h4>📋 Descrição que Vende</h4>
+                    <p><strong>Fórmula simples:</strong> O que você vende + Para quem + Diferencial</p>
+                    <p><strong>Exemplo:</strong> "Cosméticos naturais para mulheres que querem realçar sua beleza | Entrega em 48h | Consultoria gratuita"</p>
+                    <p><strong>Por que funciona:</strong> O cliente entende imediatamente se está no lugar certo</p>
+                </div>
+                
+                <div class="step-item micro-interaction">
+                    <h4>🕒 Horário de Atendimento Real</h4>
+                    <p><strong>Por que configurar:</strong> Evita clientes irritados tentando falar fora do horário</p>
+                    <p><strong>Dica honesta:</strong> Coloque um horário que você realmente consegue cumprir. É melhor ter 6 horas disponíveis de verdade do que 12 horas fictícias</p>
+                    <p><strong>Exemplo:</strong> "Segunda a sexta: 9h às 18h | Sábado: 9h às 14h"</p>
+                </div>
+                
+                <div class="step-item micro-interaction">
+                    <h4>👋 Saudação Automática Inteligente</h4>
+                    <p><strong>Por que é poderosa:</strong> Responde instantaneamente mesmo quando você está dormindo, dando sensação de atendimento 24h</p>
+                    <p><strong>Exemplo eficaz:</strong> "Oi! 😊 Obrigada pelo interesse nos nossos produtos! Vou te responder em instantes. Enquanto isso, que tal dar uma olhada no nosso catálogo abaixo? 👇"</p>
+                    <p><strong>Evite:</strong> Mensagens longas demais ou muito robóticas</p>
+                </div>
+                
+                <div class="step-item micro-interaction">
+                    <h4>📦 Catálogo Irresistível</h4>
+                    <p><strong>Por que é seu vendedor 24h:</strong> Mesmo quando você não está online, seus produtos estão "vendendo sozinhos"</p>
+                    <p><strong>Estratégia:</strong> Comece com 3-5 produtos principais com fotos profissionais, preços claros e descrições que vendem</p>
+                    <p><strong>Dica de conversão:</strong> Use fotos dos produtos sendo usados, não apenas o produto parado</p>
+                </div>
+            </div>
+
+            <div class="faq-box">
+                <strong>E se eu não tenho WhatsApp Business ainda?</strong> Baixe na loja de aplicativos do seu celular. Você pode migrar seus contatos do WhatsApp comum sem perder nada. O processo é automático e seguro.
+            </div>
+
+            <div class="tip-box">
+                <strong>Segredo dos vendedores top:</strong> Eles tratam o WhatsApp como uma loja física. Cada detalhe é pensado para transmitir profissionalismo e confiança. Clientes sentem isso e compram mais!
+            </div>
+
+            <div class="success-box">
+                <strong>🎉 Sua loja virtual está pronta para receber clientes!</strong> Agora quando alguém vier dos seus anúncios, vai encontrar um ambiente profissional que inspira confiança e facilita a compra. Você saiu da zona amadora!
+            </div>
+
+            <div class="text-center">
+                <button class="btn btn-whatsapp" onclick="updateProgress(94, 'Loja virtual profissional criada!', 'Vendedora Expert')">
+                    Próximo: As leis da segurança →
+                </button>
+            </div>
+        </section>
+
+        <!-- Seção 8: 3 Regras de Ouro -->
+        <section id="regras" class="content-section fade-in">
+            <h2>As 3 Leis Sagradas para usar o Facebook Ads sem medo</h2>
+            
+            <div class="analogy-box">
+                <h3>🛡️ Por que você precisa dessas leis:</h3>
+                <p>Imagine que você ganhou um carro de última geração, mas não sabe dirigir. Seria perigoso, certo? O Facebook Ads é igual: ferramenta poderosa que precisa de algumas regras básicas para ser usada com segurança e confiança.</p>
+                
+                <p><strong>Essas 3 leis vão te proteger de 99% dos erros</strong> que fazem empreendedoras perderem dinheiro e ficarem com medo da ferramenta.</p>
+            </div>
+
+            <div class="info-box micro-interaction">
+                <h3>🎯 O mindset correto sobre o Facebook Ads:</h3>
+                <p>Essa ferramenta NÃO foi criada para te enganar ou roubar seu dinheiro. <strong>O Facebook só ganha quando você vende!</strong> Eles querem que você tenha sucesso, porque quanto mais você vende, mais você anuncia.</p>
+                
+                <p>Por isso, cada função existe para te ajudar a vender melhor, não para te confundir.</p>
+            </div>
+
+            <div class="steps-container">
+                <div class="step-item micro-interaction">
+                    <h4>🚫 Lei 1: "Não Sei, Não Clico"</h4>
+                    <p><strong>Por que esta lei existe:</strong> Cada botão no Facebook Ads tem uma função específica. Clicar aleatoriamente pode alterar configurações importantes ou gastar dinheiro sem querer.</p>
+                    <p><strong>Na prática:</strong> Viu um botão que não sabe para que serve? Anote e pesquise depois. NUNCA clique por curiosidade quando está com dinheiro ativo na conta.</p>
+                    <p><strong>Analogia:</strong> É como dirigir um carro - você não aperta pedais aleatoriamente para "ver o que acontece"!</p>
+                </div>
+                
+                <div class="step-item micro-interaction">
+                    <h4>📚 Lei 2: Uma Coisa de Cada Vez</h4>
+                    <p><strong>Por que é crucial:</strong> O Facebook Ads tem centenas de recursos. Querer usar tudo de uma vez é receita para confusão e frustração.</p>
+                    <p><strong>Sua jornada organizada:</strong></p>
+                    <ul>
+                        <li><strong>Hoje:</strong> BASE (estrutura que fizemos)</li>
+                        <li><strong>Próxima aula:</strong> PRIMEIRO ANÚNCIO simples</li>
+                        <li><strong>Depois:</strong> ANÁLISE DE RESULTADOS</li>
+                        <li><strong>Só então:</strong> Estratégias avançadas</li>
+                    </ul>
+                    <p><strong>Resultado:</strong> Domínio gradual e seguro, sem ansiedade!</p>
+                </div>
+                
+                <div class="step-item micro-interaction">
+                    <h4>🤝 Lei 3: A Ferramenta é sua Aliada</h4>
+                    <p><strong>Mentalidade transformadora:</strong> Pare de ver o Facebook Ads como "inimigo que vai roubar meu dinheiro" e comece a vê-lo como "parceiro que quer me ajudar a vender mais".</p>
+                    <p><strong>Evidência:</strong> As sugestões que o Facebook dá (público, orçamento, etc.) são baseadas em bilhões de anúncios que deram certo. Eles literalmente sabem o que funciona!</p>
+                    <p><strong>Mindset vencedor:</strong> "Vou aprender a usar essa ferramenta a meu favor, não contra mim"</p>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <strong>O erro mental que quebra empreendedoras:</strong> Pensar que o Facebook Ads é "complicado demais". Na verdade, é poderoso demais! A diferença está em aprender gradualmente, respeitando essas 3 leis.
+            </div>
+
+            <div class="success-box">
+                <strong>🎊 Transformação mental completa!</strong> Você saiu do medo paralisante para a confiança estratégica! Agora tem as ferramentas E a mentalidade certa para dominar o Facebook Ads. Essas 3 leis vão te proteger em qualquer situação!
+            </div>
+
+            <div class="text-center">
+                <button class="btn btn-primary" onclick="updateProgress(100, 'Mindset de sucesso ativado!', '👑 Mestra Digital')">
+                    Finalizar minha transformação →
+                </button>
+            </div>
+        </section>
+
+        <!-- Seção 9: Checklist Final -->
+        <section id="checklist" class="content-section fade-in">
+            <h2>🏆 Missão Cumprida - Você É Oficialmente uma Mestra!</h2>
+            
+            <div class="success-box text-center">
+                <h3>🎉 PARABÉNS! Você fez o que 90% das empreendedoras não conseguem!</h3>
+                <p>Você construiu uma estrutura profissional na maior e mais poderosa ferramenta de anúncios do mundo! <strong>Isso não é pouca coisa - é HISTÓRICO!</strong></p>
+                
+                <p>Há uma hora você tinha medo do Facebook Ads. Agora você tem uma base sólida como pedra para começar a multiplicar suas vendas!</p>
+            </div>
+
+            <div class="analogy-box">
+                <h3>🏗️ O que você realmente construiu hoje:</h3>
+                <p>Não foi "só" uma conta no Facebook. Você construiu a fundação digital do seu império empresarial! É como se você tivesse:</p>
+                <ul>
+                    <li>✅ Aberto o CNPJ da sua empresa digital (Página)</li>
+                    <li>✅ Alugado o escritório corporativo (Business Manager)</li>
+                    <li>✅ Aberto a conta bancária empresarial (Conta de Anúncios)</li>
+                    <li>✅ Montado sua loja profissional (WhatsApp Business)</li>
+                </ul>
+                <p><strong>Empresas de milhões</strong> usam exatamente a mesma estrutura que você criou hoje!</p>
+            </div>
+
+            <div class="checklist">
+                <h3>✅ Verificação final da sua estrutura profissional:</h3>
+                
+                <div class="checklist-item micro-interaction">
+                    <input type="checkbox" id="pagina-check">
+                    <label for="pagina-check">📄 Página do Facebook criada com identidade comercial</label>
+                </div>
+                
+                <div class="checklist-item micro-interaction">
+                    <input type="checkbox" id="bm-check">
+                    <label for="bm-check">🏢 Business Manager criado e e-mail confirmado</label>
+                </div>
+                
+                <div class="checklist-item micro-interaction">
+                    <input type="checkbox" id="conta-check">
+                    <label for="conta-check">💳 Conta de Anúncios em Real (BRL) e fuso de Brasília</label>
+                </div>
+                
+                <div class="checklist-item micro-interaction">
+                    <input type="checkbox" id="pagamento-check">
+                    <label for="pagamento-check">💰 Forma de pagamento configurada (cartão ou débito)</label>
+                </div>
+                
+                <div class="checklist-item micro-interaction">
+                    <input type="checkbox" id="whatsapp-perfil-check">
+                    <label for="whatsapp-perfil-check">📱 WhatsApp Business com perfil profissional completo</label>
+                </div>
+                
+                <div class="checklist-item micro-interaction">
+                    <input type="checkbox" id="catalogo-check">
+                    <label for="catalogo-check">📦 Catálogo criado com produtos estratégicos</label>
+                </div>
+                
+                <div class="checklist-item micro-interaction">
+                    <input type="checkbox" id="saudacao-check">
+                    <label for="saudacao-check">👋 Saudação automática configurada</label>
+                </div>
+                
+                <div class="checklist-item micro-interaction">
+                    <input type="checkbox" id="mindset-check">
+                    <label for="mindset-check">🧠 Mentalidade vencedora ativada (3 Leis Sagradas)</label>
+                </div>
+            </div>
+
+            <div class="info-box text-center micro-interaction">
+                <h3>🚀 Seus próximos passos como Mestra Digital:</h3>
+                <p><strong>Base sólida ✅ Agora é hora da ação!</strong></p>
+                
+                <p>🎯 <strong>Primeiro anúncio:</strong> Comece testando com R$ 15-20/dia</p>
+                <p>📊 <strong>Acompanhe resultados:</strong> Analise cliques, conversas e vendas</p>
+                <p>🔄 <strong>Otimize gradualmente:</strong> Ajuste o que não funciona, potencialize o que dá certo</p>
+                
+                <p><strong>Lembre-se:</strong> Você não está mais sozinha! Cada anúncio é uma oportunidade de aprendizado e crescimento.</p>
+            </div>
+
+            <div class="tip-box">
+                <strong>O segredo das empreendedoras de sucesso:</strong> Elas começaram exatamente onde você está agora - com uma estrutura sólida e muita determinação. A diferença está na ação consistente, não no conhecimento perfeito!
+            </div>
+
+            <div class="faq-box">
+                <strong>E se eu me sentir insegura no primeiro anúncio?</strong> É completamente normal! Até as experts sentiram isso no início. A confiança vem com a prática. Comece pequeno, aprenda com cada resultado e celebre cada pequena vitória!
+            </div>
+
+            <div class="text-center">
+                <button class="btn btn-whatsapp" onclick="celebrateCompletion()">
+                    🌟 Sou uma Mestra Digital Oficial!
+                </button>
+            </div>
+        </section>
+
+        <!-- Footer Moderno -->
+        <footer>
+            <h3>🎯 Sua revolução digital começou hoje!</h3>
+            <p>De empreendedora com medo da tecnologia para Mestra Digital com estrutura profissional montada!</p>
+            <p style="margin-top: 20px; opacity: 0.8; font-size: 0.9rem;">
+                O mundo digital está aos seus pés. Agora é hora de conquistá-lo! 💜
+            </p>
+            <p style="margin-top: 10px; opacity: 0.8; font-size: 0.85rem;">
+                Feito com 💜 para mulheres empreendedoras que não desistem dos seus sonhos
+            </p>
+        </footer>
+    </div>
+
+    <!-- JavaScript Aprimorado -->
+    <script>
+        // Função para atualizar progresso com mais feedback
+        function updateProgress(percentage, status, badge = null) {
+            const progressBar = document.getElementById('progressBar');
+            const currentStatus = document.getElementById('currentStatus');
+            const progressBadge = document.getElementById('progressBadge');
+            
+            // Animação suave da barra
+            progressBar.style.width = percentage + '%';
+            progressBar.classList.add('loading');
+            
+            // Atualizar textos
+            currentStatus.textContent = status;
+            if (badge) {
+                progressBadge.textContent = badge;
+                progressBadge.style.animation = 'pulse 1s ease';
+            }
+            
+            // Feedback visual
+            setTimeout(() => {
+                progressBar.classList.remove('loading');
+                showSuccessMessage('Progresso atualizado! 🎉');
+            }, 800);
+            
+            // Scroll suave para próxima seção se necessário
+            if (percentage >= 100) {
+                setTimeout(() => {
+                    document.getElementById('checklist').scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }, 1000);
+            }
+        }
+
+        // Navegação suave aprimorada
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    // Remove classe active de todos os links
+                    document.querySelectorAll('nav a').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    
+                    // Adiciona classe active ao link clicado
+                    this.classList.add('active');
+                    
+                    // Scroll suave
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Feedback visual
+                    showSuccessMessage('Navegando para: ' + target.querySelector('h2').textContent);
+                }
+            });
+        });
+
+        // Observador de seções para navegação automática
+        const observerOptions = {
+            threshold: 0.3,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const sectionObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Atualizar navegação ativa
+                    const id = entry.target.id;
+                    const correspondingLink = document.querySelector(`nav a[href="#${id}"]`);
+                    
+                    if (correspondingLink) {
+                        document.querySelectorAll('nav a').forEach(link => {
+                            link.classList.remove('active');
+                        });
+                        correspondingLink.classList.add('active');
+                    }
+                    
+                    // Animação de entrada
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observar todas as seções
+        document.querySelectorAll('.content-section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+            sectionObserver.observe(section);
+        });
+
+        // Sistema de checklist aprimorado
+        let checkedItems = 0;
+        const totalItems = document.querySelectorAll('.checklist-item input[type="checkbox"]').length;
+
+        document.querySelectorAll('.checklist-item input[type="checkbox"]').forEach((checkbox, index) => {
+            checkbox.addEventListener('change', function() {
+                const item = this.closest('.checklist-item');
+                
+                if (this.checked) {
+                    checkedItems++;
+                    item.style.background = 'linear-gradient(135deg, #c6f6d5, #9ae6b4)';
+                    item.style.borderColor = 'var(--verde-whatsapp)';
+                    showSuccessMessage('Item concluído! ✅ Você está arrasando!');
+                } else {
+                    checkedItems--;
+                    item.style.background = 'var(--cinza-claro)';
+                    item.style.borderColor = 'transparent';
+                }
+                
+                // Atualizar progresso baseado no checklist
+                const completionPercentage = Math.round((checkedItems / totalItems) * 100);
+                
+                if (checkedItems === totalItems) {
+                    setTimeout(() => {
+                        celebrateCompletion();
+                    }, 500);
+                }
+            });
+        });
+
+        // Função de celebração
+        function celebrateCompletion() {
+            // Confetes virtuais
+            createConfetti();
+            
+            // Alerta especial
+            setTimeout(() => {
+                showSuccessMessage('🎊 VOCÊ É INCRÍVEL! Estrutura 100% completa! Você saiu da zona de medo e entrou na zona de poder! Agora é partir para as vendas! 🚀💎');
+            }, 1000);
+            
+            // Atualizar progresso para 100%
+            updateProgress(100, 'Transformação digital completa!', '👑 Mestra Suprema');
+        }
+
+        // Sistema de notificações
+        function showSuccessMessage(message) {
+            // Remove notificação anterior se existir
+            const existingNotification = document.querySelector('.success-notification');
+            if (existingNotification) {
+                existingNotification.remove();
+            }
+            
+            // Criar nova notificação
+            const notification = document.createElement('div');
+            notification.className = 'success-notification';
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: var(--gradiente-sucesso);
+                color: white;
+                padding: 15px 25px;
+                border-radius: 10px;
+                font-weight: 600;
+                z-index: 1000;
+                box-shadow: var(--sombra-hover);
+                transform: translateX(100%);
+                transition: all 0.3s ease;
+                max-width: 350px;
+                word-wrap: break-word;
+                line-height: 1.4;
+            `;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            // Animação de entrada
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 100);
+            
+            // Remover após 5 segundos
+            setTimeout(() => {
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 5000);
+        }
+
+        // Confetes de celebração
+        function createConfetti() {
+            const colors = ['#667eea', '#764ba2', '#25d366', '#fd79a8', '#fdcb6e'];
+            const confettiContainer = document.createElement('div');
+            confettiContainer.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: 9999;
+            `;
+            document.body.appendChild(confettiContainer);
+
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.style.cssText = `
+                    position: absolute;
+                    width: ${Math.random() * 10 + 5}px;
+                    height: ${Math.random() * 10 + 5}px;
+                    background: ${colors[Math.floor(Math.random() * colors.length)]};
+                    top: -10px;
+                    left: ${Math.random() * 100}%;
+                    animation: confetti-fall ${Math.random() * 3 + 2}s linear forwards;
+                    border-radius: ${Math.random() > 0.5 ? '50%' : '0'};
+                `;
+                confettiContainer.appendChild(confetti);
+            }
+
+            // CSS da animação
+            if (!document.querySelector('#confetti-styles')) {
+                const style = document.createElement('style');
+                style.id = 'confetti-styles';
+                style.textContent = `
+                    @keyframes confetti-fall {
+                        to {
+                            transform: translateY(100vh) rotate(720deg);
+                            opacity: 0;
+                        }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+
+            // Remover confetes após animação
+            setTimeout(() => {
+                confettiContainer.remove();
+            }, 4000);
+        }
+
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', function() {
+            // Primeira seção ativa por padrão
+            document.querySelector('nav a[href="#introducao"]').classList.add('active');
+            
+            // Animação inicial da barra de progresso
+            setTimeout(() => {
+                updateProgress(12, 'Preparando sua mente para o sucesso', 'Corajosa');
+            }, 1000);
+            
+            // Mensagem de boas-vindas
+            setTimeout(() => {
+                showSuccessMessage('Bem-vinda à sua revolução digital! Você está no lugar certo para transformar medo em poder! 💪✨');
+            }, 2000);
+        });
+
+        // Detecção de dispositivo móvel para otimizações
+        const isMobile = window.innerWidth <= 768;
+        if (isMobile) {
+            // Ajustes específicos para mobile
+            document.body.style.fontSize = '15px';
+        }
+
+        // Salvamento automático do progresso (localStorage)
+        function saveProgress() {
+            const checkedBoxes = document.querySelectorAll('.checklist-item input[type="checkbox"]:checked');
+            const checkedIds = Array.from(checkedBoxes).map(box => box.id);
+            localStorage.setItem('facebook-ads-progress', JSON.stringify(checkedIds));
+        }
+
+        function loadProgress() {
+            const savedProgress = localStorage.getItem('facebook-ads-progress');
+            if (savedProgress) {
+                const checkedIds = JSON.parse(savedProgress);
+                checkedIds.forEach(id => {
+                    const checkbox = document.getElementById(id);
+                    if (checkbox) {
+                        checkbox.checked = true;
+                        checkbox.dispatchEvent(new Event('change'));
+                    }
+                });
+            }
+        }
+
+        // Carregar progresso salvo
+        setTimeout(loadProgress, 500);
+
+        // Salvar progresso sempre que houver mudança
+        document.addEventListener('change', saveProgress);
+    </script>
+</body>
+</html>
