@@ -1,0 +1,210 @@
+# ROTEIRO DE TELEPROMPTER - DEMONSTRAÇÃO FERRAMENTA SVI
+# Duração: 30-40 minutos
+# https://ferramentaslilialainy.com.br/aula-svi-deploy.html
+
+=== ABERTURA - MOSTRANDO RESULTADO (3 MIN) ===
+
+[OLHAR CÂMERA] Oi meninas! [PAUSA] 
+
+E se eu te dissesse que existe uma ferramenta... [PAUSA] que pega aquele seu textinho sem graça do WhatsApp... [ENFASE] e transforma ele num texto que vende que nem água no deserto? [PAUSA]
+
+Vocês acreditam? [ESPERAR CHAT] 
+
+[MOSTRAR TELA] Olha isso aqui! [APONTAR] Essa é a ferramenta SVI - Sistema de Vendas Inteligente. [PAUSA] É como ter uma consultora de cem mil reais morando no seu computador! [RISADA]
+
+Vou te mostrar uma coisa que vai te chocar. [PAUSA] Peguei esse texto aqui de uma menina que vende brownie... [LER DEVAGAR] "Oi, vendo brownie. 5 reais. Quer?" [PAUSA] 
+
+Tá vendo isso? [APONTAR] A ferramenta deu nota DOIS pra esse texto! [ENFASE] DOIS de dez, gente! [PAUSA] Mas olha o que acontece quando ela melhora... [CLICAR]
+
+[APONTAR RESULTADO] "Oi linda! Que tal adoçar seu dia com um brownie artesanal que derrete na boca? [PAUSA] Feito com chocolate belga importado, sem conservantes. [PAUSA] Por apenas R$5 você leva uma explosão de sabor que vai fazer sua tarde mais gostosa. [PAUSA] Últimas 5 unidades disponíveis hoje!" [PAUSA]
+
+Gente... isso é OUTRA COISA! [ENFASE] A nota subiu para NOVE! [CELEBRAR] E sabe quanto a mais ela vai vender com esse texto? [PAUSA] TRÊS VEZES MAIS! [CHOQUE]
+
+[VOLTAR CÂMERA] Meninas, nos próximos 30 minutos vocês vão aprender a usar essa ferramenta passo a passo. [PAUSA] E o melhor... [SUSPENSE] é DE GRAÇA pra testar! [ANIMAÇÃO]
+
+=== COMO ACESSAR A FERRAMENTA (2 MIN) ===
+
+[MOSTRAR TELA] Primeira coisa, meninas... vamos entrar na ferramenta juntas. [PAUSA] O endereço é... [FALAR DEVAGAR] ferramentaslilialainy.com.br [PAUSA] barra aula-svi-deploy.html [PAUSA]
+
+Vou colocar aqui no chat pra vocês... [DIGITAR NO CHAT] [ESPERAR] 
+
+Receberam o link? Digitem SIM no chat se conseguiram abrir! [ESPERAR CHAT]
+
+[APONTAR] Olha que lindo! [PAUSA] Essa é a nossa ferramenta. [PAUSA] Tudo muito simples, muito fácil de usar. [PAUSA] Até minha mãe de 60 anos conseguiu! [RISADA]
+
+Vou mostrar cada cantinho aqui pra vocês. [PAUSA] [SCROLLAR DEVAGAR] Aqui tem os exemplos... [APONTAR] aqui tem os áudios... [APONTAR] e aqui embaixo é onde a mágica acontece! [APONTAR]
+
+=== PRIMEIRA DEMONSTRAÇÃO - BROWNIE (8 MIN) ===
+
+Agora vem a parte gostosa! [ANIMAÇÃO] Vamos fazer nossa primeira análise juntas. [PAUSA]
+
+[MOSTRAR ÁREA DE TEXTO] Vou usar um exemplo real aqui... [PAUSA] Imaginem que vocês vendem brownie, igual a Joana lá de Campinas. [PAUSA] Ela mandou pra mim assim... [DIGITAR DEVAGAR]
+
+"Oi, vendo brownie. 5 reais. Quer?" [PAUSA]
+
+Meninas, sinceramente... [PAUSA] quem vai comprar com esse texto? [ESPERAR CHAT] Ninguém, né? [CONFIRMAÇÃO]
+
+[CLICAR EM ANALISAR] Agora vou clicar aqui em... A-NA-LI-SAR [FALAR CADA LETRA] [PAUSA] 
+
+Espera aí que a inteligência artificial tá trabalhando... [AGUARDAR] [PAUSA]
+
+[RESULTADO APARECE] GENTE! [CHOQUE] Olha isso! [APONTAR] Nota 2,1! [ENFASE] Duas vírgula um de dez! [PAUSA] Isso é quase zero, meninas!
+
+E olha aqui os problemas que ela identificou... [LER DEVAGAR] [APONTAR CADA UM]
+
+"Falta urgência" [PAUSA] "Não tem benefícios" [PAUSA] "Linguagem muito fria" [PAUSA] "Não desperta desejo" [PAUSA]
+
+Tá tudo errado! [ENFASE] Por isso que não vende, né gente? [CONFIRMAÇÃO]
+
+Mas calma... [SUSPENSE] que agora vem o melhor! [ANIMAÇÃO]
+
+[CLICAR EM GERAR VERSÃO MELHORADA] Vou clicar aqui em "Gerar Versão Melhorada"... [PAUSA] 
+
+A inteligência artificial tá criando um texto novo pra gente... [AGUARDAR] [PAUSA]
+
+[TEXTO MELHORADO APARECE] MEU DEUS DO CÉU! [CHOQUE] Vocês tão vendo isso? [APONTAR]
+
+[LER O TEXTO MELHORADO COM EMOÇÃO] "Oi, linda! Seu dia merece um mimo especial... [PAUSA] Brownie artesanal quentinho, com cobertura que derrete na boca! [PAUSA] Feito agora há pouco com ingredientes selecionados. [PAUSA] Por apenas R$5 você leva essa delícia que vai adoçar sua tarde. [PAUSA] Restam só 3 unidades hoje!" [PAUSA]
+
+GENTE! [CELEBRAR] Isso é OUTRO NÍVEL! [ENFASE] A nota subiu pra 8,7! [MOSTRAR] Quase nota máxima!
+
+E olha a diferença na taxa de conversão... [APONTAR] De 2% foi pra 18%! [CHOQUE] Isso significa que ela vai vender NOVE VEZES MAIS! [ENFASE]
+
+Meninas, vocês entenderam o que aconteceu aqui? [ESPERAR CHAT] Digitem no chat se entenderam! [PAUSA]
+
+=== EXPLICANDO OS RESULTADOS (5 MIN) ===
+
+[VOLTAR CÂMERA] Deixa eu explicar o que cada coisinha significa aqui... [PAUSA] porque é importante vocês entenderem. [EDUCATIVO]
+
+[MOSTRAR TELA] [APONTAR PONTUAÇÃO] Essa nota aqui de 0 a 10... [PAUSA] é como se fosse uma prova da escola, tá? [ANALOGIA] [PAUSA] Quanto maior a nota, mais o texto vai vender! [PAUSA]
+
+[APONTAR TAXA DE CONVERSÃO] E essa porcentagem aqui embaixo... [PAUSA] é quantas pessoas de cada 100 vão comprar. [PAUSA] Se tá 2%, significa que de 100 pessoas que lerem, só 2 vão comprar. [PAUSA] Mas se subir pra 18%, são 18 pessoas! [ENFASE]
+
+Ou seja... [PAUSA] se você manda mensagem pra 100 pessoas... [PAUSA] com o texto ruim vende pra 2... [PAUSA] com o texto bom vende pra 18! [CELEBRAR] É QUASE DEZ VEZES MAIS! [CHOQUE]
+
+[APONTAR PROBLEMAS IDENTIFICADOS] E esses pontinhos vermelhos aqui? [PAUSA] São os problemas que a ferramenta encontrou. [PAUSA] É como ter uma professora corrigindo sua redação! [ANALOGIA] [PAUSA]
+
+Ela fala assim... "Ó, tá faltando isso aqui... precisa melhorar ali..." [IMITANDO VOZ] [RISADA] [PAUSA]
+
+[APONTAR MELHORIAS] E esses pontinhos verdes? [PAUSA] São as coisas boas que ela colocou no texto novo! [PAUSA] Urgência... benefícios... linguagem carinhosa... [ENUMERAR]
+
+Tá fazendo sentido pra vocês? [ESPERAR CHAT] Digitem "ENTENDI" se tá claro! [PAUSA]
+
+=== SEGUNDO EXEMPLO - ROUPAS (8 MIN) ===
+
+Agora vamos fazer mais um exemplo... [ANIMAÇÃO] pra vocês verem que funciona com qualquer coisa! [PAUSA]
+
+Vou usar o exemplo da Maria, que vende blusinha no Instagram. [PAUSA] O texto dela era assim... [DIGITAR]
+
+"Tenho blusas pra vender. Me chama." [PAUSA]
+
+[VIRAR PRA CÂMERA] Meninas... [PAUSA] vocês comprariam com esse texto? [ESPERAR CHAT] Claro que não, né? [CONFIRMAÇÃO] Tá mais sem graça que água! [RISADA]
+
+[VOLTAR TELA] [CLICAR ANALISAR] Vou jogar na ferramenta... [PAUSA] ANALISAR... [CLICAR] [AGUARDAR]
+
+[RESULTADO] Olha aí! [APONTAR] Nota 1,8! [CHOQUE] Pior que o brownie! [PAUSA] E taxa de conversão... 1,5%! [ENFASE] Isso é quase zero, gente!
+
+Os problemas... [LER] "Muito genérico"... "Não desperta interesse"... "Sem call-to-action"... "Linguagem fria"... [PAUSA]
+
+Tudo errado mesmo! [CONFIRMAÇÃO] [PAUSA]
+
+Mas agora... [SUSPENSE] vamos ver a mágica! [CLICAR GERAR MELHORADA]
+
+[AGUARDAR RESULTADO] [TEXTO APARECE]
+
+NOSSA SENHORA! [CHOQUE] [LER COM EMOÇÃO] "Oi, bonita! 💕 Chegaram as blusas que vão revolucionar seu guarda-roupa! [PAUSA] Tecido macio que abraça seu corpo, cores vibrantes que realçam sua beleza natural. [PAUSA] Tamanhos P ao GG, todas por R$35 (valor normal R$50). [PAUSA] Últimas peças da coleção - quando acabar, só mês que vem! [PAUSA] Chama agora no direct que eu separo a sua! ✨" [PAUSA]
+
+GENTE! [CELEBRAR] Olha a diferença! [ENFASE] A nota foi pra 9,2! [MOSTRAR] E a conversão... [APONTAR] 22%! [CHOQUE]
+
+Isso significa que se ela mandar pra 100 pessoas... [PAUSA] com o texto ruim vende 1 blusa... [PAUSA] com o texto bom vende 22! [ENFASE] VINTE E DUAS VEZES MAIS! [CHOQUE]
+
+Maria, se você tá assistindo... [OLHAR CÂMERA] usa esse texto agora! [RISADA] Vai ficar rica! [ANIMAÇÃO]
+
+Entenderam a diferença, meninas? [ESPERAR CHAT] É como comparar uma bicicleta com uma Ferrari! [ANALOGIA] [PAUSA]
+
+=== COMPARAÇÃO ANTES E DEPOIS (3 MIN) ===
+
+[MOSTRAR TELA DIVIDIDA] Deixa eu colocar os dois textos lado a lado pra vocês verem... [ARRANJAR TELA] [PAUSA]
+
+[LADO ESQUERDO] Texto original... [LER SEM EMOÇÃO] "Tenho blusas pra vender. Me chama." [PAUSA] Nota 1,8... Conversão 1,5%... [MONÓTONO]
+
+[LADO DIREITO] Texto melhorado... [LER COM EMOÇÃO] "Oi, bonita! Chegaram as blusas que vão revolucionar seu guarda-roupa..." [PAUSA] Nota 9,2... Conversão 22%! [ANIMADO]
+
+É como comparar uma formiguinha com um elefante! [ANALOGIA] [RISADA] [PAUSA]
+
+Sabe por que o texto melhorado funciona? [EDUCATIVO] [PAUSA] Porque ele fala com o CORAÇÃO da mulher! [EMOÇÃO] [PAUSA]
+
+Ele não tá só vendendo blusa... [PAUSA] tá vendendo transformação! [ENFASE] Autoestima! [PAUSA] Beleza! [PAUSA] É isso que a gente quer comprar! [CONFIRMAÇÃO]
+
+O primeiro texto é frio... [PAUSA] o segundo é caloroso... [PAUSA] o primeiro é genérico... [PAUSA] o segundo é específico... [COMPARAR] [PAUSA]
+
+Agora me digam... [OLHAR CÂMERA] qual das duas Marias vai vender mais? [ESPERAR CHAT] A que usa o texto de nota 1,8 ou a de nota 9,2? [PAUSA] Óbvio, né? [CONFIRMAÇÃO]
+
+=== DICAS EXTRAS (5 MIN) ===
+
+[VOLTAR CÂMERA] Agora vou dar umas dicas preciosas pra vocês... [PAUSA] que vão fazer vocês usarem essa ferramenta como profissionais! [ANIMAÇÃO]
+
+[MOSTRAR TELA] Primeira dica... [ENFASE] sempre testem textos diferentes! [PAUSA] Não fiquem no primeiro resultado. [EDUCATIVO] [PAUSA] Às vezes o segundo ou terceiro fica ainda melhor! [PAUSA]
+
+[CLICAR GERAR NOVA VERSÃO] Olha... posso pedir pra ela gerar outro texto! [DEMONSTRAR] [AGUARDAR] [PAUSA] Viu? Saiu diferente! [APONTAR] Às vezes uma palavra diferente faz toda a diferença! [PAUSA]
+
+Segunda dica... [ENFASE] sempre adaptem pro seu jeito de falar! [EDUCATIVO] [PAUSA] Se vocês não falam "bonita", troquem por "querida"... [EXEMPLO] Se não usam emoji, tirem... [PAUSA] O importante é soar natural pra vocês! [PAUSA]
+
+Terceira dica preciosa... [ENFASE] testem em clientes diferentes! [PAUSA] O que funciona pra uma de 20 anos pode não funcionar pra uma de 50! [EDUCATIVO] [PAUSA] A ferramenta vai ajudar vocês a encontrar o tom certo! [PAUSA]
+
+E a última dica... [SUSPENSE] a mais importante... [PAUSA] USEM! [ENFASE] Não adianta ter a ferramenta mais linda do mundo se não usar! [EDUCATIVO] [PAUSA] É como ter uma Ferrari na garagem! [ANALOGIA] [RISADA]
+
+[OLHAR CÂMERA] Quantas de vocês têm curso parado em casa? [ESPERAR CHAT] Pois é... [CONFIRMAÇÃO] Essa ferramenta só funciona se vocês usarem! [ENFASE] [PAUSA]
+
+=== PRÁTICA GUIADA (5 MIN) ===
+
+[ANIMAÇÃO] Agora chegou a hora mais gostosa! [PAUSA] Vocês vão fazer junto comigo! [PAUSA] Peguem um texto de vocês que tá meio fraquinho... [PAUSA]
+
+Pode ser do Instagram... do WhatsApp... do Facebook... [ENUMERAR] [PAUSA] Alguma coisa que vocês já postaram e não vendeu muito... [EDUCATIVO] [PAUSA]
+
+[ESPERAR] Conseguiram? Digitem "CONSEGUI" no chat! [ESPERAR CHAT] [PAUSA]
+
+Agora... [PAUSA] vão lá na ferramenta... [MOSTRAR TELA] copiem o texto de vocês... [DEMONSTRAR COPIANDO] [PAUSA] e colem aqui onde tá escrito "Cole seu texto aqui"... [APONTAR] [PAUSA]
+
+Colaram? [ESPERAR] Agora... todo mundo junto... [PAUSA] vamos clicar em ANALISAR! [ENFASE] [PAUSA] Um... dois... três... CLIQUEM! [COMANDAR]
+
+[AGUARDAR] Saiu o resultado de vocês? [ESPERAR CHAT] [PAUSA] Digitem no chat qual foi a nota que vocês tiraram! [INTERAÇÃO] [PAUSA]
+
+Nossa, tô vendo aqui... 2,3... 1,8... 3,1... [LER RESULTADOS DO CHAT] Meninas, tá tudo baixo mesmo! [CONFIRMAÇÃO] [PAUSA] Mas calma que agora vem o melhor! [ANIMAÇÃO]
+
+Agora cliquem em "Gerar Versão Melhorada"... [COMANDAR] [PAUSA] Todo mundo junto! [ANIMAÇÃO] [AGUARDAR]
+
+Saiu? [ESPERAR] Qual foi a nota nova? [INTERAÇÃO] [PAUSA] 8,5... 9,1... 7,9... [LER] MUITO BOM! [CELEBRAR] Olha a diferença que fez! [ENFASE]
+
+Agora vocês viram na prática! [CONFIRMAÇÃO] [PAUSA] É assim que se transforma um texto que não vende em um texto que EXPLODE de vendas! [ANIMAÇÃO]
+
+=== FECHAMENTO E PRÓXIMOS PASSOS (3 MIN) ===
+
+[OLHAR CÂMERA] Meninas... [PAUSA] nos últimos 30 minutos vocês aprenderam uma coisa que vale ouro! [ENFASE] [PAUSA]
+
+Vocês viram como uma ferramenta simples... [PAUSA] pode multiplicar as vendas de vocês por 5, 10, até 20 vezes! [ENFASE] [PAUSA]
+
+E o melhor... [SUSPENSE] vocês podem testar DE GRAÇA! [ANIMAÇÃO] [PAUSA] Quantos textos quiserem! [PAUSA] Sem pagar nada! [PAUSA]
+
+[MOSTRAR TELA] O link tá aqui... [APONTAR] vou colocar no chat de novo... [DIGITAR] [PAUSA] ferramentaslilialainy.com.br/aula-svi-deploy.html [PAUSA]
+
+Agora eu quero uma coisa de vocês... [PAUSA] saiam desta live e USEM! [ENFASE] [PAUSA] Peguem todos os textos de vocês... joguem na ferramenta... melhorem... e postem! [COMANDAR] [PAUSA]
+
+E depois... [SUSPENSE] voltem aqui e me contem os resultados! [INTERAÇÃO] [PAUSA] Eu quero saber quantas vendas a mais vocês fizeram! [ANIMAÇÃO]
+
+Porque eu tenho certeza... [ENFASE] certeza absoluta... [PAUSA] de que vocês vão vender muito mais! [CONFIANÇA] [PAUSA]
+
+Um beijo imenso... [CARINHO] usem a ferramenta... [COMANDO] e até a próxima! [DESPEDIDA] [ACENAR]
+
+[PAUSA 3 SEGUNDOS] [TERMINAR GRAVAÇÃO]
+
+==== FIM DO ROTEIRO ====
+
+OBSERVAÇÕES TÉCNICAS:
+- Velocidade: 120-130 palavras por minuto
+- Pausas estratégicas para absorção
+- Interação constante com o chat
+- Demonstração prática em tempo real
+- Linguagem acessível para iniciantes
+- Foco em resultados e transformações
+- Call-to-action claro no final

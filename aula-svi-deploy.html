@@ -356,9 +356,22 @@
             font-family: 'Inter', sans-serif;
             font-weight: 400;
             white-space: pre-line;
-            line-height: 1.7;
-            color: #495057;
-            letter-spacing: 0.003em;
+            line-height: 1.8;
+            color: #333;
+            letter-spacing: 0.02em;
+            font-size: 1.05rem;
+        }
+        
+        .modal-text p {
+            margin: 0.8rem 0;
+            line-height: 1.8;
+        }
+        
+        .modal-text h3, .modal-text h4, .modal-text h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         /* Animations */
@@ -643,7 +656,7 @@
                             Seu navegador não suporta áudio HTML5.
                         </audio>
                         <div class="audio-info">
-                            <span class="audio-duration">Duração: 1:45</span>
+                            <span class="audio-duration">Duração: 0:25</span>
                         </div>
                     </div>
                     <div class="transcription">
@@ -808,7 +821,7 @@
                     <div class="card">
                         <div class="card-icon">🛡️</div>
                         <h3>Banco de Objeções</h3>
-                        <p>15 objeções comuns do nicho saúde/beleza com respostas SVI testadas e variações por perfil de cliente.</p>
+                        <p>10 principais objeções do nicho saúde/beleza com respostas SVI testadas e variações por perfil de cliente.</p>
                         <button onclick="abrirModal('modal-objecoes')" class="btn">Ver Conteúdo</button>
                     </div>
                     
@@ -842,6 +855,145 @@
                 </div>
 
             </section>
+            
+            <!-- Link para Google Drive -->
+            <section class="section" style="text-align: center; padding: 3rem 0;">
+                <div style="background: linear-gradient(135deg, #4285f4 0%, #34a853 100%); padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(66, 133, 244, 0.3);">
+                    <h2 style="color: white; margin-bottom: 1rem; font-family: 'Playfair Display', serif; font-size: 2.2rem;">📁 Conteúdos Extras do Produtor</h2>
+                    <p style="color: white; opacity: 0.9; margin-bottom: 1.5rem; font-size: 1.1rem;">Acesse todos os materiais complementares, templates e recursos adicionais</p>
+                    <a href="https://drive.google.com/drive/folders/1s2zr0ADZfZSbo15iqPZRY6bTl1ygDnVF" 
+                       target="_blank" 
+                       style="display: inline-block; background: white; color: #4285f4; padding: 1rem 2.5rem; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"
+                       onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)'"
+                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.1)'">
+                        <span style="margin-right: 0.5rem;">🔗</span> Acessar Google Drive
+                    </a>
+                </div>
+            </section>
+
+            <!-- Ferramenta Leadzy -->
+            <section class="section" style="padding: 4rem 0; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);">
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <h2 style="color: white; margin-bottom: 1rem; font-family: 'Playfair Display', serif; font-size: 2.8rem;">🚀 Ferramenta Oficial SVI</h2>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 1.3rem; max-width: 600px; margin: 0 auto;">Aplique tudo que aprendeu com nossa ferramenta profissional de automação</p>
+                </div>
+
+                <!-- Tutorial e Download -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                    <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+                        <div style="text-align: center; margin-bottom: 1.5rem;">
+                            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #ff6b9d, #c44dbb); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                                <span style="font-size: 1.5rem;">📚</span>
+                            </div>
+                            <h3 style="color: white; margin-bottom: 0.5rem;">Tutorial Completo</h3>
+                            <p style="color: rgba(255,255,255,0.7); margin-bottom: 1.5rem;">Aprenda a instalar e usar a ferramenta passo a passo</p>
+                        </div>
+                        <a href="https://leadzy.com.br/instalacao-tutorial/" 
+                           target="_blank" 
+                           style="display: block; background: linear-gradient(135deg, #ff6b9d, #c44dbb); color: white; padding: 1rem 2rem; border-radius: 25px; text-decoration: none; font-weight: 600; text-align: center; transition: all 0.3s ease;"
+                           onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(255, 107, 157, 0.4)'"
+                           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                            Ver Tutorial
+                        </a>
+                    </div>
+
+                    <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+                        <div style="text-align: center; margin-bottom: 1.5rem;">
+                            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #4285f4, #34a853); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                                <span style="font-size: 1.5rem;">📥</span>
+                            </div>
+                            <h3 style="color: white; margin-bottom: 0.5rem;">Funil Leadzy</h3>
+                            <p style="color: rgba(255,255,255,0.7); margin-bottom: 1.5rem;">Download do funil completo pronto para usar</p>
+                        </div>
+                        <a href="FunilLeadzy.json" 
+                           download 
+                           style="display: block; background: linear-gradient(135deg, #4285f4, #34a853); color: white; padding: 1rem 2rem; border-radius: 25px; text-decoration: none; font-weight: 600; text-align: center; transition: all 0.3s ease;"
+                           onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(66, 133, 244, 0.4)'"
+                           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                            Download Funil
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Planos -->
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h3 style="color: white; font-size: 2rem; margin-bottom: 1rem;">🎯 Escolha Seu Plano</h3>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 1.1rem;">Comece a usar as técnicas SVI hoje mesmo</p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto;">
+                    <!-- Plano Mensal -->
+                    <div style="background: rgba(255,255,255,0.1); padding: 2.5rem 2rem; border-radius: 20px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); text-align: center; position: relative;">
+                        <h4 style="color: white; font-size: 1.5rem; margin-bottom: 0.5rem;">Plano Mensal</h4>
+                        <p style="color: rgba(255,255,255,0.7); margin-bottom: 1.5rem;">Ideal para testar</p>
+                        <div style="margin-bottom: 2rem;">
+                            <span style="color: #ff6b9d; font-size: 2.5rem; font-weight: 700;">R$ 97</span>
+                            <span style="color: rgba(255,255,255,0.7); font-size: 1rem;">/mês</span>
+                        </div>
+                        <a href="https://go.hotmart.com/M77682524C?ap=611c" 
+                           target="_blank" 
+                           style="display: block; background: linear-gradient(135deg, #ff6b9d, #c44dbb); color: white; padding: 1rem 2rem; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;"
+                           onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(255, 107, 157, 0.4)'"
+                           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                            Assinar Agora
+                        </a>
+                    </div>
+
+                    <!-- Plano Trimestral -->
+                    <div style="background: rgba(255,255,255,0.15); padding: 2.5rem 2rem; border-radius: 20px; backdrop-filter: blur(10px); border: 2px solid #ff6b9d; text-align: center; position: relative; transform: scale(1.05);">
+                        <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #ff6b9d, #c44dbb); color: white; padding: 0.5rem 1.5rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">
+                            MAIS POPULAR
+                        </div>
+                        <h4 style="color: white; font-size: 1.5rem; margin-bottom: 0.5rem;">Plano Trimestral</h4>
+                        <p style="color: rgba(255,255,255,0.7); margin-bottom: 1rem;">Melhor custo-benefício</p>
+                        <div style="margin-bottom: 0.5rem;">
+                            <span style="color: rgba(255,255,255,0.5); font-size: 1.2rem; text-decoration: line-through;">R$ 291</span>
+                        </div>
+                        <div style="margin-bottom: 2rem;">
+                            <span style="color: #ff6b9d; font-size: 2.5rem; font-weight: 700;">R$ 197</span>
+                            <span style="color: rgba(255,255,255,0.7); font-size: 1rem;">/trimestre</span>
+                        </div>
+                        <a href="https://go.hotmart.com/M77682524C?ap=6674" 
+                           target="_blank" 
+                           style="display: block; background: linear-gradient(135deg, #ff6b9d, #c44dbb); color: white; padding: 1rem 2rem; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;"
+                           onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(255, 107, 157, 0.4)'"
+                           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                            Assinar Agora
+                        </a>
+                        <p style="color: #4caf50; font-size: 0.9rem; margin-top: 1rem; font-weight: 600;">💰 Economize 32%</p>
+                    </div>
+
+                    <!-- Plano Semestral -->
+                    <div style="background: rgba(255,255,255,0.1); padding: 2.5rem 2rem; border-radius: 20px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); text-align: center; position: relative;">
+                        <h4 style="color: white; font-size: 1.5rem; margin-bottom: 0.5rem;">Plano Semestral</h4>
+                        <p style="color: rgba(255,255,255,0.7); margin-bottom: 1rem;">Maior economia</p>
+                        <div style="margin-bottom: 0.5rem;">
+                            <span style="color: rgba(255,255,255,0.5); font-size: 1.2rem; text-decoration: line-through;">R$ 582</span>
+                        </div>
+                        <div style="margin-bottom: 2rem;">
+                            <span style="color: #ff6b9d; font-size: 2.5rem; font-weight: 700;">R$ 297</span>
+                            <span style="color: rgba(255,255,255,0.7); font-size: 1rem;">/semestre</span>
+                        </div>
+                        <a href="https://go.hotmart.com/M77682524C?ap=53fe" 
+                           target="_blank" 
+                           style="display: block; background: linear-gradient(135deg, #ff6b9d, #c44dbb); color: white; padding: 1rem 2rem; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;"
+                           onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(255, 107, 157, 0.4)'"
+                           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                            Assinar Agora
+                        </a>
+                        <p style="color: #4caf50; font-size: 0.9rem; margin-top: 1rem; font-weight: 600;">💰 Economize 49%</p>
+                    </div>
+                </div>
+
+                <!-- Garantia -->
+                <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: rgba(255,255,255,0.05); border-radius: 15px; max-width: 600px; margin-left: auto; margin-right: auto; margin-top: 3rem;">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #4caf50, #45a049); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                        <span style="font-size: 1.5rem;">🛡️</span>
+                    </div>
+                    <h4 style="color: white; margin-bottom: 0.5rem;">Garantia de 7 Dias</h4>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem;">Se não ficar satisfeita, devolvemos 100% do seu dinheiro sem perguntas</p>
+                </div>
+            </section>
 
         </div>
     </main>
@@ -860,32 +1012,62 @@
         <div class="modal-content">
             <span class="close" onclick="fecharModal('modal-script')">&times;</span>
             <h2>📋 Script Completo BHC Premium</h2>
-            <div class="modal-text">SCRIPT COMPLETO BHC PREMIUM - TRANSCRIÇÃO DETALHADA
+            <div class="modal-text">
+                <div style="background: linear-gradient(135deg, #ff6b9d 0%, #c44dbb 100%); color: white; padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem; text-align: center;">
+                    <h3 style="margin: 0; font-size: 1.8rem; font-weight: 700;">SCRIPT COMPLETO BHC PREMIUM</h3>
+                    <p style="margin: 0.5rem 0 0 0; opacity: 0.9;">Transcrição Detalhada com Técnicas SVI</p>
+                </div>
 
-=== ÁUDIO 1: SAUDAÇÃO + QUEBRA DE OBJEÇÕES ===
-Duração: 1:45
+                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem;">
+                    <h4 style="color: #ff6b9d; margin-bottom: 1rem; font-size: 1.3rem;">🎯 ÁUDIO 1: SAUDAÇÃO + QUEBRA DE OBJEÇÕES</h4>
+                    <div style="background: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                        <span style="background: #e3f2fd; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.9rem; color: #1976d2;">⏱️ Duração: 1:45</span>
+                    </div>
 
-[0:00-0:15] RAPPORT INICIAL
-"Oiê, minha linda, tudo bem?" 
-[PAUSA 2 segundos - entonação calorosa]
-"Que prazer em falar com você."
+                    <div style="margin-bottom: 1.5rem;">
+                        <div style="background: white; padding: 1rem; border-radius: 8px; border-left: 4px solid #ff6b9d;">
+                            <h5 style="margin: 0 0 0.5rem 0; color: #ff6b9d;">[0:00-0:15] RAPPORT INICIAL</h5>
+                            <p style="margin: 0.5rem 0; font-style: italic;">"Oiê, minha linda, tudo bem?"</p>
+                            <p style="margin: 0; color: #666; font-size: 0.9rem;">⏸️ PAUSA 2 segundos - entonação calorosa</p>
+                            <p style="margin: 0.5rem 0; font-style: italic;">"Que prazer em falar com você."</p>
+                        </div>
+                    </div>
 
-[0:15-0:30] APRESENTAÇÃO + AUTORIDADE
-"Eu sou a Victória Leal, responsável pelo seu atendimento de hoje, tá?"
-[GATILHO: Personalização + Autoridade sutil]
+                    <div style="margin-bottom: 1.5rem;">
+                        <div style="background: white; padding: 1rem; border-radius: 8px; border-left: 4px solid #c44dbb;">
+                            <h5 style="margin: 0 0 0.5rem 0; color: #c44dbb;">[0:15-0:30] APRESENTAÇÃO + AUTORIDADE</h5>
+                            <p style="margin: 0.5rem 0; font-style: italic;">"Eu sou a Victória Leal, responsável pelo seu atendimento de hoje, tá?"</p>
+                            <div style="background: #f0e6ff; padding: 0.5rem; border-radius: 5px; margin-top: 0.5rem;">
+                                <small style="color: #7b3ff2;">💡 GATILHO: Personalização + Autoridade sutil</small>
+                            </div>
+                        </div>
+                    </div>
 
-[0:30-1:00] QUEBRA DE OBJEÇÃO PREVENTIVA
-"E eu quero te deixar tranquila, você só paga o tratamento depois que o entregador colocar o produto na sua mão, tá?"
-[PAUSA 3 segundos - deixar assimilar]
-"A gente faz assim pra garantir a sua segurança, porque infelizmente tem muita gente caindo em golpe na internet."
-[GATILHO: Social proof reverso + Diferenciação]
+                    <div style="margin-bottom: 1.5rem;">
+                        <div style="background: white; padding: 1rem; border-radius: 8px; border-left: 4px solid #ff6b9d;">
+                            <h5 style="margin: 0 0 0.5rem 0; color: #ff6b9d;">[0:30-1:00] QUEBRA DE OBJEÇÃO PREVENTIVA</h5>
+                            <p style="margin: 0.5rem 0; font-style: italic;">"E eu quero te deixar tranquila, você só paga o tratamento depois que o entregador colocar o produto na sua mão, tá?"</p>
+                            <p style="margin: 0; color: #666; font-size: 0.9rem;">⏸️ PAUSA 3 segundos - deixar assimilar</p>
+                            <p style="margin: 0.5rem 0; font-style: italic;">"A gente faz assim pra garantir a sua segurança, porque infelizmente tem muita gente caindo em golpe na internet."</p>
+                            <div style="background: #ffe6f0; padding: 0.5rem; border-radius: 5px; margin-top: 0.5rem;">
+                                <small style="color: #d63384;">💡 GATILHO: Social proof reverso + Diferenciação</small>
+                            </div>
+                        </div>
+                    </div>
 
-[1:00-1:45] QUALIFICAÇÃO DO LEAD
-"Agora me conta uma coisa, qual é o seu maior incômodo hoje?"
-[PAUSA 2 segundos]
-"É com o seu cabelo, com a sua pele, com as suas unhas?"
-"Me explica rapidinho qual é o problema, pra eu ver se o nosso tratamento é mesmo indicado pra você, tá?"
-[GATILHO: Interesse genuíno + Qualificação técnica]
+                    <div style="margin-bottom: 1.5rem;">
+                        <div style="background: white; padding: 1rem; border-radius: 8px; border-left: 4px solid #c44dbb;">
+                            <h5 style="margin: 0 0 0.5rem 0; color: #c44dbb;">[1:00-1:45] QUALIFICAÇÃO DO LEAD</h5>
+                            <p style="margin: 0.5rem 0; font-style: italic;">"Agora me conta uma coisa, qual é o seu maior incômodo hoje?"</p>
+                            <p style="margin: 0; color: #666; font-size: 0.9rem;">⏸️ PAUSA 2 segundos</p>
+                            <p style="margin: 0.5rem 0; font-style: italic;">"É com o seu cabelo, com a sua pele, com as suas unhas?"</p>
+                            <p style="margin: 0.5rem 0; font-style: italic;">"Me explica rapidinho qual é o problema, pra eu ver se o nosso tratamento é mesmo indicado pra você, tá?"</p>
+                            <div style="background: #f0e6ff; padding: 0.5rem; border-radius: 5px; margin-top: 0.5rem;">
+                                <small style="color: #7b3ff2;">💡 GATILHO: Interesse genuíno + Qualificação técnica</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 === ÁUDIO 2: APRESENTAÇÃO DO PRODUTO ===
 Duração: 2:30
@@ -938,14 +1120,24 @@ OBSERVAÇÕES DE ENTONAÇÃO:
         <div class="modal-content">
             <span class="close" onclick="fecharModal('modal-objecoes')">&times;</span>
             <h2>🛡️ Banco de Objeções - BHC Premium</h2>
-            <div class="modal-text">BANCO DE OBJEÇÕES - BHC PREMIUM
-Respostas SVI Testadas para Suplemento Capilar
+            <div class="modal-text">
+                <div style="background: linear-gradient(135deg, #ff6b9d 0%, #c44dbb 100%); color: white; padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem; text-align: center;">
+                    <h3 style="margin: 0; font-size: 1.8rem; font-weight: 700;">BANCO DE OBJEÇÕES - BHC PREMIUM</h3>
+                    <p style="margin: 0.5rem 0 0 0; opacity: 0.9;">10 Principais Objeções com Respostas SVI Testadas</p>
+                </div>
 
-=== OBJEÇÕES SOBRE EFICÁCIA ===
-
-1. "Já tentei outros suplementos capilares e nada funcionou"
-RESPOSTA SVI: "Sei que você já deve estar se perguntando isso mesmo, né? 'Mas Victória, eu já provei vários outros suplementos e nada funcionou.' Mas calma que eu vou te explicar. É exatamente por isso que nenhum outro funcionou pra você antes. Porque nenhum possui Colágeno Verisol® clinicamente testado + Nutricolin® ácido ortosilícico como o BHC Premium. Outros usam colágeno genérico sem comprovação científica. O Verisol® tem estudo que comprova 31% mais proliferação celular no folículo capilar."
-GATILHOS: Antecipação empática + Diferenciação técnica + Prova científica
+                <div style="background: #fff5f5; padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem;">
+                    <h4 style="color: #ff6b9d; margin-bottom: 1rem; font-size: 1.3rem;">🎯 OBJEÇÕES SOBRE EFICÁCIA</h4>
+                    
+                    <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <h5 style="color: #333; margin-bottom: 0.5rem;">1. "Já tentei outros suplementos capilares e nada funcionou"</h5>
+                        <div style="background: #f8f9fa; padding: 1rem; border-radius: 5px; margin: 0.5rem 0;">
+                            <p style="margin: 0; font-style: italic; color: #555;">"Sei que você já deve estar se perguntando isso mesmo, né? 'Mas Victória, eu já provei vários outros suplementos e nada funcionou.' Mas calma que eu vou te explicar. É exatamente por isso que nenhum outro funcionou pra você antes. Porque nenhum possui Colágeno Verisol® clinicamente testado + Nutricolin® ácido ortosilícico como o BHC Premium. Outros usam colágeno genérico sem comprovação científica. O Verisol® tem estudo que comprova 31% mais proliferação celular no folículo capilar."</p>
+                        </div>
+                        <div style="background: #e8f5e8; padding: 0.8rem; border-radius: 5px; margin-top: 0.5rem;">
+                            <strong style="color: #2e7d32;">💡 GATILHOS:</strong> Antecipação empática + Diferenciação técnica + Prova científica
+                        </div>
+                    </div>
 
 2. "Como sei que vai funcionar comigo?"
 RESPOSTA SVI: "Olha, minha linda, eu entendo perfeitamente essa dúvida. Mas é exatamente por isso que eu te dou [X] dias de garantia total. Se por algum motivo você não gostar dos resultados, você me manda uma mensagem e eu devolvo cada centavo do seu dinheiro. Você literalmente não tem nada a perder, só [BENEFÍCIO] a ganhar."
@@ -1018,23 +1210,29 @@ PERFIL IMPULSIVO:
         <div class="modal-content">
             <span class="close" onclick="fecharModal('modal-templates')">&times;</span>
             <h2>✏️ Templates SVI Editáveis</h2>
-            <div class="modal-text">TEMPLATES SVI EDITÁVEIS
-Para qualquer produto ou nicho
+            <div class="modal-text">
+                <div style="background: linear-gradient(135deg, #ff6b9d 0%, #c44dbb 100%); color: white; padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem; text-align: center;">
+                    <h3 style="margin: 0; font-size: 1.8rem; font-weight: 700;">TEMPLATES SVI EDITÁVEIS</h3>
+                    <p style="margin: 0.5rem 0 0 0; opacity: 0.9;">Para Qualquer Produto ou Nicho</p>
+                </div>
 
-=== TEMPLATE 1: SAUDAÇÃO UNIVERSAL ===
-
-"Oiê, [NOME_CLIENTE], tudo bem? Que prazer em falar com você!
-
-Eu sou a [SEU_NOME], responsável pelo seu atendimento hoje, tá?
-
-E eu quero te deixar tranquila, você só paga o [NOME_PRODUTO] depois que o entregador colocar na sua mão, tá? A gente faz assim pra garantir a sua segurança, porque infelizmente tem muita gente caindo em golpe na internet.
-
-Agora me conta uma coisa, [PERGUNTA_QUALIFICACAO]?"
-
-LACUNAS PARA PREENCHER:
-- [NOME_CLIENTE]: Nome da pessoa
-- [SEU_NOME]: Seu nome ou da vendedora
-- [NOME_PRODUTO]: Nome do seu produto
+                <div style="background: #f0f5ff; padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem;">
+                    <h4 style="color: #4169e1; margin-bottom: 1rem; font-size: 1.3rem;">📝 TEMPLATE 1: SAUDAÇÃO UNIVERSAL</h4>
+                    
+                    <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem; border-left: 4px solid #4169e1;">
+                        <div style="background: #f8f9fa; padding: 1rem; border-radius: 5px; font-family: monospace; font-size: 0.95rem;">
+                            <p style="margin: 0; line-height: 1.8;">"Oiê, <span style="background: #ffeb3b; padding: 2px 4px; border-radius: 3px; color: #333;">[NOME_CLIENTE]</span>, tudo bem? Que prazer em falar com você!</p>
+                            <p style="margin: 0.5rem 0; line-height: 1.8;">Eu sou a <span style="background: #ffeb3b; padding: 2px 4px; border-radius: 3px; color: #333;">[SEU_NOME]</span>, responsável pelo seu atendimento hoje, tá?</p>
+                            <p style="margin: 0.5rem 0; line-height: 1.8;">E eu quero te deixar tranquila, você só paga o <span style="background: #ffeb3b; padding: 2px 4px; border-radius: 3px; color: #333;">[NOME_PRODUTO]</span> depois que o entregador colocar na sua mão, tá? A gente faz assim pra garantir a sua segurança, porque infelizmente tem muita gente caindo em golpe na internet.</p>
+                            <p style="margin: 0.5rem 0; line-height: 1.8;">Agora me conta uma coisa, <span style="background: #ffeb3b; padding: 2px 4px; border-radius: 3px; color: #333;">[PERGUNTA_QUALIFICACAO]</span>?"</p>
+                        </div>
+                        
+                        <div style="background: #e3f2fd; padding: 1rem; border-radius: 5px; margin-top: 1rem;">
+                            <h5 style="margin: 0 0 0.5rem 0; color: #1976d2;">📋 LACUNAS PARA PREENCHER:</h5>
+                            <ul style="margin: 0; padding-left: 1.5rem;">
+                                <li><strong>[NOME_CLIENTE]:</strong> Nome da pessoa</li>
+                                <li><strong>[SEU_NOME]:</strong> Seu nome ou da vendedora</li>
+                                <li><strong>[NOME_PRODUTO]:</strong> Nome do seu produto</li>
 - [PERGUNTA_QUALIFICACAO]: Ex: "qual é o seu maior incômodo hoje?"
 
 === TEMPLATE 2: APRESENTAÇÃO DO PRODUTO ===
@@ -1144,20 +1342,36 @@ SERVIÇOS:
         <div class="modal-content">
             <span class="close" onclick="fecharModal('modal-checklist')">&times;</span>
             <h2>✅ Checklist de Vendas SVI</h2>
-            <div class="modal-text">CHECKLIST DE VENDAS SVI
-12 Elementos Obrigatórios + Indicadores de Sucesso
+            <div class="modal-text">
+                <div style="background: linear-gradient(135deg, #ff6b9d 0%, #c44dbb 100%); color: white; padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem; text-align: center;">
+                    <h3 style="margin: 0; font-size: 1.8rem; font-weight: 700;">CHECKLIST DE VENDAS SVI</h3>
+                    <p style="margin: 0.5rem 0 0 0; opacity: 0.9;">12 Elementos Obrigatórios + Indicadores de Sucesso</p>
+                </div>
 
-=== 1. RAPPORT INICIAL ===
-□ Saudação calorosa e personalizada
-□ Uso do nome do cliente
-□ Tom de voz adequado ao perfil
-□ Linguagem próxima e empática
-
-COMO MEDIR:
-- Cliente responde de forma receptiva
-- Demonstra interesse em continuar
-- Faz perguntas ou comentários
-INDICADOR DE SUCESSO: ≥80% respondem positivamente
+                <div style="background: #f0fff0; padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem;">
+                    <h4 style="color: #2e7d32; margin-bottom: 1rem; font-size: 1.3rem;">✅ 1. RAPPORT INICIAL</h4>
+                    
+                    <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem;">
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 0.5rem;">☑️ Saudação calorosa e personalizada</li>
+                            <li style="margin-bottom: 0.5rem;">☑️ Uso do nome do cliente</li>
+                            <li style="margin-bottom: 0.5rem;">☑️ Tom de voz adequado ao perfil</li>
+                            <li style="margin-bottom: 0.5rem;">☑️ Linguagem próxima e empática</li>
+                        </ul>
+                        
+                        <div style="background: #e8f5e8; padding: 1rem; border-radius: 5px; margin-top: 1rem;">
+                            <h5 style="margin: 0 0 0.5rem 0; color: #1b5e20;">📊 COMO MEDIR:</h5>
+                            <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+                                <li>Cliente responde de forma receptiva</li>
+                                <li>Demonstra interesse em continuar</li>
+                                <li>Faz perguntas ou comentários</li>
+                            </ul>
+                            <p style="margin: 0.5rem 0 0 0; font-weight: 600; color: #2e7d32;">
+                                🎯 INDICADOR DE SUCESSO: ≥80% respondem positivamente
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
 === 2. APRESENTAÇÃO PESSOAL ===
 □ Nome completo da vendedora
@@ -1306,22 +1520,30 @@ PONTUAÇÃO:
         <div class="modal-content">
             <span class="close" onclick="fecharModal('modal-frases')">&times;</span>
             <h2>💬 Frases de Poder SVI</h2>
-            <div class="modal-text">FRASES DE PODER SVI
-90 Frases Testadas para Alta Conversão
+            <div class="modal-text">
+                <div style="background: linear-gradient(135deg, #ff6b9d 0%, #c44dbb 100%); color: white; padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem; text-align: center;">
+                    <h3 style="margin: 0; font-size: 1.8rem; font-weight: 700;">FRASES DE PODER SVI</h3>
+                    <p style="margin: 0.5rem 0 0 0; opacity: 0.9;">90 Frases Testadas para Alta Conversão</p>
+                </div>
 
-=== 50 FRASES PARA QUEBRAR OBJEÇÕES ===
-
-OBJEÇÕES DE EFICÁCIA:
-1. "É exatamente por isso que nenhum outro funcionou pra você antes..."
-2. "Se fosse pra funcionar com qualquer produto, você já teria resolvido, né?"
-3. "A diferença está nos detalhes que você não conhece ainda."
-4. "Outras marcas fazem, mas nenhuma faz como a gente faz."
-5. "O segredo não é SÓ o produto, é COMO ele age no seu organismo."
-6. "Por que você acha que eu tenho tanta certeza que vai funcionar?"
-7. "Deixa eu te explicar o que acontece dentro do seu corpo..."
-8. "A ciência por trás disso é fascinante, quer que eu explique?"
-9. "Você já parou pra pensar por que uns funcionam e outros não?"
-10. "O problema não é você, é que você ainda não encontrou o CERTO."
+                <div style="background: #fff0f5; padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem;">
+                    <h4 style="color: #d63384; margin-bottom: 1rem; font-size: 1.3rem;">💪 50 FRASES PARA QUEBRAR OBJEÇÕES</h4>
+                    
+                    <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem;">
+                        <h5 style="color: #e91e63; margin-bottom: 1rem;">OBJEÇÕES DE EFICÁCIA:</h5>
+                        <ol style="margin: 0; padding-left: 1.5rem; line-height: 2;">
+                            <li style="margin-bottom: 0.5rem;"><em>"É exatamente por isso que nenhum outro funcionou pra você antes..."</em></li>
+                            <li style="margin-bottom: 0.5rem;"><em>"Se fosse pra funcionar com qualquer produto, você já teria resolvido, né?"</em></li>
+                            <li style="margin-bottom: 0.5rem;"><em>"A diferença está nos detalhes que você não conhece ainda."</em></li>
+                            <li style="margin-bottom: 0.5rem;"><em>"Outras marcas fazem, mas nenhuma faz como a gente faz."</em></li>
+                            <li style="margin-bottom: 0.5rem;"><em>"O segredo não é SÓ o produto, é COMO ele age no seu organismo."</em></li>
+                            <li style="margin-bottom: 0.5rem;"><em>"Por que você acha que eu tenho tanta certeza que vai funcionar?"</em></li>
+                            <li style="margin-bottom: 0.5rem;"><em>"Deixa eu te explicar o que acontece dentro do seu corpo..."</em></li>
+                            <li style="margin-bottom: 0.5rem;"><em>"A ciência por trás disso é fascinante, quer que eu explique?"</em></li>
+                            <li style="margin-bottom: 0.5rem;"><em>"Você já parou pra pensar por que uns funcionam e outros não?"</em></li>
+                            <li style="margin-bottom: 0.5rem;"><em>"O problema não é você, é que você ainda não encontrou o CERTO."</em></li>
+                        </ol>
+                    </div>
 
 OBJEÇÕES DE PREÇO:
 11. "Quanto você já gastou tentando resolver isso?"
@@ -1424,22 +1646,36 @@ OBJEÇÕES DE CONFIANÇA:
         <div class="modal-content">
             <span class="close" onclick="fecharModal('modal-metricas')">&times;</span>
             <h2>📊 Métricas de Conversão SVI</h2>
-            <div class="modal-text">MÉTRICAS DE CONVERSÃO SVI
-Guia Completo de KPIs para Atendimento
+            <div class="modal-text">
+                <div style="background: linear-gradient(135deg, #ff6b9d 0%, #c44dbb 100%); color: white; padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem; text-align: center;">
+                    <h3 style="margin: 0; font-size: 1.8rem; font-weight: 700;">MÉTRICAS DE CONVERSÃO SVI</h3>
+                    <p style="margin: 0.5rem 0 0 0; opacity: 0.9;">Guia Completo de KPIs para Atendimento</p>
+                </div>
 
-=== FUNIL DE CONVERSÃO DETALHADO ===
-
-1. TAXA DE RESPOSTA INICIAL
-Definição: % de leads que respondem ao primeiro contato
-Cálculo: (Respostas ÷ Mensagens Enviadas) × 100
-Benchmark SVI: 65-80%
-Meta Mínima: 60%
-
-Como Melhorar:
-- Personalizar primeira mensagem
-- Usar gatilho de curiosidade
-- Mencionar benefício específico
-- Criar senso de exclusividade
+                <div style="background: #f0f8ff; padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem;">
+                    <h4 style="color: #1976d2; margin-bottom: 1rem; font-size: 1.3rem;">📈 FUNIL DE CONVERSÃO DETALHADO</h4>
+                    
+                    <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem; border-left: 4px solid #1976d2;">
+                        <h5 style="color: #1976d2; margin-bottom: 1rem;">1. TAXA DE RESPOSTA INICIAL</h5>
+                        
+                        <div style="display: grid; gap: 0.8rem;">
+                            <p style="margin: 0;"><strong>📖 Definição:</strong> % de leads que respondem ao primeiro contato</p>
+                            <p style="margin: 0;"><strong>🧮 Cálculo:</strong> (Respostas ÷ Mensagens Enviadas) × 100</p>
+                            <p style="margin: 0;"><strong>🎯 Benchmark SVI:</strong> <span style="background: #4caf50; color: white; padding: 2px 8px; border-radius: 4px;">65-80%</span></p>
+                            <p style="margin: 0;"><strong>⚡ Meta Mínima:</strong> <span style="background: #ff9800; color: white; padding: 2px 8px; border-radius: 4px;">60%</span></p>
+                        </div>
+                        
+                        <div style="background: #e3f2fd; padding: 1rem; border-radius: 5px; margin-top: 1rem;">
+                            <h6 style="margin: 0 0 0.5rem 0; color: #0d47a1;">💡 Como Melhorar:</h6>
+                            <ul style="margin: 0; padding-left: 1.5rem;">
+                                <li>Personalizar primeira mensagem</li>
+                                <li>Usar gatilho de curiosidade</li>
+                                <li>Mencionar benefício específico</li>
+                                <li>Criar senso de exclusividade</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
 2. TAXA DE ENGAJAMENTO
 Definição: % de leads que mantêm conversa por 3+ mensagens
