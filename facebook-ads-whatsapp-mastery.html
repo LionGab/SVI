@@ -1,0 +1,2330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Ads WhatsApp Mastery - A Máquina de Vendas Definitiva</title>
+    <style>
+        /* Mobile-First CSS Variables */
+        :root {
+            --primary: #ff006e;
+            --secondary: #8338ec;
+            --accent: #00f5ff;
+            --success: #00ff87;
+            --warning: #ffa726;
+            --danger: #ff0040;
+            --dark: #0a0014;
+            --darker: #050008;
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text: #ffffff;
+            --text-muted: #b4a5ff;
+            --gradient-primary: linear-gradient(135deg, #ff006e, #8338ec);
+            --gradient-danger: linear-gradient(135deg, #ff0040, #ff4081);
+            --gradient-success: linear-gradient(135deg, #00ff87, #60efff);
+            --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            --shadow-neon: 0 0 20px rgba(255, 0, 110, 0.3);
+            --shadow-glass: 0 4px 16px rgba(0, 0, 0, 0.2);
+            --border-radius: 16px;
+            --border-radius-sm: 12px;
+            --spacing: 0.75rem;
+            --spacing-lg: 1.25rem;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--dark);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Animated Background */
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 0, 110, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(131, 56, 236, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(0, 245, 255, 0.05) 0%, transparent 50%),
+                linear-gradient(135deg, var(--dark) 0%, var(--darker) 100%);
+            z-index: -1;
+            animation: backgroundShift 20s ease-in-out infinite;
+        }
+
+        @keyframes backgroundShift {
+            0%, 100% { filter: hue-rotate(0deg); }
+            50% { filter: hue-rotate(30deg); }
+        }
+
+        /* Floating Particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: float 8s linear infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% { opacity: 0.7; }
+            90% { opacity: 0.7; }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Progress Bar */
+        .progress-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: var(--gradient-primary);
+            width: 0%;
+            transition: width 0.3s ease;
+            position: relative;
+        }
+
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 20px;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8));
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-20px); }
+            100% { transform: translateX(20px); }
+        }
+
+        /* Container System */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing);
+            position: relative;
+            z-index: 1;
+        }
+
+        .section {
+            padding: var(--spacing-lg) 0;
+            position: relative;
+        }
+
+        /* Glass Morphism Cards */
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius);
+            padding: var(--spacing);
+            box-shadow: var(--shadow-glass);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--gradient-primary);
+            opacity: 0.6;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-neon);
+            border-color: rgba(255, 0, 110, 0.3);
+        }
+
+        /* Typography */
+        .hero-title {
+            font-size: clamp(2rem, 8vw, 4rem);
+            font-weight: 900;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+            margin-bottom: var(--spacing);
+            text-align: center;
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 20px rgba(255, 0, 110, 0.3)); }
+            to { filter: drop-shadow(0 0 40px rgba(255, 0, 110, 0.6)); }
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: var(--spacing-lg) 0;
+            position: relative;
+        }
+
+        .hero-content {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .countdown-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: var(--spacing);
+            margin: var(--spacing-lg) 0;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .countdown-item {
+            background: var(--gradient-danger);
+            padding: var(--spacing);
+            border-radius: var(--border-radius-sm);
+            box-shadow: var(--shadow-neon);
+            animation: pulse 2s infinite;
+            text-align: center;
+        }
+
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: 900;
+            display: block;
+            color: white;
+        }
+
+        .countdown-label {
+            font-size: 0.8rem;
+            opacity: 0.9;
+            color: white;
+            margin-top: 0.25rem;
+        }
+
+        /* Button System */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: var(--spacing) calc(var(--spacing) * 1.5);
+            border: none;
+            border-radius: var(--border-radius-sm);
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            min-height: 48px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: var(--shadow-neon);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(255, 0, 110, 0.4);
+        }
+
+        .btn-success {
+            background: var(--gradient-success);
+            color: var(--dark);
+            animation: pulseGreen 2s infinite;
+        }
+
+        @keyframes pulseGreen {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .btn-danger {
+            background: var(--gradient-danger);
+            color: white;
+        }
+
+        /* Fatal Errors Section */
+        .errors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .error-card {
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            border: 2px solid var(--danger);
+            border-radius: var(--border-radius);
+            padding: var(--spacing);
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .error-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 0, 64, 0.1), transparent);
+            transform: rotate(45deg);
+            animation: scan 3s linear infinite;
+        }
+
+        @keyframes scan {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .error-card:hover {
+            transform: scale(1.02) rotate(1deg);
+            box-shadow: 0 0 40px var(--danger);
+            animation: shake 0.5s ease-in-out;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        .error-icon {
+            font-size: 3rem;
+            margin-bottom: var(--spacing);
+            display: block;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 53%, 80%, 100% { transform: translate3d(0,0,0); }
+            40%, 43% { transform: translate3d(0, -20px, 0); }
+            70% { transform: translate3d(0, -10px, 0); }
+            90% { transform: translate3d(0, -4px, 0); }
+        }
+
+        .error-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--danger);
+            margin-bottom: var(--spacing);
+        }
+
+        .error-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            margin-top: var(--spacing);
+        }
+
+        .error-card.expanded .error-details {
+            max-height: 300px;
+        }
+
+        /* Truth Section */
+        .truth-section {
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid var(--danger);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            position: relative;
+        }
+
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .timeline-item {
+            padding: var(--spacing);
+            border-radius: var(--border-radius-sm);
+            text-align: center;
+            position: relative;
+        }
+
+        .timeline-item.red {
+            background: var(--gradient-danger);
+            animation: pulse 2s infinite;
+        }
+
+        .timeline-item.yellow {
+            background: var(--warning);
+            color: var(--dark);
+        }
+
+        .timeline-item.green {
+            background: var(--gradient-success);
+            color: var(--dark);
+        }
+
+        /* Step by Step Guide */
+        .step-card {
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius);
+            padding: var(--spacing);
+            margin-bottom: var(--spacing);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .step-card.active {
+            border-color: var(--success);
+            box-shadow: 0 0 20px rgba(0, 255, 135, 0.3);
+        }
+
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing);
+            margin-bottom: var(--spacing);
+        }
+
+        .step-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            flex-shrink: 0;
+            font-size: 0.9rem;
+        }
+
+        .step-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        /* Interactive Elements */
+        .interactive-demo {
+            background: var(--darker);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius-sm);
+            padding: var(--spacing);
+            margin: var(--spacing) 0;
+            font-family: 'Courier New', monospace;
+            position: relative;
+        }
+
+        .demo-screen {
+            background: #1a1a1a;
+            border-radius: var(--border-radius-sm);
+            padding: var(--spacing);
+            color: #00ff00;
+            font-family: monospace;
+            overflow-x: auto;
+        }
+
+        /* Mobile Phone Preview */
+        .phone-mockup {
+            width: 240px;
+            height: 480px;
+            background: #000;
+            border-radius: 24px;
+            padding: 15px 10px;
+            margin: var(--spacing-lg) auto;
+            position: relative;
+            border: 2px solid var(--primary);
+            box-shadow: var(--shadow-neon);
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ad-preview {
+            padding: var(--spacing);
+            color: #000;
+        }
+
+        .ad-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: var(--spacing);
+        }
+
+        .ad-avatar {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .ad-image {
+            width: 100%;
+            height: 200px;
+            background: #f0f0f0;
+            border-radius: 10px;
+            margin: var(--spacing) 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+
+        .whatsapp-btn {
+            background: #25d366;
+            color: white;
+            border: none;
+            padding: var(--spacing);
+            border-radius: 25px;
+            width: 100%;
+            font-weight: bold;
+            margin-top: var(--spacing);
+            animation: pulseWhatsApp 2s infinite;
+        }
+
+        @keyframes pulseWhatsApp {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Form Elements */
+        .form-group {
+            margin-bottom: var(--spacing);
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: var(--spacing);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius-sm);
+            color: var(--text);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--success);
+            box-shadow: 0 0 10px rgba(0, 255, 135, 0.3);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Copy Template */
+        .copy-template {
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid var(--secondary);
+            border-radius: var(--border-radius-sm);
+            padding: var(--spacing-lg);
+            margin: var(--spacing) 0;
+            position: relative;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: var(--spacing);
+            right: var(--spacing);
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius-sm);
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Troubleshooting Cards */
+        .trouble-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .trouble-card {
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius);
+            padding: var(--spacing);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            perspective: 1000px;
+            min-height: 160px;
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .trouble-card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: var(--border-radius);
+            padding: var(--spacing);
+        }
+
+        .card-back {
+            background: var(--gradient-success);
+            color: var(--dark);
+            transform: rotateY(180deg);
+        }
+
+        /* Checklist */
+        .checklist {
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius);
+            padding: var(--spacing);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing);
+            padding: calc(var(--spacing) * 0.75) 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+
+        .checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--success);
+            border-radius: 4px;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .checkbox.checked {
+            background: var(--success);
+            animation: checkPop 0.3s ease-out;
+        }
+
+        .checkbox.checked::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--dark);
+            font-weight: bold;
+        }
+
+        @keyframes checkPop {
+            0% { transform: scale(0.8); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .checklist-item.completed {
+            opacity: 0.7;
+            text-decoration: line-through;
+        }
+
+        /* Floating Elements */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+            z-index: 1000;
+            animation: pulseWhatsApp 2s infinite;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            text-decoration: none;
+        }
+
+        /* Celebration Modal */
+        .celebration {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            padding: var(--spacing);
+        }
+
+        .celebration-content {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 2px solid var(--success);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-lg);
+            text-align: center;
+            animation: celebrationPop 0.5s ease-out;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        @keyframes celebrationPop {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Motivation Messages */
+        .motivation {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--gradient-success);
+            color: var(--dark);
+            padding: var(--spacing) calc(var(--spacing) * 1.5);
+            border-radius: 50px;
+            font-weight: bold;
+            z-index: 1000;
+            animation: motivationShow 3s ease-in-out;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        @keyframes motivationShow {
+            0%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+            20%, 80% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+        }
+
+        /* Grid System */
+        .grid {
+            display: grid;
+            gap: var(--spacing);
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        .grid-4 {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
+        /* Utility Classes */
+        .text-center { text-align: center; }
+        .text-left { text-align: left; }
+        .text-right { text-align: right; }
+
+        .mb-0 { margin-bottom: 0; }
+        .mb-1 { margin-bottom: var(--spacing); }
+        .mb-2 { margin-bottom: var(--spacing-lg); }
+
+        .mt-0 { margin-top: 0; }
+        .mt-1 { margin-top: var(--spacing); }
+        .mt-2 { margin-top: var(--spacing-lg); }
+
+        .p-1 { padding: var(--spacing); }
+        .p-2 { padding: var(--spacing-lg); }
+
+        .hidden { display: none; }
+        .visible { display: block; }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            :root {
+                --spacing: 0.5rem;
+                --spacing-lg: 1rem;
+                --border-radius: 12px;
+                --border-radius-sm: 8px;
+            }
+
+            .container {
+                padding: 0 var(--spacing);
+            }
+
+            .phone-mockup {
+                width: 200px;
+                height: 400px;
+                padding: 10px 8px;
+            }
+
+            .grid-2,
+            .grid-3,
+            .grid-4 {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline {
+                grid-template-columns: 1fr;
+            }
+
+            .countdown-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.5rem;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .glass-card {
+                padding: 0.75rem;
+            }
+
+            .step-number {
+                width: 28px;
+                height: 28px;
+                font-size: 0.8rem;
+            }
+
+            .error-card {
+                padding: 0.75rem;
+            }
+
+            .trouble-card {
+                min-height: 120px;
+                padding: 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            :root {
+                --spacing: 0.5rem;
+                --spacing-lg: 0.75rem;
+            }
+
+            .countdown-grid {
+                grid-template-columns: 1fr;
+                max-width: 180px;
+            }
+
+            .countdown-item {
+                padding: 0.5rem;
+            }
+
+            .phone-mockup {
+                width: 180px;
+                height: 360px;
+                padding: 8px 6px;
+            }
+
+            .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+
+            .glass-card {
+                padding: 0.5rem;
+            }
+
+            .step-number {
+                width: 24px;
+                height: 24px;
+                font-size: 0.7rem;
+            }
+
+            .checkbox {
+                width: 16px;
+                height: 16px;
+            }
+        }
+
+        /* Dark Mode Optimizations */
+        @media (prefers-color-scheme: dark) {
+            /* Already optimized for dark mode */
+        }
+
+        /* Print Styles */
+        @media print {
+            .floating-whatsapp,
+            .celebration,
+            .motivation,
+            .progress-wrapper {
+                display: none !important;
+            }
+
+            body {
+                background: white !important;
+                color: black !important;
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* High Contrast Mode */
+        @media (prefers-contrast: high) {
+            .glass-card {
+                border-width: 2px;
+                border-color: var(--text);
+            }
+        }
+
+        /* Focus Styles for Accessibility */
+        .btn:focus,
+        .checkbox:focus,
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* Loading States */
+        .loading {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        /* Enhanced Visual Effects */
+        .neon-text {
+            text-shadow: 
+                0 0 5px currentColor,
+                0 0 10px currentColor,
+                0 0 15px currentColor,
+                0 0 20px var(--primary);
+        }
+
+        .gradient-text {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Smooth Scrolling Enhancement */
+        html {
+            scroll-padding-top: 2rem;
+        }
+
+        /* Enhanced Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--darker);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="background"></div>
+    <div class="particles" id="particles"></div>
+
+    <!-- Progress Bar -->
+    <div class="progress-wrapper">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content fade-in-up">
+                <h1 class="hero-title neon-text">Facebook Ads WhatsApp Mastery</h1>
+                <p class="subtitle">
+                    A máquina de vendas definitiva que já transformou +10.000 empreendedoras 
+                    em máquinas de faturamento pelo WhatsApp
+                </p>
+                
+                <div class="countdown-grid">
+                    <div class="countdown-item">
+                        <span class="countdown-number">5</span>
+                        <span class="countdown-label">ERROS FATAIS</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number">70%</span>
+                        <span class="countdown-label">DESISTEM</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number">3</span>
+                        <span class="countdown-label">DIAS FASE</span>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <button class="btn btn-success" onclick="startJourney()">
+                        🚀 COMEÇAR JORNADA AGORA
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fatal Errors Section -->
+    <section class="section" id="fatal-errors">
+        <div class="container">
+            <h2 class="section-title">🚨 OS 5 ERROS FATAIS QUE DESTROEM CAMPANHAS</h2>
+            <p class="subtitle">
+                Estes erros já fizeram pessoas perderem R$200... R$500... e até desistirem 
+                achando que o problema era elas. NÃO CAIA NESSA!
+            </p>
+            
+            <div class="errors-grid">
+                <div class="error-card" onclick="toggleError(this)">
+                    <span class="error-icon">💸</span>
+                    <h3 class="error-title">ERRO FATAL #1</h3>
+                    <p>Escolher objetivo TRÁFEGO ao invés de VENDAS</p>
+                    <div class="error-details">
+                        <p><strong>Por que é fatal:</strong> Facebook otimiza para cliques vazios, não para pessoas interessadas em comprar</p>
+                        <p><strong>A real:</strong> É como gritar no meio da Times Square esperando que sua cliente ideal escute</p>
+                        <p><strong>Solução:</strong> SEMPRE use objetivo "VENDAS > MENSAGENS"</p>
+                        <p><strong>Economia:</strong> Até 300% menos desperdício de verba</p>
+                    </div>
+                </div>
+
+                <div class="error-card" onclick="toggleError(this)">
+                    <span class="error-icon">🚪❌</span>
+                    <h3 class="error-title">ERRO FATAL #2</h3>
+                    <p>Não conectar WhatsApp Business ANTES</p>
+                    <div class="error-details">
+                        <p><strong>Por que é fatal:</strong> É como construir uma loja linda e esquecer de colocar a porta</p>
+                        <p><strong>A real:</strong> A cliente quer comprar mas não consegue entrar</p>
+                        <p><strong>Solução:</strong> Configure WhatsApp Business API primeiro</p>
+                        <p><strong>Benefício:</strong> Algoritmo aprende quem realmente converte</p>
+                    </div>
+                </div>
+
+                <div class="error-card" onclick="toggleError(this)">
+                    <span class="error-icon">🌍❌</span>
+                    <h3 class="error-title">ERRO FATAL #3</h3>
+                    <p>Segmentação "Brasil inteiro, 18-65 anos"</p>
+                    <div class="error-details">
+                        <p><strong>Por que é fatal:</strong> Isso não é segmentar, é jogar dinheiro fora</p>
+                        <p><strong>A real:</strong> Mulher de 18 e de 65 não compram o mesmo produto</p>
+                        <p><strong>Solução:</strong> Mulheres, 35-55 anos, sua cidade + 25km</p>
+                        <p><strong>Resultado:</strong> 5x mais conversões com mesmo orçamento</p>
+                    </div>
+                </div>
+
+                <div class="error-card" onclick="toggleError(this)">
+                    <span class="error-icon">🔍💸</span>
+                    <h3 class="error-title">ERRO FATAL #4</h3>
+                    <p>Orçamento de R$10 por dia</p>
+                    <div class="error-details">
+                        <p><strong>Por que é fatal:</strong> Facebook fica míope, não consegue otimizar</p>
+                        <p><strong>A real:</strong> É como tentar aprender a dirigir dando só uma volta no quarteirão</p>
+                        <p><strong>Solução:</strong> Mínimo R$30/dia para conversões</p>
+                        <p><strong>Meta:</strong> 50+ conversões por semana para escalar</p>
+                    </div>
+                </div>
+
+                <div class="error-card" onclick="toggleError(this)">
+                    <span class="error-icon">🗑️</span>
+                    <h3 class="error-title">ERRO FATAL #5</h3>
+                    <p>Copy genérica "Compre agora!"</p>
+                    <div class="error-details">
+                        <p><strong>Por que é fatal:</strong> Sua cliente recebe 200 mensagens iguais por dia</p>
+                        <p><strong>A real:</strong> Ela só para quando sente: "nossa... ela tá falando comigo"</p>
+                        <p><strong>Solução:</strong> Foque na dor específica + transformação emocional</p>
+                        <p><strong>Exemplo:</strong> "Cansada de [problema específico]? Eu sei exatamente como é..."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Truth Section -->
+    <section class="section">
+        <div class="container">
+            <div class="truth-section">
+                <h2 class="section-title">💀 A VERDADE BRUTAL SOBRE ANÚNCIOS</h2>
+                <p class="subtitle">
+                    70% de vocês vão DESISTIR antes de completar uma semana. 
+                    E não é porque são burras ou fracas. É porque NINGUÉM contou a verdade antes.
+                </p>
+                
+                <div class="timeline">
+                    <div class="timeline-item red">
+                        <h3>DIA 1</h3>
+                        <p><strong>Gastou R$30</strong></p>
+                        <p><strong>Vendeu: NADA</strong></p>
+                        <p>😰 "Isso não funciona!"</p>
+                    </div>
+                    <div class="timeline-item yellow">
+                        <h3>DIAS 2-3</h3>
+                        <p><strong>Fase de Aprendizado</strong></p>
+                        <p>Facebook testando</p>
+                        <p>⏳ Paciência...</p>
+                    </div>
+                    <div class="timeline-item green">
+                        <h3>DIAS 4-7</h3>
+                        <p><strong>Primeiras vendas</strong></p>
+                        <p>Algoritmo aprendeu</p>
+                        <p>🎉 Sucesso!</p>
+                    </div>
+                </div>
+                
+                <div class="glass-card mt-2">
+                    <h3 class="gradient-text">🌱 A MATEMÁTICA DO SUCESSO</h3>
+                    <p>Fazer anúncio é como plantar. Você prepara a terra, joga a semente, rega, espera o sol vir.</p>
+                    <p><strong>Mas tem gente que planta hoje e quer colher hoje.</strong></p>
+                    <p>No agro isso é chamado de LOUCURA. No marketing, é chamado de ansiedade.</p>
+                    
+                    <div class="mt-1">
+                        <p>📊 <strong>Anota isso:</strong></p>
+                        <p>• Gastou R$100, teve 30 mensagens = R$3,33 por lead</p>
+                        <p>• Converteu 3 em vendas = 10% de conversão</p>
+                        <p>• Vendeu R$300 = 3x de retorno</p>
+                        <p class="gradient-text"><strong>ESCALA ISSO!</strong></p>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-2">
+                    <button class="btn btn-success" onclick="makeCommitment()">
+                        🌱 EU VOU PLANTAR ATÉ FLORESCER
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Step by Step Guide -->
+    <section class="section" id="step-guide">
+        <div class="container">
+            <h2 class="section-title">📱 PARTE 1: CRIANDO SUA MÁQUINA DE VENDAS</h2>
+            <p class="subtitle">
+                Vamos fazer isso juntas, passo a passo. Você vai sair daqui com sua campanha rodando e vendendo!
+            </p>
+            
+            <div class="step-card active">
+                <div class="step-header">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Nome da Campanha</h3>
+                </div>
+                <p>Apaga tudo e digita exatamente assim:</p>
+                <div class="copy-template">
+                    <button class="copy-btn" onclick="copyText('[VENDAS] WhatsApp - [Seu Produto] - [Data]')">📋 Copiar</button>
+                    <code>[VENDAS] WhatsApp - [Seu Produto] - [Data de Hoje]</code>
+                    <p class="mt-1"><strong>Exemplo:</strong> [VENDAS] WhatsApp - Cílios - 27/07</p>
+                </div>
+                <p><em>Por que esse nome? Daqui 3 meses você vai ter 50 campanhas e vai me agradecer por essa organização!</em></p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Objetivo VENDAS (CRUCIAL!)</h3>
+                </div>
+                <div class="glass-card">
+                    <h4>⚡ MOMENTO CRUCIAL - NÃO ERRE AQUI!</h4>
+                    <p><strong>NÃO CLICA</strong> em 'Tráfego' - esse é o erro fatal número 1!</p>
+                    <p>Procura ali <strong>'VENDAS'</strong>. Achou? Ótimo, clica em 'Vendas'.</p>
+                    <p>Depois clica na setinha do lado de 'Conversões' e escolhe <strong>'MENSAGENS'</strong></p>
+                    <p class="gradient-text"><strong>TEM QUE ESTAR selecionado 'WhatsApp'</strong></p>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Conectando WhatsApp Business</h3>
+                </div>
+                <div class="interactive-demo">
+                    <div class="demo-screen">
+                        <p>✅ Status: Conectando WhatsApp Business...</p>
+                        <p>📱 Número: +55 11 99999-9999</p>
+                        <p>🔄 Autorização: Concedida</p>
+                        <p>✅ Configuração: Completa</p>
+                    </div>
+                </div>
+                <p><strong>Se aparecer 'Conectar WhatsApp':</strong> Clica, loga no WhatsApp Business e autoriza</p>
+                <p><strong>Se aparecer 'Selecionar número':</strong> Escolhe seu número na lista</p>
+            </div>
+
+      </section>
+
+    <!-- Targeting Section -->
+    <section class="section" id="targeting">
+        <div class="container">
+            <h2 class="section-title">🎯 PARTE 2: SEGMENTAÇÃO QUE CONVERTE</h2>
+            <p class="subtitle">
+                Agora entramos na parte que REALMENTE vai fazer sua campanha vender ou morrer. 
+                O conjunto de anúncios é como GPS do Facebook.
+            </p>
+            
+            <div class="grid grid-2">
+                <div class="glass-card">
+                    <h3>📍 LOCALIZAÇÃO INTELIGENTE</h3>
+                    <div class="form-group">
+                        <label class="form-label">Brasil</label>
+                        </select>
+                        <p class="mt-1"><em>Anúnciar para pessoas certas!</em></p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">IDADE ESPECÍFICA (não 18-65!)</label>
+                        <select class="form-select">
+                            <option>35-55 anos (jovens adultas)</option>
+                            <option>28-42 anos (estabelecidas)</option>
+                            <option>35-50 anos (consolidadas)</option>
+                        </select>
+                        <p class="mt-1"><em>Mulher de 18 e de 65 não compram o mesmo produto!</em></p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">GÊNERO</label>
+                        <select class="form-select">
+                            <option>✅ Mulheres (para produtos femininos)</option>
+                            <option>Homens</option>
+                            <option>Todos</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="glass-card">
+                    <h3>🎯 SEGMENTAÇÃO DETALHADA - O OURO</h3>
+                  
+                    
+                    <p><strong>AGORA O PULO DO GATO</strong> - segunda camada:</p>
+                    <div class="grid grid-2">
+                        <label class="btn btn-primary" style="cursor: pointer;">
+                            <input type="checkbox"> Produtos para cabelos
+                        </label>
+                        <label class="btn btn-primary" style="cursor: pointer;">
+                            <input type="checkbox"> Beleza
+                        </label>
+</label>
+                        <label class="btn btn-primary" style="cursor: pointer;">
+                            <input type="checkbox"> Cuidados com o cabelo
+                        </label>
+
+                        <label class="btn btn-primary" style="cursor: pointer;">
+                            <input type="checkbox"> Salões de beleza
+                        </label>
+                        <label class="btn btn-primary" style="cursor: pointer;">
+                            <input type="checkbox"> Compradores envolvidos
+                        </label>
+                    </div>
+                    <p class="mt-1"><em>Por quê? Não adianta gostar de cílios se nunca compra nada online!</em></p>
+                </div>
+            </div>
+            
+            <div class="glass-card mt-2">
+
+                <h3>💰 ORÇAMENTO INTELIGENTE</h3>
+
+                <div class="grid grid-3">
+                    <div class="text-center">
+                        <h4>❌ R$10/dia</h4>
+                        <p>Facebook não aprende</p>
+                        <p class="text-danger">Dinheiro jogado fora</p>
+                    </div>
+                    <div class="text-center">
+                        <h4>✅ R$30/dia se for dividido por 3 ou 4</h4>
+                        <p>Mínimo para conversões</p>
+                        <p class="gradient-text">Recomendado</p>
+                    </div>
+                    <div class="text-center">
+                        <h4>🚀 R$50+/dia, não recomendado agora</h4>
+                        <p>Escalonamento</p>
+                        <p class="gradient-text">Fase de aprendizado</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ad Creation Section -->
+    <section class="section" id="ad-creation">
+        <div class="container">
+            <h2 class="section-title">✍️ PARTE 3: CRIANDO O ANÚNCIO MATADOR</h2>
+            <p class="subtitle">
+                Chegamos na parte mais importante! Pode ter a melhor segmentação do mundo, 
+                se seu anúncio for sem graça, não vende NADA.
+            </p>
+            
+            <div class="grid grid-2">
+                <div class="glass-card">
+                    <div class="glass-card">
+  <h3>💬 MENSAGEM AUTOMÁTICA</h3>
+  <p>Esse é um SEGREDO que pouca gente configura e faz TODA diferença!</p>
+
+  <div class="copy-template">
+    <button class="copy-btn" onclick="copyTemplate('whatsapp')">📋 Copiar</button>
+    <textarea class="form-textarea" rows="8">
+Oi! 😊 Que bom ver seu interesse no produto!
+
+Em 2 minutinhos, te explico:
+✅ Como ele funciona
+✅ Condições especiais pra você
+✅ Garantia completa, sem risco
+
+Me diz seu nome rapidinho? Assim já te mando tudo certinho por aqui 💬✨
+    </textarea>
+  </div>
+</div>
+                    </div>
+                </div>
+
+            <!-- Link para Google Drive -->
+            <section class="section" style="text-align: center; padding: 3rem 0;">
+                <div style="background: linear-gradient(135deg, #4285f4 0%, #34a853 100%); padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(66, 133, 244, 0.3);">
+                    <h2 style="color: white; margin-bottom: 1rem; font-family: 'Playfair Display', serif; font-size: 2.2rem;">🔒 Criativos Alunas SVI</h2>
+                    <p style="color: white; opacity: 0.9; margin-bottom: 1.5rem; font-size: 1.1rem;">Acesse todos os materiais complementares, templates e recursos adicionais</p>
+                    <a href="https://drive.google.com/drive/folders/122v_YA2aflvjI48znWtMny8QNA9wH0Up?usp=drive_link" 
+                       target="_blank" 
+                       style="display: inline-block; background: white; color: #4285f4; padding: 1rem 2.5rem; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"
+                       onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)'"
+                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.1)'">
+                        <span style="margin-right: 0.5rem;">🔗</span> Acessar Google Drive
+                    </a>
+                </div>
+            </section>
+                
+                <div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="glass-card mt-2">
+                <h3>🎯 TEXTO DO ANÚNCIO - FÓRMULA EXATA</h3>
+                <p>Vou te dar a fórmula que VENDE. Presta atenção que isso vale ouro!</p>
+                <div class="copy-template">
+                    <button class="copy-btn" onclick="copyTemplate('ad')">📋 Copiar Fórmula</button>
+                    <textarea class="form-textarea" rows="12">🚨 Você também está cansada de [PROBLEMA ESPECÍFICO E DOLOROSO]?
+
+Eu sei exatamente como é [DESCRIÇÃO EMOCIONAL DO PROBLEMA]. 
+
+Por isso desenvolvi [SUA SOLUÇÃO] que já ajudou mais de [NÚMERO] mulheres a [RESULTADO TRANSFORMADOR].
+
+✅ [Benefício específico e tangível]
+✅ [Benefício emocional poderoso]
+✅ [Diferencial único seu]
+
+🎁 HOJE APENAS: [Oferta irresistível com urgência real]
+
+⏰ Atenção: [Escassez verdadeira - vagas/unidades limitadas]
+
+👇 Toque no botão abaixo e fale comigo no WhatsApp agora! Respondo em menos de 2 minutos.</textarea>
+                </div>
+            </div>
+            
+            <div class="grid grid-2 mt-2">
+                <div class="glass-card">
+                    <h3>📸 CRIATIVO PERFEITO</h3>
+                    <h4>REGRAS DE OURO:</h4>
+                    <div class="checklist">
+                        <div class="checklist-item">
+                            <div class="checkbox"></div>
+                            <span>Imagens profissionais</span>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checkbox"></div>
+                            <span>Imagem 16:9 formato stories/reels</span>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checkbox"></div>
+                            <span>Cores VIBRANTES</span>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checkbox"></div>
+                            <span>Mostra o RESULTADO, não processo</span>
+                        </div>
+                    </div>
+                    <p class="mt-1"><em>Exemplo: Se vende cílios, mostra o olhar DEPOIS, não a aplicação!</em></p>
+                </div>
+                
+                    
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secrets Section -->
+    <section class="section" id="secrets">
+        <div class="container">
+            <h2 class="section-title">💎 OTIMIZAÇÕES SECRETAS</h2>
+            <p class="subtitle">
+                Antes de você ir, vou te dar os SEGREDOS que só quem gasta muito descobriu
+            </p>
+            
+            <div class="trouble-grid">
+                <div class="trouble-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>⏰ Horários de Ouro</h3>
+                            <p>Quando publicar para CPM 40% mais barato?</p>
+                        </div>
+                        <div class="card-back">
+                            <h3>Domingo 20h-22h</h3>
+                            <p>CPM 40% mais barato</p>
+                            <p>Engajamento 3x maior</p>
+                            <p>Mulheres relaxando em casa</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="trouble-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>🎯 Público Similar Secreto</h3>
+                            <p>Como cortar CPM pela metade?</p>
+                        </div>
+                        <div class="card-back">
+                            <h3>Após 50 mensagens:</h3>
+                            <p>1. Cria público de quem mandou mensagem</p>
+                            <p>2. Faz Lookalike 1%</p>
+                            <p>3. CPM cai pela metade!</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="trouble-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>⚡ Tempo de Resposta</h3>
+                            <p>O que impacta 3x nas vendas?</p>
+                        </div>
+                        <div class="card-back">
+                            <h3>Menos de 5 minutos</h3>
+                            <p>= 3x mais vendas</p>
+                            <p>Configure resposta automática</p>
+                            <p>Use áudios quando possível</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="trouble-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>📈 Escalonamento</h3>
+                            <p>Quando aumentar orçamento?</p>
+                        </div>
+                        <div class="card-back">
+                            <h3>Sinais para escalar:</h3>
+                            <p>• 50+ mensagens</p>
+                            <p>• CPA menor que R$10</p>
+                            <p>• 7 dias rodando bem</p>
+                            <p>Aumente 20% por vez</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Troubleshooting Section -->
+    <section class="section" id="troubleshooting">
+        <div class="container">
+            <h2 class="section-title">🚨 CENTRO DE SOLUÇÕES</h2>
+            <p class="subtitle">
+                Anota essas soluções, você VAI precisar! Os 4 problemas mais comuns + soluções imediatas
+            </p>
+            
+            <!-- Navegação Rápida -->
+            <div class="glass-card" style="background: rgba(255,0,110,0.1); border: 1px solid var(--primary); margin-bottom: 2rem;">
+                <h3 style="color: var(--primary); text-align: center; margin-bottom: 1rem;">🔍 NAVEGAÇÃO RÁPIDA</h3>
+                <div class="grid grid-2">
+                    <div style="text-align: center;">
+                        <a href="#problema1" style="display: block; color: var(--danger); text-decoration: none; padding: 0.5rem; border-radius: 8px; background: rgba(255,0,64,0.1); margin-bottom: 0.5rem; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,0,64,0.2)'" onmouseout="this.style.background='rgba(255,0,64,0.1)'">
+                            ❌ Anúncio Reprovado
+                        </a>
+                        <a href="#problema2" style="display: block; color: var(--warning); text-decoration: none; padding: 0.5rem; border-radius: 8px; background: rgba(255,165,0,0.1); margin-bottom: 0.5rem; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,165,0,0.2)'" onmouseout="this.style.background='rgba(255,165,0,0.1)'">
+                            📱 Nenhuma Mensagem
+                        </a>
+                    </div>
+                    <div style="text-align: center;">
+                        <a href="#problema3" style="display: block; color: var(--danger); text-decoration: none; padding: 0.5rem; border-radius: 8px; background: rgba(255,0,64,0.1); margin-bottom: 0.5rem; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,0,64,0.2)'" onmouseout="this.style.background='rgba(255,0,64,0.1)'">
+                            💸 Custo Muito Alto
+                        </a>
+                        <a href="#problema4" style="display: block; color: var(--accent); text-decoration: none; padding: 0.5rem; border-radius: 8px; background: rgba(0,245,255,0.1); margin-bottom: 0.5rem; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(0,245,255,0.2)'" onmouseout="this.style.background='rgba(0,245,255,0.1)'">
+                            👻 Pessoas Somem
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Problema 1: Anúncio Reprovado -->
+            <div class="glass-card mb-2" id="problema1" style="border-left: 4px solid var(--danger);">
+                <div style="background: rgba(255,0,64,0.1); padding: 1rem; border-radius: 12px; margin-bottom: 1.5rem;">
+                    <h3 style="color: var(--danger); margin-bottom: 1rem; font-size: 1.4rem;">❌ PROBLEMA #1: "MEU ANÚNCIO FOI REPROVADO"</h3>
+                    <p style="color: var(--text); font-size: 1.1rem; margin-bottom: 0.5rem;"><strong>Situação:</strong> Facebook rejeitou e você não sabe por quê</p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">⏰ <strong>Tempo de resolução:</strong> 30 minutos + 24-48h para nova análise</p>
+                </div>
+                
+                <div class="grid grid-2">
+                    <div>
+                        <h4 style="color: var(--warning); margin-bottom: 1rem; font-size: 1.1rem;">🔍 PRINCIPAIS CAUSAS:</h4>
+                        <ul style="color: var(--text-muted); line-height: 1.6;">
+                            <li>• Palavras proibidas: "você", "antes/depois"</li>
+                            <li>• Promessas médicas ou de resultado</li>
+                            <li>• Texto dentro da imagem</li>
+                            <li>• Imagens de partes do corpo íntimas</li>
+                            <li>• Claims exagerados: "milagroso", "instantâneo"</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--success); margin-bottom: 1rem; font-size: 1.1rem;">✅ SOLUÇÃO IMEDIATA:</h4>
+                        <div class="checklist">
+                            <div class="checklist-item">
+                                <div class="checkbox"></div>
+                                <span>Remove: "você", "antes/depois", promessas médicas</span>
+                            </div>
+                            <div class="checklist-item">
+                                <div class="checkbox"></div>
+                                <span>Tira QUALQUER texto da imagem</span>
+                            </div>
+                            <div class="checklist-item">
+                                <div class="checkbox"></div>
+                                <span>Muda para: "descubra", "conheça", "transformação"</span>
+                            </div>
+                            <div class="checklist-item">
+                                <div class="checkbox"></div>
+                                <span>Reenviar para análise (aguardar 24-48h)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="copy-template" style="margin-top: 1rem;">
+                            <button class="copy-btn" onclick="copyText('Descubra a transformação que já mudou a vida de milhares de mulheres. Conheça nossa solução comprovada.')">📋</button>
+                            <p><strong>Template aprovado:</strong></p>
+                            <p style="background: rgba(0,255,135,0.1); padding: 0.75rem; border-radius: 8px; font-size: 0.9rem;">
+                                "Descubra a transformação que já mudou a vida de milhares de mulheres. Conheça nossa solução comprovada."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Problema 2: Nenhuma Mensagem -->
+            <div class="glass-card mb-2" id="problema2" style="border-left: 4px solid var(--warning);">
+                <div style="background: rgba(255,165,0,0.1); padding: 1rem; border-radius: 12px; margin-bottom: 1.5rem;">
+                    <h3 style="color: var(--warning); margin-bottom: 1rem; font-size: 1.4rem;">📱 PROBLEMA #2: "NINGUÉM MANDA MENSAGEM"</h3>
+                    <p style="color: var(--text); font-size: 1.1rem; margin-bottom: 0.5rem;"><strong>Situação:</strong> Anúncio rodando há 24h+ mas zero conversões</p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">🎯 <strong>Meta inicial:</strong> Pelo menos 5-10 mensagens nas primeiras 24h</p>
+                </div>
+                
+                <div class="grid grid-2">
+                    <div>
+                        <h4 style="color: var(--danger); margin-bottom: 1rem; font-size: 1.1rem;">🔍 DIAGNÓSTICO COMPLETO:</h4>
+                        <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px;">
+                            <h5 style="color: var(--accent); margin-bottom: 0.5rem;">📝 Copy (80% dos casos):</h5>
+                            <ul style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
+                                <li>• Não identifica dor específica</li>
+                                <li>• Benefício genérico demais</li>
+                                <li>• Sem urgência ou escassez</li>
+                                <li>• CTA muito fraco</li>
+                            </ul>
+                            
+                            <h5 style="color: var(--accent); margin-bottom: 0.5rem;">🎨 Visual (15% dos casos):</h5>
+                            <ul style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
+                                <li>• Imagem não para o scroll</li>
+                                <li>• Não mostra resultado final</li>
+                                <li>• Cores fracas ou monótonas</li>
+                            </ul>
+                            
+                            <h5 style="color: var(--accent); margin-bottom: 0.5rem;">🎯 Segmentação (5% dos casos):</h5>
+                            <ul style="color: var(--text-muted); font-size: 0.9rem;">
+                                <li>• Público muito amplo</li>
+                                <li>• Interesses incorretos</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--success); margin-bottom: 1rem; font-size: 1.1rem;">✅ SOLUÇÃO RÁPIDA:</h4>
+                        
+                        <div class="copy-template" style="margin-bottom: 1rem;">
+                            <button class="copy-btn" onclick="copyText('🚨 APENAS HOJE: 10 vagas com 50% OFF! Quem garantir nas próximas 6 horas leva bônus exclusivo. Últimas vagas!')">📋</button>
+                            <p><strong>Template de urgência REAL:</strong></p>
+                            <textarea class="form-textarea" rows="3" style="font-size: 0.9rem;">🚨 APENAS HOJE: 10 vagas com 50% OFF!
+Quem garantir nas próximas 6 horas leva bônus exclusivo.
+🔥 Últimas vagas!</textarea>
+                        </div>
+                        
+                        <div style="background: rgba(255,165,0,0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <h5 style="color: var(--warning); margin-bottom: 0.5rem;">⚡ AÇÃO IMEDIATA:</h5>
+                            <div class="checklist">
+                                <div class="checklist-item">
+                                    <div class="checkbox"></div>
+                                    <span>Adiciona urgência VERDADEIRA ao copy</span>
+                                </div>
+                                <div class="checklist-item">
+                                    <div class="checkbox"></div>
+                                    <span>Troca imagem por vídeo ou foto resultado</span>
+                                </div>
+                                <div class="checklist-item">
+                                    <div class="checkbox"></div>
+                                    <span>Muda CTA para "Quero minha vaga"</span>
+                                </div>
+                                <div class="checklist-item">
+                                    <div class="checkbox"></div>
+                                    <span>Reduz público em 50%</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="background: rgba(0,255,135,0.1); padding: 0.75rem; border-radius: 8px;">
+                            <p style="color: var(--success); font-weight: bold; font-size: 0.9rem;">💡 DICA PRO: Se não tem urgência real, CRIA uma promoção rápida só para testar!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Problema 3: Custo Alto -->
+            <div class="glass-card mb-2" id="problema3" style="border-left: 4px solid var(--danger);">
+                <div style="background: rgba(255,0,64,0.1); padding: 1rem; border-radius: 12px; margin-bottom: 1.5rem;">
+                    <h3 style="color: var(--danger); margin-bottom: 1rem; font-size: 1.4rem;">💸 PROBLEMA #3: "CUSTO MUITO ALTO POR MENSAGEM"</h3>
+                    <p style="color: var(--text); font-size: 1.1rem; margin-bottom: 0.5rem;"><strong>Situação:</strong> Custo por lead acima de R$15</p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">⚠️ <strong>Limite crítico:</strong> Se passou de R$20, PARE o anúncio AGORA!</p>
+                </div>
+                
+                <div class="grid grid-2">
+                    <div>
+                        <h4 style="color: var(--warning); margin-bottom: 1rem; font-size: 1.1rem;">🔍 CAUSAS PRINCIPAIS:</h4>
+                        <div style="background: rgba(255,0,64,0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <h5 style="color: var(--danger); margin-bottom: 0.5rem;">🎯 Segmentação (70% dos casos):</h5>
+                            <ul style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
+                                <li>• Raio muito amplo (100km+)</li>
+                                <li>• Muitos interesses (confunde algoritmo)</li>
+                                <li>• Idade muito ampla (18-65)</li>
+                                <li>• Público competitivo (beleza geral)</li>
+                            </ul>
+                            
+                            <h5 style="color: var(--danger); margin-bottom: 0.5rem;">⏰ Horário (20% dos casos):</h5>
+                            <ul style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
+                                <li>• Publicando em horário caro</li>
+                                <li>• Competindo com grandes marcas</li>
+                            </ul>
+                            
+                            <h5 style="color: var(--danger); margin-bottom: 0.5rem;">🎨 Criativo (10% dos casos):</h5>
+                            <ul style="color: var(--text-muted); font-size: 0.9rem;">
+                                <li>• CTR baixo (menos de 1%)</li>
+                                <li>• Relevância baixa</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--success); margin-bottom: 1rem; font-size: 1.1rem;">✅ AJUSTES NECESSÁRIOS:</h4>
+                        
+                        <div style="background: rgba(255,165,0,0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <h5 style="color: var(--warning); margin-bottom: 0.5rem;">🚨 AÇÃO IMEDIATA (próximos 30 min):</h5>
+                            <div class="checklist">
+                                <div class="checklist-item">
+                                    <div class="checkbox"></div>
+                                    <span>REDUZ raio para 25km ou menos</span>
+                                </div>
+                                <div class="checklist-item">
+                                    <div class="checkbox"></div>
+                                    <span>REMOVE interesses genéricos (beleza, moda)</span>
+                                </div>
+                                <div class="checklist-item">
+                                    <div class="checkbox"></div>
+                                    <span>FOCA em 1-2 interesses específicos apenas</span>
+                                </div>
+                                <div class="checklist-item">
+                                    <div class="checkbox"></div>
+                                    <span>REDUZ idade (máximo 20 anos de diferença)</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="background: rgba(0,255,135,0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <h5 style="color: var(--success); margin-bottom: 0.5rem;">💡 OTIMIZAÇÕES AVANÇADAS:</h5>
+                            <div class="checklist">
+                                <div class="checklist-item">
+                                    <div class="checkbox"></div>
+                                    <span>Publica domingo 20h-22h (CPM 40% menor)</span>
+                                </div>
+                                <div class="checklist-item">
+                                    <div class="checkbox"></div>
+                                    <span>Testa vídeo no lugar de imagem</span>
+                                </div>
+                                <div class="checklist-item">
+                                    <div class="checkbox"></div>
+                                    <span>Remove posicionamentos caros</span>
+                                </div>
+                                <div class="checklist-item">
+                                    <div class="checkbox"></div>
+                                    <span>Cria lookalike dos primeiros leads</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="background: rgba(0,255,135,0.2); padding: 0.75rem; border-radius: 8px; text-align: center;">
+                            <p style="color: var(--success); font-weight: bold; font-size: 1rem;">🎯 META IDEAL: R$3-8 por mensagem</p>
+                            <p style="color: var(--text); font-size: 0.8rem;">Abaixo de R$5 = ESCALAR AGORA!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Problema 4: Pessoas Somem -->
+            <div class="glass-card mb-2" id="problema4" style="border-left: 4px solid var(--accent);">
+                <div style="background: rgba(0,245,255,0.1); padding: 1rem; border-radius: 12px; margin-bottom: 1.5rem;">
+                    <h3 style="color: var(--accent); margin-bottom: 1rem; font-size: 1.4rem;">👻 PROBLEMA #4: "PESSOAS SOMEM NO WHATSAPP"</h3>
+                    <p style="color: var(--text); font-size: 1.1rem; margin-bottom: 0.5rem;"><strong>Situação:</strong> Mandaram mensagem mas não respondem mais</p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">⏰ <strong>Janela crítica:</strong> Você tem 5 minutos! Após isso, conversão cai 70%</p>
+                </div>
+                
+                <div class="grid grid-2">
+                    <div>
+                        <h4 style="color: var(--warning); margin-bottom: 1rem; font-size: 1.1rem;">🔍 POR QUE ISSO ACONTECE:</h4>
+                        <div style="background: rgba(255,165,0,0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <h5 style="color: var(--warning); margin-bottom: 0.5rem;">📱 Comportamento digital:</h5>
+                            <ul style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
+                                <li>• Impulso inicial passou</li>
+                                <li>• Recebeu outras ofertas</li>
+                                <li>• Demorou para responder</li>
+                                <li>• Primeira mensagem muito "vendas"</li>
+                                <li>• Não criou conexão emocional</li>
+                            </ul>
+                            
+                            <h5 style="color: var(--warning); margin-bottom: 0.5rem;">📊 Estatísticas reais:</h5>
+                            <ul style="color: var(--text-muted); font-size: 0.9rem;">
+                                <li>• Resposta em 1 min = 85% conversão</li>
+                                <li>• Resposta em 5 min = 60% conversão</li>
+                                <li>• Resposta em 1h = 25% conversão</li>
+                                <li>• Resposta no dia seguinte = 5% conversão</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--success); margin-bottom: 1rem; font-size: 1.1rem;">✅ SCRIPTS DE RECUPERAÇÃO:</h4>
+                        
+                        <div class="copy-template" style="margin-bottom: 1rem;">
+                            <button class="copy-btn" onclick="copyTemplate('recovery')">📋 Script 1</button>
+                            <p><strong>📱 Para quem sumiu (enviar 2h depois):</strong></p>
+                            <textarea class="form-textarea" rows="4" style="font-size: 0.9rem;">Oi [NOME]! 😊 
+Notei que demonstrou interesse mas algo aconteceu...
+Separei um desconto especial SÓ PRA VOCÊ!
+Válido até 18h hoje. Posso enviar? 💕</textarea>
+                        </div>
+                        
+                        <div class="copy-template" style="margin-bottom: 1rem;">
+                            <button class="copy-btn" onclick="copyText('Oi! Vi sua mensagem mas não consegui responder ainda 😅 Você ainda tem interesse? Separei uma condição especial!')">📋 Script 2</button>
+                            <p><strong>💬 Para resgate no dia seguinte:</strong></p>
+                            <textarea class="form-textarea" rows="3" style="font-size: 0.9rem;">Oi! Vi sua mensagem mas não consegui responder ainda 😅
+Você ainda tem interesse? Separei uma condição especial!</textarea>
+                        </div>
+                        
+                        <div style="background: rgba(0,255,135,0.1); padding: 1rem; border-radius: 8px;">
+                            <h5 style="color: var(--success); margin-bottom: 0.5rem;">🎯 ESTRATÉGIAS PRO:</h5>
+                            <div class="checklist">
+                                <div class="checklist-item">
+                                    <div class="checkbox"></div>
+                                    <span>Resposta automática em 30 segundos</span>
+                                </div>
+                                <div class="checklist-item">
+                                    <div class="checkbox"></div>
+                                    <span>SEMPRE usa áudio (3x mais conversão)</span>
+                                </div>
+                                <div class="checklist-item">
+                                    <div class="checkbox"></div>
+                                    <span>Pergunta o NOME antes de tudo</span>
+                                </div>
+                                <div class="checklist-item">
+                                    <div class="checkbox"></div>
+                                    <span>Cria urgência real (tempo limitado)</span>
+                                </div>
+                                <div class="checklist-item">
+                                    <div class="checkbox"></div>
+                                    <span>Facilita o pagamento (PIX, cartão)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Métricas de Referência EXPANDIDAS -->
+            <div class="glass-card" style="background: rgba(0,245,255,0.1); border: 2px solid var(--accent);">
+                <h3 style="color: var(--accent); text-align: center; margin-bottom: 1.5rem; font-size: 1.3rem;">📊 MÉTRICAS DE REFERÊNCIA COMPLETAS</h3>
+                
+                <div class="grid grid-2" style="margin-bottom: 1.5rem;">
+                    <div>
+                        <h4 style="color: var(--success); margin-bottom: 1rem;">🎯 MÉTRICAS PRINCIPAIS</h4>
+                        <div class="grid grid-2">
+                            <div style="text-align: center; background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px;">
+                                <h5 style="color: var(--success);">CTR</h5>
+                                <p style="font-size: 1.4rem; font-weight: bold; color: var(--text);">1-3%</p>
+                                <p style="font-size: 0.8rem; color: var(--text-muted);">Taxa de clique</p>
+                                <p style="font-size: 0.7rem; color: var(--danger);">Abaixo de 1% = trocar criativo</p>
+                            </div>
+                            <div style="text-align: center; background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px;">
+                                <h5 style="color: var(--success);">CPM</h5>
+                                <p style="font-size: 1.4rem; font-weight: bold; color: var(--text);">R$10-30</p>
+                                <p style="font-size: 0.8rem; color: var(--text-muted);">Custo por mil</p>
+                                <p style="font-size: 0.7rem; color: var(--danger);">Acima de R$35 = ajustar público</p>
+                            </div>
+                            <div style="text-align: center; background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px;">
+                                <h5 style="color: var(--success);">CPC</h5>
+                                <p style="font-size: 1.4rem; font-weight: bold; color: var(--text);">R$0.50-2</p>
+                                <p style="font-size: 0.8rem; color: var(--text-muted);">Custo por clique</p>
+                                <p style="font-size: 0.7rem; color: var(--success);">Ideal: R$0.80-1.20</p>
+                            </div>
+                            <div style="text-align: center; background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px;">
+                                <h5 style="color: var(--success);">CPL</h5>
+                                <p style="font-size: 1.4rem; font-weight: bold; color: var(--text);">R$3-8</p>
+                                <p style="font-size: 0.8rem; color: var(--text-muted);">Custo por lead</p>
+                                <p style="font-size: 0.7rem; color: var(--success);">Abaixo de R$5 = ESCALAR!</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 style="color: var(--warning); margin-bottom: 1rem;">⚠️ SINAIS DE ALERTA</h4>
+                        <div style="background: rgba(255,0,64,0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <h5 style="color: var(--danger); margin-bottom: 0.5rem;">🚨 PARE O ANÚNCIO SE:</h5>
+                            <ul style="color: var(--text); font-size: 0.9rem; line-height: 1.6;">
+                                <li>• CTR abaixo de 0.8% por 24h</li>
+                                <li>• CPM acima de R$40</li>
+                                <li>• CPL acima de R$20</li>
+                                <li>• Zero mensagens em 24h</li>
+                                <li>• Relevância baixa (frequência 4+)</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background: rgba(0,255,135,0.1); padding: 1rem; border-radius: 8px;">
+                            <h5 style="color: var(--success); margin-bottom: 0.5rem;">✅ ESCALE SE:</h5>
+                            <ul style="color: var(--text); font-size: 0.9rem; line-height: 1.6;">
+                                <li>• CPL consistente abaixo de R$8</li>
+                                <li>• CTR acima de 2%</li>
+                                <li>• Taxa de conversão WhatsApp > 15%</li>
+                                <li>• 7 dias de performance estável</li>
+                                <li>• ROI positivo comprovado</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Horários de Ouro -->
+                <div style="background: rgba(255,215,0,0.1); padding: 1rem; border-radius: 8px; text-align: center;">
+                    <h4 style="color: #FFD700; margin-bottom: 1rem;">⏰ HORÁRIOS DE OURO (CPM MAIS BARATO)</h4>
+                    <div class="grid grid-3">
+                        <div>
+                            <p style="color: var(--success); font-weight: bold;">🥇 DOMINGO</p>
+                            <p style="font-size: 0.9rem;">20h-22h</p>
+                            <p style="font-size: 0.8rem; color: var(--text-muted);">CPM 40% menor</p>
+                        </div>
+                        <div>
+                            <p style="color: var(--success); font-weight: bold;">🥈 TERÇA</p>
+                            <p style="font-size: 0.9rem;">12h-13h</p>
+                            <p style="font-size: 0.8rem; color: var(--text-muted);">Horário almoço</p>
+                        </div>
+                        <div>
+                            <p style="color: var(--success); font-weight: bold;">🥉 QUARTA</p>
+                            <p style="font-size: 0.9rem;">21h-23h</p>
+                            <p style="font-size: 0.8rem; color: var(--text-muted);">Pico vendas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/5511999999999?text=Terminei%20o%20guia%20e%20quero%20começar%20a%20vender!" 
+       class="floating-whatsapp" target="_blank">
+        💬
+    </a>
+
+    <!-- Celebration Modal -->
+    <div class="celebration" id="celebration">
+        <div class="celebration-content">
+            <h1 class="gradient-text">🎉 VOCÊ ESTÁ PRONTA PARA VENDER!</h1>
+            <p>Parabéns! Você completou o treinamento mais completo de Facebook Ads para WhatsApp do Brasil!</p>
+            <p><strong>Agora é só aplicar e colher os resultados! 💰</strong></p>
+            <p class="gradient-text">Essa não é só sua primeira campanha.<br>
+            É o primeiro passo de uma mulher que decidiu ter um negócio de verdade.</p>
+            <button class="btn btn-success" onclick="closeCelebration()">
+                Fechar e Começar a Vender! 🚀
+            </button>
+        </div>
+    </div>
+
+    <!-- Motivation Messages -->
+    <div class="motivation" id="motivation"></div>
+
+    <script>
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            setupScrollTracking();
+            updateProgress();
+            showMotivation();
+        });
+
+        // Create floating particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 8 + 's';
+                particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        // Setup scroll tracking
+        function setupScrollTracking() {
+            const sections = document.querySelectorAll('.section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const sectionIndex = Array.from(sections).indexOf(entry.target);
+                        progress = Math.max(progress, sectionIndex + 1);
+                        updateProgress();
+                        
+                        if (Math.random() < 0.3) {
+                            showMotivation();
+                        }
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            sections.forEach(section => observer.observe(section));
+        }
+
+        // Update progress bar
+        function updateProgress() {
+            const progressBar = document.getElementById('progressBar');
+            progressBar.style.width = (progress / totalSections) * 100 + '%';
+        }
+
+        // Show motivational message
+        function showMotivation() {
+            const motivation = document.getElementById('motivation');
+            const message = motivationalMessages[Math.floor(Math.random() * motivationalMessages.length)];
+            motivation.textContent = message;
+            motivation.style.animation = 'motivationShow 3s ease-in-out';
+            
+            setTimeout(() => {
+                motivation.style.animation = '';
+            }, 3000);
+        }
+
+        // Start journey
+        function startJourney() {
+            document.getElementById('fatal-errors').scrollIntoView({ behavior: 'smooth' });
+            showMotivation();
+        }
+
+        // Toggle error details
+        function toggleError(card) {
+            card.classList.toggle('expanded');
+        }
+
+        // Make commitment
+        function makeCommitment() {
+            showCustomAlert('🌱 Compromisso assumido! Você vai plantar até florescer! 💪');
+            showMotivation();
+        }
+
+        // Next section
+        function nextSection() {
+            document.getElementById('targeting').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Toggle checkbox
+        function toggleCheck(checkbox) {
+            checkbox.classList.toggle('checked');
+            const item = checkbox.parentElement;
+            
+            if (checkbox.classList.contains('checked')) {
+                item.classList.add('completed');
+                checkedItems++;
+            } else {
+                item.classList.remove('completed');
+                checkedItems--;
+            }
+            
+            updateLaunchButton();
+        }
+
+        // Update launch button
+        function updateLaunchButton() {
+            const launchBtn = document.getElementById('launchBtn');
+            if (checkedItems >= 8) {
+                launchBtn.style.background = 'var(--gradient-success)';
+                launchBtn.style.animation = 'pulseGreen 2s infinite';
+            } else {
+                launchBtn.style.background = 'rgba(255, 255, 255, 0.3)';
+                launchBtn.style.animation = 'none';
+            }
+        }
+
+        // Launch campaign
+        function launchCampaign() {
+            if (checkedItems >= 8) {
+                createConfetti();
+                document.getElementById('celebration').style.display = 'flex';
+            } else {
+                showCustomAlert('⚠️ Complete pelo menos 8 itens do checklist antes de lançar!');
+            }
+        }
+
+        // Create confetti
+        function createConfetti() {
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.style.cssText = `
+                    position: fixed;
+                    width: 10px;
+                    height: 10px;
+                    background: hsl(${Math.random() * 360}, 100%, 50%);
+                    left: ${Math.random() * 100}%;
+                    top: -10px;
+                    z-index: 10000;
+                    pointer-events: none;
+                    animation: confettiFall 3s linear forwards;
+                `;
+                document.body.appendChild(confetti);
+                
+                setTimeout(() => confetti.remove(), 3000);
+            }
+        }
+
+        // Close celebration
+        function closeCelebration() {
+            document.getElementById('celebration').style.display = 'none';
+        }
+
+        // Copy text to clipboard
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                showCustomAlert('📋 Texto copiado para a área de transferência!');
+            }).catch(() => {
+                showCustomAlert('❌ Erro ao copiar. Selecione e copie manualmente.');
+            });
+        }
+
+        // Copy template
+        function copyTemplate(type) {
+            let text = '';
+            
+            switch(type) {
+                case 'whatsapp':
+                    text = `Oi! 😊 Vi que você se interessou pelo [SEU PRODUTO/SERVIÇO]!
+
+Em 2 minutinhos te explico:
+✅ Como funciona
+✅ Valores especiais
+✅ Garantia
+
+Qual seu nome? Vou te mandar as informações completas! 💕`;
+                    break;
+                    
+                case 'ad':
+                    text = `🚨 Você também está cansada de [PROBLEMA ESPECÍFICO E DOLOROSO]?
+
+Eu sei exatamente como é [DESCRIÇÃO EMOCIONAL DO PROBLEMA]. 
+
+Por isso desenvolvi [SUA SOLUÇÃO] que já ajudou mais de [NÚMERO] mulheres a [RESULTADO TRANSFORMADOR].
+
+✅ [Benefício específico e tangível]
+✅ [Benefício emocional poderoso]
+✅ [Diferencial único seu]
+
+🎁 HOJE APENAS: [Oferta irresistível com urgência real]
+
+⏰ Atenção: [Escassez verdadeira - vagas/unidades limitadas]
+
+👇 Toque no botão abaixo e fale comigo no WhatsApp agora! Respondo em menos de 2 minutos.`;
+                    break;
+                    
+                case 'recovery':
+                    text = `Oi [nome]! Vi que você demonstrou interesse mas não respondeu. 
+
+Aconteceu algo? Separei um desconto especial só pra você! 
+
+Válido só até hoje às 18h. Posso te enviar?`;
+                    break;
+            }
+            
+            copyText(text);
+        }
+
+        // Custom alert
+        function showCustomAlert(message) {
+            const alert = document.createElement('div');
+            alert.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: var(--glass);
+                backdrop-filter: blur(20px);
+                border: 1px solid var(--glass-border);
+                border-radius: var(--border-radius);
+                padding: var(--spacing-lg);
+                color: var(--text);
+                z-index: 10000;
+                animation: fadeInUp 0.3s ease;
+                max-width: 90%;
+                text-align: center;
+            `;
+            alert.textContent = message;
+            
+            document.body.appendChild(alert);
+            
+            setTimeout(() => {
+                alert.style.animation = 'fadeOut 0.3s ease forwards';
+                setTimeout(() => alert.remove(), 300);
+            }, 3000);
+        }
+
+        // Add confetti animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes confettiFall {
+                to {
+                    transform: translateY(100vh) rotate(720deg);
+                    opacity: 0;
+                }
+            }
+            
+            @keyframes fadeOut {
+                to {
+                    opacity: 0;
+                    transform: translate(-50%, -50%) scale(0.8);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Initialize first motivation
+        setTimeout(showMotivation, 2000);
+
+        // Performance optimization
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.glass-card, .step-card, .error-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
