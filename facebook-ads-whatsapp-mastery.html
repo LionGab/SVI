@@ -25,10 +25,10 @@
             --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
             --shadow-neon: 0 0 20px rgba(255, 0, 110, 0.3);
             --shadow-glass: 0 4px 16px rgba(0, 0, 0, 0.2);
-            --border-radius: 16px;
-            --border-radius-sm: 12px;
-            --spacing: 0.75rem;
-            --spacing-lg: 1.25rem;
+            --border-radius: 12px;
+            --border-radius-sm: 8px;
+            --spacing: 0.5rem;
+            --spacing-lg: 0.75rem;
         }
 
         /* Reset & Base Styles */
@@ -40,7 +40,7 @@
 
         html {
             scroll-behavior: smooth;
-            font-size: 16px;
+            font-size: 14px;
         }
 
         body {
@@ -154,7 +154,7 @@
         }
 
         .section {
-            padding: var(--spacing-lg) 0;
+            padding: var(--spacing) 0;
             position: relative;
         }
 
@@ -190,7 +190,7 @@
 
         /* Typography */
         .hero-title {
-            font-size: clamp(2rem, 8vw, 4rem);
+            font-size: clamp(1.75rem, 7vw, 3.5rem);
             font-weight: 900;
             background: var(--gradient-primary);
             -webkit-background-clip: text;
@@ -208,7 +208,7 @@
         }
 
         .section-title {
-            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-size: clamp(1.5rem, 4.5vw, 2.25rem);
             font-weight: 800;
             background: var(--gradient-primary);
             -webkit-background-clip: text;
@@ -220,7 +220,7 @@
         }
 
         .subtitle {
-            font-size: clamp(1rem, 3vw, 1.2rem);
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
             color: var(--text-muted);
             text-align: center;
             margin-bottom: var(--spacing-lg);
@@ -246,10 +246,10 @@
 
         .countdown-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: var(--spacing);
+            grid-template-columns: repeat(3, 1fr);
+            gap: calc(var(--spacing) * 0.5);
             margin: var(--spacing-lg) 0;
-            max-width: 500px;
+            max-width: 400px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -264,7 +264,7 @@
         }
 
         .countdown-number {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 900;
             display: block;
             color: white;
@@ -282,16 +282,16 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
-            padding: var(--spacing) calc(var(--spacing) * 1.5);
+            gap: 0.4rem;
+            padding: calc(var(--spacing) * 0.8) calc(var(--spacing) * 1.2);
             border: none;
             border-radius: var(--border-radius-sm);
             font-weight: 600;
             text-decoration: none;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-size: 1rem;
-            min-height: 48px;
+            font-size: 0.9rem;
+            min-height: 44px;
             position: relative;
             overflow: hidden;
         }
@@ -341,7 +341,7 @@
         /* Fatal Errors Section */
         .errors-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: 1fr;
             gap: var(--spacing);
             margin: var(--spacing-lg) 0;
         }
@@ -389,7 +389,7 @@
         }
 
         .error-icon {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-bottom: var(--spacing);
             display: block;
             animation: bounce 2s infinite;
@@ -403,7 +403,7 @@
         }
 
         .error-title {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             font-weight: 800;
             color: var(--danger);
             margin-bottom: var(--spacing);
@@ -432,7 +432,7 @@
 
         .timeline {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: 1fr;
             gap: var(--spacing);
             margin: var(--spacing-lg) 0;
         }
@@ -484,8 +484,8 @@
         }
 
         .step-number {
-            width: 32px;
-            height: 32px;
+            width: 28px;
+            height: 28px;
             border-radius: 50%;
             background: var(--gradient-primary);
             display: flex;
@@ -494,11 +494,11 @@
             color: white;
             font-weight: bold;
             flex-shrink: 0;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
 
         .step-title {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: var(--text);
         }
@@ -525,11 +525,11 @@
 
         /* Mobile Phone Preview */
         .phone-mockup {
-            width: 240px;
-            height: 480px;
+            width: 200px;
+            height: 400px;
             background: #000;
-            border-radius: 24px;
-            padding: 15px 10px;
+            border-radius: 20px;
+            padding: 12px 8px;
             margin: var(--spacing-lg) auto;
             position: relative;
             border: 2px solid var(--primary);
@@ -659,7 +659,7 @@
         /* Troubleshooting Cards */
         .trouble-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: var(--spacing);
             margin: var(--spacing-lg) 0;
         }
@@ -673,7 +673,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
             perspective: 1000px;
-            min-height: 160px;
+            min-height: 140px;
         }
 
         .card-inner {
@@ -732,8 +732,8 @@
         }
 
         .checkbox {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             border: 2px solid var(--success);
             border-radius: 4px;
             background: transparent;
@@ -772,16 +772,16 @@
         /* Floating Elements */
         .floating-whatsapp {
             position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 60px;
-            height: 60px;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            width: 50px;
+            height: 50px;
             background: #25d366;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             color: white;
             cursor: pointer;
             z-index: 1000;
@@ -851,15 +851,15 @@
         }
 
         .grid-2 {
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: 1fr;
         }
 
         .grid-3 {
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: 1fr;
         }
 
         .grid-4 {
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
         }
 
         /* Utility Classes */
@@ -882,12 +882,36 @@
         .visible { display: block; }
 
         /* Responsive Design */
-        @media (max-width: 768px) {
+        @media (min-width: 768px) {
             :root {
-                --spacing: 0.5rem;
-                --spacing-lg: 1rem;
-                --border-radius: 12px;
-                --border-radius-sm: 8px;
+                --spacing: 0.75rem;
+                --spacing-lg: 1.25rem;
+                --border-radius: 16px;
+                --border-radius-sm: 12px;
+            }
+            
+            html {
+                font-size: 16px;
+            }
+            
+            .grid-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .grid-3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .grid-4 {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .errors-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+            
+            .timeline {
+                grid-template-columns: repeat(3, 1fr);
             }
 
             .container {
@@ -1648,15 +1672,15 @@ Por isso desenvolvi [SUA SOLUÇÃO] que já ajudou mais de [NÚMERO] mulheres a 
 
             <!-- Problema 1: Anúncio Reprovado -->
             <div class="glass-card mb-2" id="problema1" style="border-left: 4px solid var(--danger);">
-                <div style="background: rgba(255,0,64,0.1); padding: 1rem; border-radius: 12px; margin-bottom: 1.5rem;">
-                    <h3 style="color: var(--danger); margin-bottom: 1rem; font-size: 1.4rem;">❌ PROBLEMA #1: "MEU ANÚNCIO FOI REPROVADO"</h3>
-                    <p style="color: var(--text); font-size: 1.1rem; margin-bottom: 0.5rem;"><strong>Situação:</strong> Facebook rejeitou e você não sabe por quê</p>
+                <div style="background: rgba(255,0,64,0.1); padding: 0.75rem; border-radius: 12px; margin-bottom: 1rem;">
+                    <h3 style="color: var(--danger); margin-bottom: 0.75rem; font-size: 1.2rem;">❌ PROBLEMA #1: "MEU ANÚNCIO FOI REPROVADO"</h3>
+                    <p style="color: var(--text); font-size: 1rem; margin-bottom: 0.5rem;"><strong>Situação:</strong> Facebook rejeitou e você não sabe por quê</p>
                     <p style="color: var(--text-muted); font-size: 0.9rem;">⏰ <strong>Tempo de resolução:</strong> 30 minutos + 24-48h para nova análise</p>
                 </div>
                 
                 <div class="grid grid-2">
                     <div>
-                        <h4 style="color: var(--warning); margin-bottom: 1rem; font-size: 1.1rem;">🔍 PRINCIPAIS CAUSAS:</h4>
+                        <h4 style="color: var(--warning); margin-bottom: 0.75rem; font-size: 1rem;">🔍 PRINCIPAIS CAUSAS:</h4>
                         <ul style="color: var(--text-muted); line-height: 1.6;">
                             <li>• Palavras proibidas: "você", "antes/depois"</li>
                             <li>• Promessas médicas ou de resultado</li>
@@ -1666,7 +1690,7 @@ Por isso desenvolvi [SUA SOLUÇÃO] que já ajudou mais de [NÚMERO] mulheres a 
                         </ul>
                     </div>
                     <div>
-                        <h4 style="color: var(--success); margin-bottom: 1rem; font-size: 1.1rem;">✅ SOLUÇÃO IMEDIATA:</h4>
+                        <h4 style="color: var(--success); margin-bottom: 0.75rem; font-size: 1rem;">✅ SOLUÇÃO IMEDIATA:</h4>
                         <div class="checklist">
                             <div class="checklist-item">
                                 <div class="checkbox"></div>
@@ -1699,16 +1723,16 @@ Por isso desenvolvi [SUA SOLUÇÃO] que já ajudou mais de [NÚMERO] mulheres a 
 
             <!-- Problema 2: Nenhuma Mensagem -->
             <div class="glass-card mb-2" id="problema2" style="border-left: 4px solid var(--warning);">
-                <div style="background: rgba(255,165,0,0.1); padding: 1rem; border-radius: 12px; margin-bottom: 1.5rem;">
-                    <h3 style="color: var(--warning); margin-bottom: 1rem; font-size: 1.4rem;">📱 PROBLEMA #2: "NINGUÉM MANDA MENSAGEM"</h3>
-                    <p style="color: var(--text); font-size: 1.1rem; margin-bottom: 0.5rem;"><strong>Situação:</strong> Anúncio rodando há 24h+ mas zero conversões</p>
+                <div style="background: rgba(255,165,0,0.1); padding: 0.75rem; border-radius: 12px; margin-bottom: 1rem;">
+                    <h3 style="color: var(--warning); margin-bottom: 0.75rem; font-size: 1.2rem;">📱 PROBLEMA #2: "NINGUÉM MANDA MENSAGEM"</h3>
+                    <p style="color: var(--text); font-size: 1rem; margin-bottom: 0.5rem;"><strong>Situação:</strong> Anúncio rodando há 24h+ mas zero conversões</p>
                     <p style="color: var(--text-muted); font-size: 0.9rem;">🎯 <strong>Meta inicial:</strong> Pelo menos 5-10 mensagens nas primeiras 24h</p>
                 </div>
                 
                 <div class="grid grid-2">
                     <div>
-                        <h4 style="color: var(--danger); margin-bottom: 1rem; font-size: 1.1rem;">🔍 DIAGNÓSTICO COMPLETO:</h4>
-                        <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px;">
+                        <h4 style="color: var(--danger); margin-bottom: 0.75rem; font-size: 1rem;">🔍 DIAGNÓSTICO COMPLETO:</h4>
+                        <div style="background: rgba(255,255,255,0.05); padding: 0.75rem; border-radius: 8px;">
                             <h5 style="color: var(--accent); margin-bottom: 0.5rem;">📝 Copy (80% dos casos):</h5>
                             <ul style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
                                 <li>• Não identifica dor específica</li>
@@ -1732,7 +1756,7 @@ Por isso desenvolvi [SUA SOLUÇÃO] que já ajudou mais de [NÚMERO] mulheres a 
                         </div>
                     </div>
                     <div>
-                        <h4 style="color: var(--success); margin-bottom: 1rem; font-size: 1.1rem;">✅ SOLUÇÃO RÁPIDA:</h4>
+                        <h4 style="color: var(--success); margin-bottom: 0.75rem; font-size: 1rem;">✅ SOLUÇÃO RÁPIDA:</h4>
                         
                         <div class="copy-template" style="margin-bottom: 1rem;">
                             <button class="copy-btn" onclick="copyText('🚨 APENAS HOJE: 10 vagas com 50% OFF! Quem garantir nas próximas 6 horas leva bônus exclusivo. Últimas vagas!')">📋</button>
@@ -1742,7 +1766,7 @@ Quem garantir nas próximas 6 horas leva bônus exclusivo.
 🔥 Últimas vagas!</textarea>
                         </div>
                         
-                        <div style="background: rgba(255,165,0,0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                        <div style="background: rgba(255,165,0,0.1); padding: 0.75rem; border-radius: 8px; margin-bottom: 0.75rem;">
                             <h5 style="color: var(--warning); margin-bottom: 0.5rem;">⚡ AÇÃO IMEDIATA:</h5>
                             <div class="checklist">
                                 <div class="checklist-item">
@@ -1773,16 +1797,16 @@ Quem garantir nas próximas 6 horas leva bônus exclusivo.
 
             <!-- Problema 3: Custo Alto -->
             <div class="glass-card mb-2" id="problema3" style="border-left: 4px solid var(--danger);">
-                <div style="background: rgba(255,0,64,0.1); padding: 1rem; border-radius: 12px; margin-bottom: 1.5rem;">
-                    <h3 style="color: var(--danger); margin-bottom: 1rem; font-size: 1.4rem;">💸 PROBLEMA #3: "CUSTO MUITO ALTO POR MENSAGEM"</h3>
-                    <p style="color: var(--text); font-size: 1.1rem; margin-bottom: 0.5rem;"><strong>Situação:</strong> Custo por lead acima de R$15</p>
+                <div style="background: rgba(255,0,64,0.1); padding: 0.75rem; border-radius: 12px; margin-bottom: 1rem;">
+                    <h3 style="color: var(--danger); margin-bottom: 0.75rem; font-size: 1.2rem;">💸 PROBLEMA #3: "CUSTO MUITO ALTO POR MENSAGEM"</h3>
+                    <p style="color: var(--text); font-size: 1rem; margin-bottom: 0.5rem;"><strong>Situação:</strong> Custo por lead acima de R$15</p>
                     <p style="color: var(--text-muted); font-size: 0.9rem;">⚠️ <strong>Limite crítico:</strong> Se passou de R$20, PARE o anúncio AGORA!</p>
                 </div>
                 
                 <div class="grid grid-2">
                     <div>
-                        <h4 style="color: var(--warning); margin-bottom: 1rem; font-size: 1.1rem;">🔍 CAUSAS PRINCIPAIS:</h4>
-                        <div style="background: rgba(255,0,64,0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                        <h4 style="color: var(--warning); margin-bottom: 0.75rem; font-size: 1rem;">🔍 CAUSAS PRINCIPAIS:</h4>
+                        <div style="background: rgba(255,0,64,0.1); padding: 0.75rem; border-radius: 8px; margin-bottom: 0.75rem;">
                             <h5 style="color: var(--danger); margin-bottom: 0.5rem;">🎯 Segmentação (70% dos casos):</h5>
                             <ul style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
                                 <li>• Raio muito amplo (100km+)</li>
@@ -1805,9 +1829,9 @@ Quem garantir nas próximas 6 horas leva bônus exclusivo.
                         </div>
                     </div>
                     <div>
-                        <h4 style="color: var(--success); margin-bottom: 1rem; font-size: 1.1rem;">✅ AJUSTES NECESSÁRIOS:</h4>
+                        <h4 style="color: var(--success); margin-bottom: 0.75rem; font-size: 1rem;">✅ AJUSTES NECESSÁRIOS:</h4>
                         
-                        <div style="background: rgba(255,165,0,0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                        <div style="background: rgba(255,165,0,0.1); padding: 0.75rem; border-radius: 8px; margin-bottom: 0.75rem;">
                             <h5 style="color: var(--warning); margin-bottom: 0.5rem;">🚨 AÇÃO IMEDIATA (próximos 30 min):</h5>
                             <div class="checklist">
                                 <div class="checklist-item">
@@ -1829,7 +1853,7 @@ Quem garantir nas próximas 6 horas leva bônus exclusivo.
                             </div>
                         </div>
                         
-                        <div style="background: rgba(0,255,135,0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                        <div style="background: rgba(0,255,135,0.1); padding: 0.75rem; border-radius: 8px; margin-bottom: 0.75rem;">
                             <h5 style="color: var(--success); margin-bottom: 0.5rem;">💡 OTIMIZAÇÕES AVANÇADAS:</h5>
                             <div class="checklist">
                                 <div class="checklist-item">
@@ -1861,16 +1885,16 @@ Quem garantir nas próximas 6 horas leva bônus exclusivo.
 
             <!-- Problema 4: Pessoas Somem -->
             <div class="glass-card mb-2" id="problema4" style="border-left: 4px solid var(--accent);">
-                <div style="background: rgba(0,245,255,0.1); padding: 1rem; border-radius: 12px; margin-bottom: 1.5rem;">
-                    <h3 style="color: var(--accent); margin-bottom: 1rem; font-size: 1.4rem;">👻 PROBLEMA #4: "PESSOAS SOMEM NO WHATSAPP"</h3>
-                    <p style="color: var(--text); font-size: 1.1rem; margin-bottom: 0.5rem;"><strong>Situação:</strong> Mandaram mensagem mas não respondem mais</p>
+                <div style="background: rgba(0,245,255,0.1); padding: 0.75rem; border-radius: 12px; margin-bottom: 1rem;">
+                    <h3 style="color: var(--accent); margin-bottom: 0.75rem; font-size: 1.2rem;">👻 PROBLEMA #4: "PESSOAS SOMEM NO WHATSAPP"</h3>
+                    <p style="color: var(--text); font-size: 1rem; margin-bottom: 0.5rem;"><strong>Situação:</strong> Mandaram mensagem mas não respondem mais</p>
                     <p style="color: var(--text-muted); font-size: 0.9rem;">⏰ <strong>Janela crítica:</strong> Você tem 5 minutos! Após isso, conversão cai 70%</p>
                 </div>
                 
                 <div class="grid grid-2">
                     <div>
-                        <h4 style="color: var(--warning); margin-bottom: 1rem; font-size: 1.1rem;">🔍 POR QUE ISSO ACONTECE:</h4>
-                        <div style="background: rgba(255,165,0,0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                        <h4 style="color: var(--warning); margin-bottom: 0.75rem; font-size: 1rem;">🔍 POR QUE ISSO ACONTECE:</h4>
+                        <div style="background: rgba(255,165,0,0.1); padding: 0.75rem; border-radius: 8px; margin-bottom: 0.75rem;">
                             <h5 style="color: var(--warning); margin-bottom: 0.5rem;">📱 Comportamento digital:</h5>
                             <ul style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
                                 <li>• Impulso inicial passou</li>
@@ -1890,7 +1914,7 @@ Quem garantir nas próximas 6 horas leva bônus exclusivo.
                         </div>
                     </div>
                     <div>
-                        <h4 style="color: var(--success); margin-bottom: 1rem; font-size: 1.1rem;">✅ SCRIPTS DE RECUPERAÇÃO:</h4>
+                        <h4 style="color: var(--success); margin-bottom: 0.75rem; font-size: 1rem;">✅ SCRIPTS DE RECUPERAÇÃO:</h4>
                         
                         <div class="copy-template" style="margin-bottom: 1rem;">
                             <button class="copy-btn" onclick="copyTemplate('recovery')">📋 Script 1</button>
@@ -1943,7 +1967,7 @@ Você ainda tem interesse? Separei uma condição especial!</textarea>
                 
                 <div class="grid grid-2" style="margin-bottom: 1.5rem;">
                     <div>
-                        <h4 style="color: var(--success); margin-bottom: 1rem;">🎯 MÉTRICAS PRINCIPAIS</h4>
+                        <h4 style="color: var(--success); margin-bottom: 0.75rem;">🎯 MÉTRICAS PRINCIPAIS</h4>
                         <div class="grid grid-2">
                             <div style="text-align: center; background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px;">
                                 <h5 style="color: var(--success);">CTR</h5>
@@ -1973,8 +1997,8 @@ Você ainda tem interesse? Separei uma condição especial!</textarea>
                     </div>
                     
                     <div>
-                        <h4 style="color: var(--warning); margin-bottom: 1rem;">⚠️ SINAIS DE ALERTA</h4>
-                        <div style="background: rgba(255,0,64,0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                        <h4 style="color: var(--warning); margin-bottom: 0.75rem;">⚠️ SINAIS DE ALERTA</h4>
+                        <div style="background: rgba(255,0,64,0.1); padding: 0.75rem; border-radius: 8px; margin-bottom: 0.75rem;">
                             <h5 style="color: var(--danger); margin-bottom: 0.5rem;">🚨 PARE O ANÚNCIO SE:</h5>
                             <ul style="color: var(--text); font-size: 0.9rem; line-height: 1.6;">
                                 <li>• CTR abaixo de 0.8% por 24h</li>
