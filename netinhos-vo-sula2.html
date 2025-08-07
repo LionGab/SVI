@@ -492,7 +492,7 @@
 
     <!-- Marquee -->
     <marquee behavior="scroll" direction="left" scrollamount="5">
-        🍺 PROIBIDO LEVAR ESPOSA - LIBERADO LEVAR WHISKY 🥃 | LUCÃO JÁ CONFIRMOU (INFELIZMENTE) | ALMIRZIN TA SUMIDO, ONDE ELE FOI SOZINHO? | AUGUSTIN E SERGIN TÃO PENSANDO O QUE ELES VÃO MENTIR NESSA TEMPORADA
+        🍺 LUCÃO JÁ CONFIRMOU (INFELIZMENTE) | ALMIRZIN TA SUMIDO, ONDE ELE FOI SOZINHO? | AUGUSTIN E SERGIN TÃO PENSANDO O QUE ELES VÃO MENTIR NESSA TEMPORADA
     </marquee>
 
     <!-- Event Info -->
@@ -917,19 +917,6 @@
 
         // Inicializa roleta
         desenharRoleta();
-
-        // Easter egg
-        let clicks = 0;
-        function easterEgg() {
-            clicks++;
-            if (clicks >= 10) {
-                document.getElementById('secret').style.display = 'block';
-                setTimeout(() => {
-                    document.getElementById('secret').style.display = 'none';
-                    clicks = 0;
-                }, 3000);
-            }
-        }
     </script>
 </body>
 </html>
