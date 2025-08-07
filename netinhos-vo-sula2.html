@@ -637,7 +637,7 @@
 
     <!-- CTA -->
     <div class="cta-container">
-        <a href="https://api.whatsapp.com/send?text=🎣%20NETINHOS%20DA%20V%C3%93%20SULA%202025%20🎣%0A%0A✅%20EU%20J%C3%81%20T%C3%94%20CONFIRMADO!%20%0A%0APantanal%20-%20MT%0A5,%206%20e%207%20de%20Setembro%0A%0A🍺%20Preparado%20pra%20beber%20at%C3%A9%20cair%0A🎣%20Preparado%20pra%20n%C3%A3o%20pescar%20nada%0A💸%20Preparado%20pra%20gastar%20uma%20grana%0A%0ABORA%20CARALHO!%20🍻" class="cta-button">
+        <a href="#" class="cta-button" onclick="enviarConfirmacao()">
             <span>CONFIRMA PRESENÇA OU É FROUXO? 📱</span>
         </a>
         <p style="color: #8B4513; margin-top: 10px; font-size: 0.9rem;">
@@ -940,6 +940,47 @@
 
         // Inicializa roleta
         desenharRoleta();
+
+        // Função para enviar confirmação
+        function enviarConfirmacao() {
+            const mensagem = `🎣 NETINHOS DA VÓ SULA 2025 🎣
+
+✅ EU JÁ TÔ CONFIRMADO! 
+
+Pantanal - MT
+5, 6 e 7 de Setembro
+
+🍺 Preparado pra beber até cair
+🎣 Preparado pra não pescar nada
+💸 Preparado pra gastar uma grana
+
+BORA CARALHO! 🍻`;
+
+            // Tenta copiar para área de transferência
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(mensagem).then(() => {
+                    alert('📋 Mensagem copiada! Cole no grupo do WhatsApp!');
+                    window.open('https://chat.whatsapp.com/KQrdxYbDGSJ29x6a5y7pxk', '_blank');
+                }).catch(() => {
+                    // Se falhar, usa método alternativo
+                    copiarTexto(mensagem);
+                });
+            } else {
+                copiarTexto(mensagem);
+            }
+        }
+
+        // Método alternativo para copiar texto
+        function copiarTexto(texto) {
+            const textarea = document.createElement('textarea');
+            textarea.value = texto;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            alert('📋 Mensagem copiada! Cole no grupo do WhatsApp!');
+            window.open('https://chat.whatsapp.com/KQrdxYbDGSJ29x6a5y7pxk', '_blank');
+        }
     </script>
 </body>
 </html>
