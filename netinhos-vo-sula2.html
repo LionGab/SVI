@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Netinhos da Vó Sula - 10ª Edição | Pantanal-MT">
+    <meta property="og:description" content="5-7 setembro no Pantanal | Traga cachaça, esqueça a isca">
+    <meta property="og:image" content="https://i.imgur.com/gy8vlMr.jpg">
+    <title>NETINHOS DA VÓ SULA - 10 ANOS DE FRACASSO 🎣</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', 'Arial', sans-serif;
+            background: #2a1810;
+            background-image: 
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,.3) 2px, rgba(0,0,0,.3) 4px),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,.3) 2px, rgba(0,0,0,.3) 4px);
+            color: #f4e4c1;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Textura de papel velho */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect width="100" height="100" fill="%23000"/><circle cx="50" cy="50" r="40" fill="%23fff" opacity="0.1"/></svg>');
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(180deg, #1a0f08 0%, #3d2418 100%);
+            padding: 20px 10px;
+            text-align: center;
+            border-bottom: 5px solid #8B4513;
+            position: relative;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.8);
+        }
+
+        .logo-container {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+            border: 8px solid #DAA520;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(218, 165, 32, 0.5);
+            animation: wobble 3s infinite;
+        }
+
+        @keyframes wobble {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-family: 'Impact', sans-serif;
+            font-size: 2.5rem;
+            color: #FFD700;
+            text-shadow: 3px 3px 0 #000, 5px 5px 10px rgba(255, 0, 0, 0.5);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            animation: flicker 2s infinite;
+        }
+
+        @keyframes flicker {
+            0%, 100% { opacity: 1; }
+            95% { opacity: 0.8; }
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #ff6b6b;
+            font-weight: bold;
+            text-transform: uppercase;
+            background: #000;
+            padding: 5px 10px;
+            display: inline-block;
+            transform: rotate(-2deg);
+            margin-top: 10px;
+        }
+
+        /* Marquee old school */
+        marquee {
+            background: #8B0000;
+            color: #FFD700;
+            padding: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: 2px solid #FFD700;
+            margin: 20px 0;
+        }
+
+        /* Info Cards */
+        .info-container {
+            padding: 20px 10px;
+            max-width: 100%;
+        }
+
+        .info-card {
+            background: #3d2418;
+            border: 3px solid #8B4513;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+            position: relative;
+            transform: rotate(-1deg);
+        }
+
+        .info-card:nth-child(even) {
+            transform: rotate(1deg);
+        }
+
+        .info-card h2 {
+            color: #FFD700;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            text-align: center;
+            text-shadow: 2px 2px 0 #000;
+        }
+
+        .event-details {
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .event-details strong {
+            color: #FFD700;
+        }
+
+        /* Countdown */
+        .countdown-container {
+            background: #000;
+            border: 5px solid #ff0000;
+            padding: 20px;
+            margin: 20px 10px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .countdown-container::before,
+        .countdown-container::after {
+            content: "🍺";
+            position: absolute;
+            font-size: 2rem;
+        }
+
+        .countdown-container::before {
+            top: -15px;
+            left: 10px;
+        }
+
+        .countdown-container::after {
+            bottom: -15px;
+            right: 10px;
+        }
+
+        #countdown {
+            font-family: 'Impact', monospace;
+            font-size: 1.5rem;
+            color: #ff0000;
+            text-shadow: 0 0 10px #ff0000;
+            letter-spacing: 2px;
+        }
+
+        /* Programação */
+        .schedule {
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect width="100" height="100" fill="%238B4513"/><rect x="10" y="10" width="80" height="80" fill="%236B3410" opacity="0.5"/></svg>');
+            padding: 20px 10px;
+            margin: 20px 0;
+        }
+
+        .schedule-table {
+            background: rgba(0,0,0,0.7);
+            width: 100%;
+            border: 3px solid #DAA520;
+            border-collapse: collapse;
+        }
+
+        .schedule-table td {
+            padding: 12px 10px;
+            border-bottom: 1px dashed #8B4513;
+            font-size: 0.95rem;
+        }
+
+        .schedule-table td:first-child {
+            color: #FFD700;
+            font-weight: bold;
+            width: 60px;
+            text-align: center;
+            background: rgba(139, 69, 19, 0.3);
+        }
+
+        /* Seção Lucão */
+        .lucao-section {
+            background: #8B0000;
+            padding: 30px 10px;
+            margin: 30px 0;
+            text-align: center;
+            border: 5px dashed #FFD700;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lucao-section::before {
+            content: "🤣";
+            position: absolute;
+            font-size: 100px;
+            opacity: 0.1;
+            left: -20px;
+            top: -20px;
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .lucao-section h2 {
+            font-size: 2rem;
+            color: #FFD700;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 0 #000;
+            animation: shake 0.5s infinite;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        .lucao-joke {
+            background: #000;
+            color: #FFD700;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        /* Premiações */
+        .awards {
+            background: #1a0f08;
+            padding: 30px 10px;
+            border-top: 5px solid #DAA520;
+            border-bottom: 5px solid #DAA520;
+        }
+
+        .award-item {
+            background: linear-gradient(135deg, #3d2418 0%, #1a0f08 100%);
+            border: 2px solid #FFD700;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            text-align: center;
+            transform: rotate(-1deg);
+            transition: all 0.3s;
+        }
+
+        .award-item:hover {
+            transform: rotate(0deg) scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        .award-item .trophy {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        /* CTA Button */
+        .cta-container {
+            padding: 30px 10px;
+            text-align: center;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #25D366;
+            color: #fff;
+            padding: 20px 30px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            animation: pulse-button 1s infinite;
+            transition: all 0.3s;
+        }
+
+        @keyframes pulse-button {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .cta-button:hover {
+            background: #128C7E;
+            transform: scale(1.1);
+        }
+
+        .cta-button::after {
+            content: "BORA CARALHO!";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .cta-button:hover::after {
+            opacity: 1;
+        }
+
+        .cta-button:hover span {
+            opacity: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            padding: 30px 10px;
+            text-align: center;
+            border-top: 5px solid #8B4513;
+        }
+
+        .footer-seal {
+            font-size: 1.5rem;
+            color: #FFD700;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .sponsors {
+            color: #8B4513;
+            font-size: 0.9rem;
+            margin: 10px 0;
+        }
+
+        .disclaimer {
+            color: #666;
+            font-size: 0.8rem;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        /* Floating elements */
+        .floating-beer {
+            position: fixed;
+            font-size: 2rem;
+            opacity: 0.3;
+            animation: float-up 10s linear infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes float-up {
+            from {
+                transform: translateY(100vh) rotate(0deg);
+            }
+            to {
+                transform: translateY(-100px) rotate(360deg);
+            }
+        }
+
+        /* Voting System Styles */
+        .vote-card {
+            background: #3d2418;
+            border: 2px solid #8B4513;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vote-card:hover {
+            transform: scale(1.05);
+            border-color: #FFD700;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+        }
+
+        .vote-card.special-lucao {
+            background: #8B0000;
+            border: 3px solid #FFD700;
+            animation: pulse 1s infinite;
+        }
+
+        .vote-name {
+            font-weight: bold;
+            color: #FFD700;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+
+        .vote-count {
+            font-size: 1.2rem;
+            color: #fff;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+
+        .vote-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #FFD700;
+            transition: height 0.3s;
+        }
+
+        .vote-card:hover .vote-bar {
+            height: 5px;
+        }
+
+        /* Mobile optimization */
+        @media (max-width: 480px) {
+            h1 { font-size: 2rem; }
+            .tagline { font-size: 1rem; }
+            .cta-button { font-size: 1.1rem; padding: 15px 25px; }
+            .schedule-table td { font-size: 0.85rem; padding: 8px 5px; }
+            .voting-grid { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); }
+        }
+
+        /* Easter egg */
+        .secret-message {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #FFD700;
+            color: #000;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            z-index: 9999;
+            box-shadow: 0 0 50px rgba(255, 215, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="logo-container" onclick="easterEgg()">
+            <img src="https://i.imgur.com/gy8vlMr.jpg" alt="Vó Sula">
+        </div>
+        <h1>NETINHOS DA VÓ SULA</h1>
+        <div class="tagline">🎣 10 ANOS SEM PESCAR PORRA NENHUMA 🎣</div>
+    </div>
+
+    <!-- Marquee -->
+    <marquee behavior="scroll" direction="left" scrollamount="5">
+        🍺 PROIBIDO LEVAR ESPOSA - LIBERADO LEVAR WHISKY 🥃 | LUCÃO JÁ CONFIRMOU (INFELIZMENTE) | ALMIRZIN TA SUMIDO, ONDE ELE FOI SOZINHO? | AUGUSTIN E SERGIN TÃO PENSANDO O QUE ELES VÃO MENTIR NESSA TEMPORADA
+    </marquee>
+
+    <!-- Event Info -->
+    <div class="info-container">
+        <div class="info-card">
+            <h2>📍 INFORMAÇÕES DO ROLÊ</h2>
+            <div class="event-details">
+                <strong>📍 LOCAL:</strong> Pantanal - MT<br>
+                <strong>📅 DATA:</strong> 5, 6 e 7 de Setembro de 2025<br>
+                <strong>🕐 HORÁRIO:</strong> A partir das 10h do dia 5<br>
+                <strong>⚠️ LEMA OFICIAL:</strong> "Décima edição: nenhuma mudança. Ninguém mudou nada. Só gurizada inútil."<br>
+                <strong>💰 VAQUINHA:</strong> entre R$350-R$450 (bebida liberada, só não deixa as lata na metade igual o lucão)
+            </div>
+        </div>
+    </div>
+
+    <!-- Countdown -->
+    <div class="countdown-container">
+        <h2 style="color: #FFD700; margin-bottom: 10px;">⏰ CONTAGEM REGRESSIVA ⏰</h2>
+        <div id="countdown">CALCULANDO...</div>
+    </div>
+
+    <!-- Programação -->
+    <div class="info-container">
+        <div class="info-card">
+            <h2>🍻 PROGRAMAÇÃO OFICIAL</h2>
+            <table class="schedule-table">
+                <tr>
+                    <td>10:00</td>
+                    <td>Chegada + 1ª dose obrigatória ☠️</td>
+                </tr>
+                <tr>
+                    <td>12:00</td>
+                    <td>Almoço (carne com toda certeza) 🍖</td>
+                </tr>
+                <tr>
+                    <td>14:00</td>
+                    <td>Pescaria frustrada coletiva 🎣</td>
+                </tr>
+                <tr>
+                    <td>16:00</td>
+                    <td>Rodada de cachaça + truco 🃏</td>
+                </tr>
+                <tr>
+                    <td>19:00</td>
+                    <td>Grito do "LIONMAN" 🦁</td>
+                </tr>
+                <tr>
+                    <td>20:00</td>
+                    <td>Premiação: Quem é o mais morto? 💀</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- Roleta da Zueira -->
+    <div class="roleta-section" style="background: linear-gradient(135deg, #8B0000 0%, #2a1810 100%); padding: 30px 10px; margin: 30px 0; text-align: center; border: 5px dashed #FFD700;">
+        <h2 style="color: #FFD700; font-size: 2rem; margin-bottom: 20px; text-shadow: 3px 3px 0 #000;">
+            🎰 ROLETA DA VERDADE 🎰
+        </h2>
+        <p style="color: #f4e4c1; margin-bottom: 20px; font-size: 1.1rem;">
+            Gire a roleta e descubra quem é o culpado!
+        </p>
+        
+        <div class="pergunta-container" style="background: #000; border: 3px solid #FFD700; border-radius: 10px; padding: 20px; margin: 20px auto; max-width: 90%;">
+            <h3 id="pergunta-atual" style="color: #FFD700; font-size: 1.5rem; margin: 0;">
+                QUEM É O MAIS MORTO? 💀
+            </h3>
+        </div>
+        
+        <div class="roleta-container" style="position: relative; width: 300px; height: 300px; margin: 20px auto;">
+            <canvas id="roleta-canvas" width="300" height="300" style="border-radius: 50%; box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);"></canvas>
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; background: #000; border-radius: 50%; border: 3px solid #FFD700; z-index: 10;">
+                <span style="color: #FFD700; font-size: 1.5rem; line-height: 54px;">🎯</span>
+            </div>
+            <div style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 20px solid transparent; border-right: 20px solid transparent; border-top: 40px solid #FFD700; z-index: 11;"></div>
+        </div>
+        
+        <div style="margin: 20px 0;">
+            <button onclick="trocarPergunta()" style="background: #8B4513; color: #FFD700; padding: 10px 20px; font-size: 1rem; font-weight: bold; border: 2px solid #FFD700; border-radius: 5px; cursor: pointer; margin: 0 5px;">
+                🔄 TROCAR PERGUNTA
+            </button>
+            <button onclick="girarRoleta()" style="background: linear-gradient(135deg, #FFD700, #DAA520); color: #000; padding: 15px 30px; font-size: 1.3rem; font-weight: bold; border: none; border-radius: 50px; cursor: pointer; box-shadow: 0 5px 20px rgba(0,0,0,0.5); margin: 0 5px;">
+                🎲 GIRAR ROLETA 🎲
+            </button>
+        </div>
+        
+        <div id="resultado-roleta" style="margin-top: 30px; padding: 20px; background: rgba(0,0,0,0.7); border-radius: 10px; display: none;">
+            <h3 style="color: #FFD700; font-size: 1.8rem; margin-bottom: 10px;">🏆 O ESCOLHIDO É: 🏆</h3>
+            <p id="pessoa-escolhida" style="color: #ff6b6b; font-size: 2rem; font-weight: bold; text-transform: uppercase; text-shadow: 2px 2px 0 #000;"></p>
+            <p id="comentario-extra" style="color: #f4e4c1; font-size: 1.1rem; margin-top: 10px; font-style: italic;"></p>
+        </div>
+        
+        <div style="margin-top: 30px; padding: 15px; background: rgba(0,0,0,0.3); border-radius: 10px;">
+            <p style="color: #8B4513; font-size: 0.9rem;">
+                📊 <strong>Estatísticas da Desgraça:</strong> <span id="stats-text">Lucão já foi escolhido 73 vezes</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- Premiações -->
+    <div class="awards">
+        <h2 style="text-align: center; color: #FFD700; font-size: 2rem; margin-bottom: 20px;">
+            🏆 TROFÉUS DA VERGONHA 🏆
+        </h2>
+        <div class="award-item">
+            <div class="trophy">🎣</div>
+            <strong>PESCADOR DE VENTO</strong><br>
+            0 peixes pelo 10º ano consecutivo
+        </div>
+        <div class="award-item">
+            <div class="trophy">🍺</div>
+            <strong>CACHAÇEIRO DIPLOMADO</strong><br>
+            PhD em ressaca
+        </div>
+        <div class="award-item">
+            <div class="trophy">💩</div>
+            <strong>CONTADOR DE HISTÓRIA</strong><br>
+            "Juro que peguei um de 20kg"
+        </div>
+        <div class="award-item">
+            <div class="trophy">🤮</div>
+            <strong>PRIMEIRO A APAGAR</strong><br>
+            Troféu Lucão (homenagem especial)
+        </div>
+        <div class="award-item">
+            <div class="trophy">💸</div>
+            <strong>ISCA MAIS CARA</strong><br>
+            Pra não pegar nada mesmo
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-container">
+        <a href="https://chat.whatsapp.com/CODIGO_DO_GRUPO" class="cta-button">
+            <span>CONFIRMA PRESENÇA OU É FROUXO? 📱</span>
+        </a>
+        <p style="color: #8B4513; margin-top: 10px; font-size: 0.9rem;">
+            * Ao clicar você concorda em beber até cair
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-seal">
+            🍺 SELO DE QUALIDADE VÓ SULA ®
+        </div>
+        <div class="sponsors">
+            Patrocínio: Boteco do João | Pescados Frozen | Cachaça Oncinha
+        </div>
+        <p style="color: #f4e4c1; margin: 15px 0;">
+            "Desde 2015 fazendo nada e bebendo muito"
+        </p>
+        <div class="disclaimer">
+            * A organização não se responsabiliza por promessas de pescaria<br>
+            * Lucão não pode ficar sozinho com a geladeira de cerveja
+        </div>
+    </footer>
+
+    <!-- Floating beers -->
+    <div class="floating-beer" style="left: 10%; animation-delay: 0s;">🍺</div>
+    <div class="floating-beer" style="left: 30%; animation-delay: 3s;">🥃</div>
+    <div class="floating-beer" style="left: 50%; animation-delay: 6s;">🍻</div>
+    <div class="floating-beer" style="left: 70%; animation-delay: 9s;">🎣</div>
+    <div class="floating-beer" style="left: 90%; animation-delay: 12s;">🐟</div>
+
+    <!-- Secret message -->
+    <div class="secret-message" id="secret">
+        🎉 PARABÉNS! 🎉<br>
+        Você descobriu o easter egg!<br>
+        Lucão ainda é gordo!
+    </div>
+
+    <script>
+        // Countdown
+        function updateCountdown() {
+            const eventDate = new Date('2025-09-05T10:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            if (distance > 0) {
+                document.getElementById('countdown').innerHTML = 
+                    `FALTAM ${days} DIAS, ${hours} HORAS, ${minutes} MINUTOS E ${seconds} SEGUNDOS`;
+            } else {
+                document.getElementById('countdown').innerHTML = '🎉 TÁ ROLANDO, PORRA! 🎉';
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Piadas do Lucão
+        const piadasLucao = [
+            "O Lucão é tão gordo e tão lerdo que se cair na piscina, não dá onda... dá tsunami com delay!",
+            "O bicho é tão pesado que quando ele sobe na balança, ela imprime um boleto!",
+            "Lucão é tão gordo que se usar uma camisa listrada, parece código de barras da Sadia!",
+            "Lucão não tem sombra... tem eclipse parcial!",
+            "Se colocar o Lucão no GPS, o Waze trava e o carro vira Uber Eats!",
+            "Lucão é tão gordo e devagar que se ele for fugir da polícia, os PM descem e prendem ele andando!",
+            "O Lucão é tão lerdo que se ele cair no chão, o chão pede socorro primeiro!",
+            "Lucão é o tipo de cara que se for jogar no time adversário, a gente ainda perde!",
+            "Lucão foi correr atrás do prejuízo... caiu no terceiro passo e o prejuízo chamou reforço de dó!",
+            "Uma vez botaram o Lucão pra apagar incêndio... ele tropeçou no balde e pediu um descanso!"
+        ];
+
+        let piadaAtual = 0;
+        function trocarPiada() {
+            piadaAtual = (piadaAtual + 1) % piadasLucao.length;
+            document.getElementById('lucao-joke').textContent = piadasLucao[piadaAtual];
+        }
+
+        // Easter egg
+        let clicks = 0;
+        function easterEgg() {
+            clicks++;
+            if (clicks >= 10) {
+                document.getElementById('secret').style.display = 'block';
+                setTimeout(() => {
+                    document.getElementById('secret').style.display = 'none';
+                    clicks = 0;
+                }, 3000);
+            }
+        }
+
+        // Roleta da Verdade
+        const participantes = [
+            'Lion', 'Attilio', 'Augustin', 'Godin', 'Guga',
+            'Meregalli', 'Igor', 'Jão Vitin', 'João H', 'Jãozin',
+            'LUCÃO', 'L.H', 'Pedro', 'Rafinha', 'Beiçola',
+            'Sergio', 'Waguin', 'Zé Gordin', 'Zelão'
+        ];
+
+        const perguntas = [
+            { 
+                pergunta: "QUEM É O MAIS MORTO? 💀",
+                comentarios: ["Já pode ir preparando o atestado!", "RIP amigo!", "F no chat!"]
+            },
+            { 
+                pergunta: "QUEM É O MAIS LIXO? 🗑️",
+                comentarios: ["Troféu lata de lixo garantido!", "Nem a mãe aguenta!", "Vergonha da profissão!"]
+            },
+            { 
+                pergunta: "QUEM DEIXA 50 LATAS PELA METADE? 🍺",
+                comentarios: ["Crime contra a humanidade!", "Desperdício ambulante!", "Merece cadeia!"]
+            },
+            { 
+                pergunta: "QUEM VAI VOMITAR PRIMEIRO? 🤮",
+                comentarios: ["Já prepara o balde!", "Estômago de criança!", "Fraco!"]
+            },
+            { 
+                pergunta: "QUEM NÃO PEGA NEM GRIPE? 🎣",
+                comentarios: ["Pescador de vento profissional!", "Anzol alérgico!", "Repelente de peixe!"]
+            },
+            { 
+                pergunta: "QUEM MENTE MAIS QUE POLÍTICO? 🤥",
+                comentarios: ["Já peguei um de 50kg!", "Mentiroso oficial!", "Pinocchio de pescador!"]
+            },
+            { 
+                pergunta: "QUEM VAI PERDER O CELULAR? 📱",
+                comentarios: ["Celular já tá nadando!", "Bye bye WhatsApp!", "Pantanal ganhou um iPhone!"]
+            },
+            { 
+                pergunta: "QUEM É O MAIS FOMINHA? 🍖",
+                comentarios: ["Come até a isca!", "Geladeira ambulante!", "Deixa todo mundo com fome!"]
+            },
+            { 
+                pergunta: "QUEM DORME ANTES DAS 22H? 😴",
+                comentarios: ["Vovô do grupo!", "Hora de dormir chegou!", "Fraco demais!"]
+            },
+            { 
+                pergunta: "QUEM É O CHORÃO DO GRUPO? 😭",
+                comentarios: ["Sempre com desculpa!", "Mimimi profissional!", "Reclama até de respirar!"]
+            },
+            { 
+                pergunta: "QUEM BEBE E NÃO PAGA? 💸",
+                comentarios: ["Caloteiro oficial!", "Carteira furada!", "Sempre esquece o pix!"]
+            },
+            { 
+                pergunta: "QUEM É O AZARADO? 🍀",
+                comentarios: ["Se chover é culpa dele!", "Ímã de azar!", "Nem morto tem sorte!"]
+            },
+            { 
+                pergunta: "QUEM É O MAIS CAGÃO? 🐔",
+                comentarios: ["Medo até da própria sombra!", "Covarde nível máximo!", "Foge até de barata!"]
+            },
+            { 
+                pergunta: "QUEM VAI CAIR NO RIO? 💦",
+                comentarios: ["Prepara o salvavidas!", "Pantanal tá esperando!", "Banho garantido!"]
+            },
+            { 
+                pergunta: "QUEM É O PIOR PESCADOR? 🎣",
+                comentarios: ["Peixe foge só de ver!", "Anti-pescador!", "Melhor ficar em casa!"]
+            }
+        ];
+
+        let perguntaAtual = 0;
+        let girando = false;
+        let rotacaoAtual = 0;
+
+        // Desenha a roleta com nomes
+        function desenharRoleta() {
+            const canvas = document.getElementById('roleta-canvas');
+            const ctx = canvas.getContext('2d');
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const radius = 140;
+            
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            const cores = ['#FFD700', '#8B4513', '#ff6b6b', '#3d2418', '#DAA520', '#8B0000', '#556B2F', '#CD5C5C'];
+            const anguloPorPessoa = (2 * Math.PI) / participantes.length;
+            
+            participantes.forEach((nome, i) => {
+                const startAngle = i * anguloPorPessoa + rotacaoAtual;
+                const endAngle = startAngle + anguloPorPessoa;
+                
+                // Desenha fatia
+                ctx.beginPath();
+                ctx.moveTo(centerX, centerY);
+                ctx.arc(centerX, centerY, radius, startAngle, endAngle);
+                ctx.closePath();
+                ctx.fillStyle = cores[i % cores.length];
+                ctx.fill();
+                ctx.strokeStyle = '#000';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+                
+                // Adiciona texto
+                ctx.save();
+                ctx.translate(centerX, centerY);
+                ctx.rotate(startAngle + anguloPorPessoa / 2);
+                ctx.textAlign = 'center';
+                ctx.fillStyle = '#fff';
+                ctx.font = nome === 'LUCÃO' ? 'bold 12px Arial' : '10px Arial';
+                ctx.fillText(nome, radius * 0.7, 0);
+                ctx.restore();
+            });
+        }
+
+        function trocarPergunta() {
+            perguntaAtual = (perguntaAtual + 1) % perguntas.length;
+            document.getElementById('pergunta-atual').innerHTML = perguntas[perguntaAtual].pergunta;
+            document.getElementById('resultado-roleta').style.display = 'none';
+        }
+
+        function girarRoleta() {
+            if (girando) return;
+            
+            girando = true;
+            const resultado = document.getElementById('resultado-roleta');
+            const pessoaEscolhidaEl = document.getElementById('pessoa-escolhida');
+            const comentarioEl = document.getElementById('comentario-extra');
+            
+            resultado.style.display = 'none';
+            
+            // Sorteia pessoa
+            const pessoaIndex = Math.floor(Math.random() * participantes.length);
+            const pessoa = participantes[pessoaIndex];
+            
+            // Calcula rotação
+            const voltas = 5 + Math.random() * 3;
+            const anguloPorPessoa = (2 * Math.PI) / participantes.length;
+            const anguloFinal = -pessoaIndex * anguloPorPessoa - anguloPorPessoa / 2;
+            const rotacaoTotal = voltas * 2 * Math.PI + anguloFinal;
+            
+            // Anima a roleta
+            let start = performance.now();
+            const duration = 3000;
+            const startRotation = rotacaoAtual;
+            
+            function animate(now) {
+                const elapsed = now - start;
+                const progress = Math.min(elapsed / duration, 1);
+                const easeOut = 1 - Math.pow(1 - progress, 3);
+                
+                rotacaoAtual = startRotation + rotacaoTotal * easeOut;
+                desenharRoleta();
+                
+                if (progress < 1) {
+                    requestAnimationFrame(animate);
+                } else {
+                    // Mostra resultado
+                    pessoaEscolhidaEl.textContent = pessoa;
+                    
+                    // Comentário especial para Lucão
+                    if (pessoa === 'LUCÃO') {
+                        comentarioEl.textContent = "ÓBVIO! Nem precisava girar! 🐷";
+                    } else {
+                        const comentario = perguntas[perguntaAtual].comentarios[
+                            Math.floor(Math.random() * perguntas[perguntaAtual].comentarios.length)
+                        ];
+                        comentarioEl.textContent = comentario;
+                    }
+                    
+                    resultado.style.display = 'block';
+                    
+                    // Atualiza estatísticas
+                    updateStats(pessoa);
+                    
+                    girando = false;
+                }
+            }
+            
+            requestAnimationFrame(animate);
+        }
+
+        function updateStats(pessoa) {
+            const stats = JSON.parse(localStorage.getItem('roleta_stats') || '{}');
+            stats[pessoa] = (stats[pessoa] || 0) + 1;
+            localStorage.setItem('roleta_stats', JSON.stringify(stats));
+            
+            // Mostra estatística mais interessante
+            const maisEscolhido = Object.entries(stats).reduce((a, b) => stats[a[0]] > stats[b[0]] ? a : b, ['Ninguém', 0]);
+            document.getElementById('stats-text').textContent = 
+                `${maisEscolhido[0]} já foi escolhido ${maisEscolhido[1]} vezes`;
+        }
+
+        // Inicializa roleta
+        desenharRoleta();
+
+        // Easter egg
+        let clicks = 0;
+        function easterEgg() {
+            clicks++;
+            if (clicks >= 10) {
+                document.getElementById('secret').style.display = 'block';
+                setTimeout(() => {
+                    document.getElementById('secret').style.display = 'none';
+                    clicks = 0;
+                }, 3000);
+            }
+        }
+    </script>
+</body>
+</html>
