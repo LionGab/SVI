@@ -627,8 +627,8 @@
 
     <!-- CTA -->
     <div class="cta-container">
-        <a href="https://chat.whatsapp.com/CODIGO_DO_GRUPO" class="cta-button">
-            <span>CONFIRMA PRESENÇA OU É FROUXO? 📱</span>
+        <a href="https://chat.whatsapp.com/KQrdxYbDGSJ29x6a5y7pxk" class="cta-button">
+            <span>EU JÁ TÔ PRONTO! BORA! 📱</span>
         </a>
         <p style="color: #8B4513; margin-top: 10px; font-size: 0.9rem;">
             * Ao clicar você concorda em beber até cair
@@ -884,12 +884,12 @@
                     
                     // Comentário especial para Lucão
                     if (pessoa === 'LUCÃO') {
-                        comentarioEl.textContent = "ÓBVIO! Nem precisava girar! 🐷";
+                        comentarioEl.innerHTML = "ÓBVIO! Nem precisava girar! 🐷<br><br>📲 <strong>Envie no grupo:</strong> \"Galera, na roleta da verdade o " + pessoa + " foi escolhido! EU JÁ TÔ PRONTO! 🍺\"";
                     } else {
                         const comentario = perguntas[perguntaAtual].comentarios[
                             Math.floor(Math.random() * perguntas[perguntaAtual].comentarios.length)
                         ];
-                        comentarioEl.textContent = comentario;
+                        comentarioEl.innerHTML = comentario + "<br><br>📲 <strong>Envie no grupo:</strong> \"Pessoal, na roleta da verdade o " + pessoa + " foi escolhido! EU JÁ TÔ PRONTO! 🍺\"";
                     }
                     
                     resultado.style.display = 'block';
