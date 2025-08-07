@@ -774,6 +774,7 @@
             participantes.forEach(nome => {
                 const opcao = document.createElement('div');
                 opcao.className = 'opcao-voto';
+                opcao.setAttribute('data-nome', nome);
                 opcao.style.cssText = `
                     background: #3d2418;
                     border: 2px solid #8B4513;
@@ -792,18 +793,22 @@
                     opcao.style.border = '3px solid #FFD700';
                 }
                 
-                opcao.innerHTML = `${nome}<br><span style="font-size: 0.8rem; color: #f4e4c1;">${votosQuiz[nome]} votos</span>`;
+                opcao.innerHTML = `${nome}<br><span style="font-size: 0.8rem; color: #f4e4c1;">${votosQuiz[nome] || 0} votos</span>`;
                 
                 opcao.addEventListener('click', () => votar(nome));
                 opcao.addEventListener('mouseover', () => {
-                    opcao.style.transform = 'scale(1.05)';
-                    opcao.style.borderColor = '#FFD700';
-                    opcao.style.boxShadow = '0 0 15px rgba(255, 215, 0, 0.5)';
+                    if (!jaVotou) {
+                        opcao.style.transform = 'scale(1.05)';
+                        opcao.style.borderColor = '#FFD700';
+                        opcao.style.boxShadow = '0 0 15px rgba(255, 215, 0, 0.5)';
+                    }
                 });
                 opcao.addEventListener('mouseout', () => {
-                    opcao.style.transform = 'scale(1)';
-                    opcao.style.borderColor = nome === 'LUCÃO' ? '#FFD700' : '#8B4513';
-                    opcao.style.boxShadow = 'none';
+                    if (!jaVotou) {
+                        opcao.style.transform = 'scale(1)';
+                        opcao.style.borderColor = nome === 'LUCÃO' ? '#FFD700' : '#8B4513';
+                        opcao.style.boxShadow = 'none';
+                    }
                 });
                 
                 container.appendChild(opcao);
@@ -816,26 +821,35 @@
                 return;
             }
             
-            votosQuiz[nome]++;
+            votosQuiz[nome] = (votosQuiz[nome] || 0) + 1;
             jaVotou = true;
-            atualizarOpcoes();
             
             // Destaca a opção votada
             const opcoes = document.querySelectorAll('.opcao-voto');
             opcoes.forEach(opcao => {
-                if (opcao.textContent.includes(nome)) {
+                const opcaoNome = opcao.getAttribute('data-nome');
+                if (opcaoNome === nome) {
                     opcao.style.background = '#228B22';
                     opcao.style.border = '3px solid #32CD32';
                     opcao.style.color = '#fff';
+                    opcao.style.cursor = 'default';
+                    opcao.innerHTML = `${nome}<br><span style="font-size: 0.8rem; color: #fff;">VOTADO! ✅</span>`;
+                } else {
+                    opcao.style.opacity = '0.6';
+                    opcao.style.cursor = 'default';
                 }
             });
+            
+            console.log('Voto registrado:', nome, 'Total votos:', votosQuiz[nome]);
         }
 
         function atualizarOpcoes() {
             const opcoes = document.querySelectorAll('.opcao-voto');
             opcoes.forEach(opcao => {
-                const nome = opcao.textContent.split('\n')[0];
-                opcao.innerHTML = `${nome}<br><span style="font-size: 0.8rem; color: #f4e4c1;">${votosQuiz[nome]} votos</span>`;
+                const nome = opcao.getAttribute('data-nome');
+                if (nome && votosQuiz[nome] !== undefined) {
+                    opcao.innerHTML = `${nome}<br><span style="font-size: 0.8rem; color: #f4e4c1;">${votosQuiz[nome]} votos</span>`;
+                }
             });
         }
 
@@ -852,10 +866,12 @@
                 document.getElementById('pergunta-quiz').innerHTML = perguntasQuiz[perguntaAtualQuiz].pergunta;
                 document.getElementById('progresso-quiz').innerHTML = 
                     `📊 <strong>Progresso:</strong> Pergunta ${perguntaAtualQuiz + 1} de ${perguntasQuiz.length}`;
-                gerarOpcoes();
+                gerarOpcoes(); // Regenera as opções para a nova pergunta
             } else {
                 document.getElementById('progresso-quiz').innerHTML = 
                     `📊 <strong>Quiz Completo!</strong> Clique em "VER RESULTADOS"`;
+                // Esconde as opções quando o quiz termina
+                document.querySelector('.opcoes-container').style.display = 'none';
             }
         }
 
