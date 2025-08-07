@@ -548,52 +548,47 @@
         </div>
     </div>
 
-    <!-- Roleta da Zueira -->
-    <div class="roleta-section" style="background: linear-gradient(135deg, #8B0000 0%, #2a1810 100%); padding: 30px 10px; margin: 30px 0; text-align: center; border: 5px dashed #FFD700;">
+    <!-- Quiz da Zueira -->
+    <div class="quiz-section" style="background: linear-gradient(135deg, #8B0000 0%, #2a1810 100%); padding: 30px 10px; margin: 30px 0; text-align: center; border: 5px dashed #FFD700;">
         <h2 style="color: #FFD700; font-size: 2rem; margin-bottom: 20px; text-shadow: 3px 3px 0 #000;">
-            🎰 ROLETA DA VERDADE 🎰
+            🎯 QUIZ DA VERDADE 🎯
         </h2>
         <p style="color: #f4e4c1; margin-bottom: 20px; font-size: 1.1rem;">
-            Gire a roleta e descubra quem é o culpado!
+            Vote e descubra quem é o culpado!
         </p>
         
         <div class="pergunta-container" style="background: #000; border: 3px solid #FFD700; border-radius: 10px; padding: 20px; margin: 20px auto; max-width: 90%;">
-            <h3 id="pergunta-atual" style="color: #FFD700; font-size: 1.5rem; margin: 0;">
+            <h3 id="pergunta-quiz" style="color: #FFD700; font-size: 1.5rem; margin: 0;">
                 QUEM É O MAIS MORTO? 💀
             </h3>
         </div>
         
-        <div class="roleta-container" style="position: relative; width: 300px; height: 300px; margin: 20px auto;">
-            <canvas id="roleta-canvas" width="300" height="300" style="border-radius: 50%; box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);"></canvas>
-            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; background: #000; border-radius: 50%; border: 3px solid #FFD700; z-index: 10;">
-                <span style="color: #FFD700; font-size: 1.5rem; line-height: 54px;">🎯</span>
-            </div>
-            <div style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 20px solid transparent; border-right: 20px solid transparent; border-top: 40px solid #FFD700; z-index: 11;"></div>
+        <div class="opcoes-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; margin: 20px 0; max-width: 600px; margin-left: auto; margin-right: auto;">
+            <!-- Opções serão geradas pelo JavaScript -->
         </div>
         
         <div style="margin: 20px 0;">
-            <button onclick="trocarPergunta()" style="background: #8B4513; color: #FFD700; padding: 10px 20px; font-size: 1rem; font-weight: bold; border: 2px solid #FFD700; border-radius: 5px; cursor: pointer; margin: 0 5px;">
-                🔄 TROCAR PERGUNTA
+            <button onclick="proximaPergunta()" style="background: #8B4513; color: #FFD700; padding: 10px 20px; font-size: 1rem; font-weight: bold; border: 2px solid #FFD700; border-radius: 5px; cursor: pointer; margin: 0 5px;">
+                ➡️ PRÓXIMA PERGUNTA
             </button>
-            <button onclick="girarRoleta()" style="background: linear-gradient(135deg, #FFD700, #DAA520); color: #000; padding: 15px 30px; font-size: 1.3rem; font-weight: bold; border: none; border-radius: 50px; cursor: pointer; box-shadow: 0 5px 20px rgba(0,0,0,0.5); margin: 0 5px;">
-                🎲 GIRAR ROLETA 🎲
+            <button onclick="verResultados()" style="background: linear-gradient(135deg, #FFD700, #DAA520); color: #000; padding: 15px 30px; font-size: 1.3rem; font-weight: bold; border: none; border-radius: 50px; cursor: pointer; box-shadow: 0 5px 20px rgba(0,0,0,0.5); margin: 0 5px;">
+                🏆 VER RESULTADOS 🏆
             </button>
         </div>
         
-        <div id="resultado-roleta" style="margin-top: 30px; padding: 20px; background: rgba(0,0,0,0.7); border-radius: 10px; display: none;">
-            <h3 style="color: #FFD700; font-size: 1.8rem; margin-bottom: 10px;">🏆 O ESCOLHIDO É: 🏆</h3>
-            <p id="pessoa-escolhida" style="color: #ff6b6b; font-size: 2rem; font-weight: bold; text-transform: uppercase; text-shadow: 2px 2px 0 #000;"></p>
-            <p id="comentario-extra" style="color: #f4e4c1; font-size: 1.1rem; margin-top: 10px; font-style: italic;"></p>
+        <div id="resultado-quiz" style="margin-top: 30px; padding: 20px; background: rgba(0,0,0,0.7); border-radius: 10px; display: none;">
+            <h3 style="color: #FFD700; font-size: 1.8rem; margin-bottom: 15px;">🏆 RESULTADOS FINAIS 🏆</h3>
+            <div id="ranking-final" style="color: #f4e4c1; font-size: 1.1rem; margin-bottom: 20px;"></div>
             <div style="margin-top: 20px;">
-                <a id="whatsapp-btn" href="#" target="_blank" style="display: inline-block; background: #25D366; color: #fff; padding: 15px 25px; font-size: 1.1rem; font-weight: bold; text-decoration: none; border-radius: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: all 0.3s;">
-                    📲 MANDAR NO GRUPO DO ZAP
+                <a id="whatsapp-quiz-btn" href="#" target="_blank" style="display: inline-block; background: #25D366; color: #fff; padding: 15px 25px; font-size: 1.1rem; font-weight: bold; text-decoration: none; border-radius: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: all 0.3s;">
+                    📲 MANDAR RESULTADO NO ZAP
                 </a>
             </div>
         </div>
         
         <div style="margin-top: 30px; padding: 15px; background: rgba(0,0,0,0.3); border-radius: 10px;">
-            <p style="color: #8B4513; font-size: 0.9rem;">
-                📊 <strong>Estatísticas da Desgraça:</strong> <span id="stats-text">Lucão já foi escolhido 73 vezes</span>
+            <p style="color: #8B4513; font-size: 0.9rem;" id="progresso-quiz">
+                📊 <strong>Progresso:</strong> Pergunta 1 de 5
             </p>
         </div>
     </div>
@@ -732,7 +727,7 @@
             }
         }
 
-        // Roleta da Verdade
+        // Quiz da Verdade
         const participantes = [
             'Lion', 'Attilio', 'Augustin', 'Godin', 'Guga',
             'Meregalli', 'Igor', 'Jão Vitin', 'João H', 'Jãozin',
@@ -740,206 +735,174 @@
             'Sergio', 'Waguin', 'Zé Gordin', 'Zelão'
         ];
 
-        const perguntas = [
+        const perguntasQuiz = [
             { 
                 pergunta: "QUEM É O MAIS MORTO? 💀",
-                comentarios: ["Já pode ir preparando o atestado!", "RIP amigo!", "F no chat!"]
-            },
-            { 
-                pergunta: "QUEM É O MAIS LIXO? 🗑️",
-                comentarios: ["Troféu lata de lixo garantido!", "Nem a mãe aguenta!", "Vergonha da profissão!"]
+                emoji: "💀"
             },
             { 
                 pergunta: "QUEM DEIXA 50 LATAS PELA METADE? 🍺",
-                comentarios: ["Crime contra a humanidade!", "Desperdício ambulante!", "Merece cadeia!"]
+                emoji: "🍺"
             },
             { 
                 pergunta: "QUEM VAI VOMITAR PRIMEIRO? 🤮",
-                comentarios: ["Já prepara o balde!", "Estômago de criança!", "Fraco!"]
+                emoji: "🤮"
             },
             { 
                 pergunta: "QUEM NÃO PEGA NEM GRIPE? 🎣",
-                comentarios: ["Pescador de vento profissional!", "Anzol alérgico!", "Repelente de peixe!"]
-            },
-            { 
-                pergunta: "QUEM MENTE MAIS QUE POLÍTICO? 🤥",
-                comentarios: ["Já peguei um de 50kg!", "Mentiroso oficial!", "Pinocchio de pescador!"]
-            },
-            { 
-                pergunta: "QUEM VAI PERDER O CELULAR? 📱",
-                comentarios: ["Celular já tá nadando!", "Bye bye WhatsApp!", "Pantanal ganhou um iPhone!"]
-            },
-            { 
-                pergunta: "QUEM É O MAIS FOMINHA? 🍖",
-                comentarios: ["Come até a isca!", "Geladeira ambulante!", "Deixa todo mundo com fome!"]
-            },
-            { 
-                pergunta: "QUEM DORME ANTES DAS 22H? 😴",
-                comentarios: ["Vovô do grupo!", "Hora de dormir chegou!", "Fraco demais!"]
-            },
-            { 
-                pergunta: "QUEM É O CHORÃO DO GRUPO? 😭",
-                comentarios: ["Sempre com desculpa!", "Mimimi profissional!", "Reclama até de respirar!"]
-            },
-            { 
-                pergunta: "QUEM BEBE E NÃO PAGA? 💸",
-                comentarios: ["Caloteiro oficial!", "Carteira furada!", "Sempre esquece o pix!"]
-            },
-            { 
-                pergunta: "QUEM É O AZARADO? 🍀",
-                comentarios: ["Se chover é culpa dele!", "Ímã de azar!", "Nem morto tem sorte!"]
+                emoji: "🎣"
             },
             { 
                 pergunta: "QUEM É O MAIS CAGÃO? 🐔",
-                comentarios: ["Medo até da própria sombra!", "Covarde nível máximo!", "Foge até de barata!"]
-            },
-            { 
-                pergunta: "QUEM VAI CAIR NO RIO? 💦",
-                comentarios: ["Prepara o salvavidas!", "Pantanal tá esperando!", "Banho garantido!"]
-            },
-            { 
-                pergunta: "QUEM É O PIOR PESCADOR? 🎣",
-                comentarios: ["Peixe foge só de ver!", "Anti-pescador!", "Melhor ficar em casa!"]
+                emoji: "🐔"
             }
         ];
 
-        let perguntaAtual = 0;
-        let girando = false;
-        let rotacaoAtual = 0;
+        let perguntaAtualQuiz = 0;
+        let votosQuiz = {};
+        let jaVotou = false;
 
-        // Desenha a roleta com nomes
-        function desenharRoleta() {
-            const canvas = document.getElementById('roleta-canvas');
-            const ctx = canvas.getContext('2d');
-            const centerX = canvas.width / 2;
-            const centerY = canvas.height / 2;
-            const radius = 140;
+        // Inicializar votos
+        participantes.forEach(nome => {
+            votosQuiz[nome] = 0;
+        });
+
+        function gerarOpcoes() {
+            const container = document.querySelector('.opcoes-container');
+            container.innerHTML = '';
             
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            const cores = ['#FFD700', '#8B4513', '#ff6b6b', '#3d2418', '#DAA520', '#8B0000', '#556B2F', '#CD5C5C'];
-            const anguloPorPessoa = (2 * Math.PI) / participantes.length;
-            
-            participantes.forEach((nome, i) => {
-                const startAngle = i * anguloPorPessoa + rotacaoAtual;
-                const endAngle = startAngle + anguloPorPessoa;
+            participantes.forEach(nome => {
+                const opcao = document.createElement('div');
+                opcao.className = 'opcao-voto';
+                opcao.style.cssText = `
+                    background: #3d2418;
+                    border: 2px solid #8B4513;
+                    border-radius: 10px;
+                    padding: 15px 10px;
+                    cursor: pointer;
+                    transition: all 0.3s;
+                    text-align: center;
+                    color: #FFD700;
+                    font-weight: bold;
+                    font-size: 0.9rem;
+                `;
                 
-                // Desenha fatia
-                ctx.beginPath();
-                ctx.moveTo(centerX, centerY);
-                ctx.arc(centerX, centerY, radius, startAngle, endAngle);
-                ctx.closePath();
-                ctx.fillStyle = cores[i % cores.length];
-                ctx.fill();
-                ctx.strokeStyle = '#000';
-                ctx.lineWidth = 2;
-                ctx.stroke();
+                if (nome === 'LUCÃO') {
+                    opcao.style.background = '#8B0000';
+                    opcao.style.border = '3px solid #FFD700';
+                }
                 
-                // Adiciona texto
-                ctx.save();
-                ctx.translate(centerX, centerY);
-                ctx.rotate(startAngle + anguloPorPessoa / 2);
-                ctx.textAlign = 'center';
-                ctx.fillStyle = '#fff';
-                ctx.font = nome === 'LUCÃO' ? 'bold 12px Arial' : '10px Arial';
-                ctx.fillText(nome, radius * 0.7, 0);
-                ctx.restore();
+                opcao.innerHTML = `${nome}<br><span style="font-size: 0.8rem; color: #f4e4c1;">${votosQuiz[nome]} votos</span>`;
+                
+                opcao.addEventListener('click', () => votar(nome));
+                opcao.addEventListener('mouseover', () => {
+                    opcao.style.transform = 'scale(1.05)';
+                    opcao.style.borderColor = '#FFD700';
+                    opcao.style.boxShadow = '0 0 15px rgba(255, 215, 0, 0.5)';
+                });
+                opcao.addEventListener('mouseout', () => {
+                    opcao.style.transform = 'scale(1)';
+                    opcao.style.borderColor = nome === 'LUCÃO' ? '#FFD700' : '#8B4513';
+                    opcao.style.boxShadow = 'none';
+                });
+                
+                container.appendChild(opcao);
             });
         }
 
-        function trocarPergunta() {
-            perguntaAtual = (perguntaAtual + 1) % perguntas.length;
-            document.getElementById('pergunta-atual').innerHTML = perguntas[perguntaAtual].pergunta;
-            document.getElementById('resultado-roleta').style.display = 'none';
-        }
-
-        function girarRoleta() {
-            if (girando) return;
-            
-            girando = true;
-            const resultado = document.getElementById('resultado-roleta');
-            const pessoaEscolhidaEl = document.getElementById('pessoa-escolhida');
-            const comentarioEl = document.getElementById('comentario-extra');
-            
-            resultado.style.display = 'none';
-            
-            // Sorteia pessoa
-            const pessoaIndex = Math.floor(Math.random() * participantes.length);
-            const pessoa = participantes[pessoaIndex];
-            
-            // Calcula rotação
-            const voltas = 5 + Math.random() * 3;
-            const anguloPorPessoa = (2 * Math.PI) / participantes.length;
-            const anguloFinal = -pessoaIndex * anguloPorPessoa - anguloPorPessoa / 2;
-            const rotacaoTotal = voltas * 2 * Math.PI + anguloFinal;
-            
-            // Anima a roleta
-            let start = performance.now();
-            const duration = 3000;
-            const startRotation = rotacaoAtual;
-            
-            function animate(now) {
-                const elapsed = now - start;
-                const progress = Math.min(elapsed / duration, 1);
-                const easeOut = 1 - Math.pow(1 - progress, 3);
-                
-                rotacaoAtual = startRotation + rotacaoTotal * easeOut;
-                desenharRoleta();
-                
-                if (progress < 1) {
-                    requestAnimationFrame(animate);
-                } else {
-                    // Mostra resultado
-                    pessoaEscolhidaEl.textContent = pessoa;
-                    
-                    // Comentário especial para Lucão
-                    if (pessoa === 'LUCÃO') {
-                        comentarioEl.textContent = "ÓBVIO! Nem precisava girar! 🐷";
-                    } else {
-                        const comentario = perguntas[perguntaAtual].comentarios[
-                            Math.floor(Math.random() * perguntas[perguntaAtual].comentarios.length)
-                        ];
-                        comentarioEl.textContent = comentario;
-                    }
-                    
-                    // Configura o botão do WhatsApp
-                    const perguntaTexto = perguntas[perguntaAtual].pergunta.replace(/[💀🗑️🍺🤮🎣🤥📱🍖😴😭💸🍀🐔💦]/g, '').trim();
-                    let mensagemWhatsApp;
-                    
-                    if (pessoa === 'LUCÃO') {
-                        mensagemWhatsApp = `🎰 ROLETA DA VERDADE 🎰\n\nPergunta: ${perguntaTexto}\nEscolhido: ${pessoa}\n\nÓBVIO! Era óbvio que ia dar ele! 🐷\n\nEU JÁ TÔ PRONTO! Netinhos da Vó Sula 2025! 🍺🎣`;
-                    } else {
-                        mensagemWhatsApp = `🎰 ROLETA DA VERDADE 🎰\n\nPergunta: ${perguntaTexto}\nEscolhido: ${pessoa}\n\n${comentario}\n\nEU JÁ TÔ PRONTO! Netinhos da Vó Sula 2025! 🍺🎣`;
-                    }
-                    
-                    const linkWhatsApp = `https://api.whatsapp.com/send?text=${encodeURIComponent(mensagemWhatsApp)}`;
-                    document.getElementById('whatsapp-btn').href = linkWhatsApp;
-                    
-                    resultado.style.display = 'block';
-                    
-                    // Atualiza estatísticas
-                    updateStats(pessoa);
-                    
-                    girando = false;
-                }
+        function votar(nome) {
+            if (jaVotou) {
+                alert('Você já votou nesta pergunta!');
+                return;
             }
             
-            requestAnimationFrame(animate);
-        }
-
-        function updateStats(pessoa) {
-            const stats = JSON.parse(localStorage.getItem('roleta_stats') || '{}');
-            stats[pessoa] = (stats[pessoa] || 0) + 1;
-            localStorage.setItem('roleta_stats', JSON.stringify(stats));
+            votosQuiz[nome]++;
+            jaVotou = true;
+            atualizarOpcoes();
             
-            // Mostra estatística mais interessante
-            const maisEscolhido = Object.entries(stats).reduce((a, b) => stats[a[0]] > stats[b[0]] ? a : b, ['Ninguém', 0]);
-            document.getElementById('stats-text').textContent = 
-                `${maisEscolhido[0]} já foi escolhido ${maisEscolhido[1]} vezes`;
+            // Destaca a opção votada
+            const opcoes = document.querySelectorAll('.opcao-voto');
+            opcoes.forEach(opcao => {
+                if (opcao.textContent.includes(nome)) {
+                    opcao.style.background = '#228B22';
+                    opcao.style.border = '3px solid #32CD32';
+                    opcao.style.color = '#fff';
+                }
+            });
         }
 
-        // Inicializa roleta
-        desenharRoleta();
+        function atualizarOpcoes() {
+            const opcoes = document.querySelectorAll('.opcao-voto');
+            opcoes.forEach(opcao => {
+                const nome = opcao.textContent.split('\n')[0];
+                opcao.innerHTML = `${nome}<br><span style="font-size: 0.8rem; color: #f4e4c1;">${votosQuiz[nome]} votos</span>`;
+            });
+        }
+
+        function proximaPergunta() {
+            if (!jaVotou) {
+                alert('Vote em alguém primeiro!');
+                return;
+            }
+            
+            perguntaAtualQuiz++;
+            jaVotou = false;
+            
+            if (perguntaAtualQuiz < perguntasQuiz.length) {
+                document.getElementById('pergunta-quiz').innerHTML = perguntasQuiz[perguntaAtualQuiz].pergunta;
+                document.getElementById('progresso-quiz').innerHTML = 
+                    `📊 <strong>Progresso:</strong> Pergunta ${perguntaAtualQuiz + 1} de ${perguntasQuiz.length}`;
+                gerarOpcoes();
+            } else {
+                document.getElementById('progresso-quiz').innerHTML = 
+                    `📊 <strong>Quiz Completo!</strong> Clique em "VER RESULTADOS"`;
+            }
+        }
+
+        function verResultados() {
+            if (perguntaAtualQuiz < perguntasQuiz.length && !jaVotou) {
+                alert('Complete todas as perguntas primeiro!');
+                return;
+            }
+            
+            // Ordena por votos
+            const ranking = Object.entries(votosQuiz)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 5);
+            
+            let rankingHTML = '';
+            const medalhas = ['🥇', '🥈', '🥉', '4️⃣', '5️⃣'];
+            
+            ranking.forEach((item, index) => {
+                const [nome, votos] = item;
+                rankingHTML += `<div style="margin: 10px 0; padding: 10px; background: rgba(0,0,0,0.5); border-radius: 5px;">
+                    ${medalhas[index]} <strong>${nome}</strong> - ${votos} votos
+                </div>`;
+            });
+            
+            document.getElementById('ranking-final').innerHTML = rankingHTML;
+            document.getElementById('resultado-quiz').style.display = 'block';
+            
+            // Configura botão WhatsApp
+            const campeao = ranking[0];
+            const mensagemResultado = `🎯 QUIZ DA VERDADE - NETINHOS 2025 🎯
+
+🏆 RESULTADO FINAL:
+
+${ranking.map((item, index) => 
+    `${medalhas[index]} ${item[0]} - ${item[1]} votos`
+).join('\n')}
+
+🎉 CAMPEÃO DA ZUEIRA: ${campeao[0]} com ${campeao[1]} votos!
+
+EU JÁ TÔ PRONTO! Netinhos da Vó Sula 2025! 🍺🎣`;
+            
+            document.getElementById('whatsapp-quiz-btn').href = 
+                `https://api.whatsapp.com/send?text=${encodeURIComponent(mensagemResultado)}`;
+        }
+
+        // Inicializar quiz
+        gerarOpcoes();
 
         // Função para enviar confirmação
         function enviarConfirmacao() {
