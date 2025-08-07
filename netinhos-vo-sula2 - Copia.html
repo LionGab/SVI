@@ -584,6 +584,11 @@
             <h3 style="color: #FFD700; font-size: 1.8rem; margin-bottom: 10px;">🏆 O ESCOLHIDO É: 🏆</h3>
             <p id="pessoa-escolhida" style="color: #ff6b6b; font-size: 2rem; font-weight: bold; text-transform: uppercase; text-shadow: 2px 2px 0 #000;"></p>
             <p id="comentario-extra" style="color: #f4e4c1; font-size: 1.1rem; margin-top: 10px; font-style: italic;"></p>
+            <div style="margin-top: 20px;">
+                <a id="whatsapp-btn" href="#" target="_blank" style="display: inline-block; background: #25D366; color: #fff; padding: 15px 25px; font-size: 1.1rem; font-weight: bold; text-decoration: none; border-radius: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: all 0.3s;">
+                    📲 MANDAR NO GRUPO DO ZAP
+                </a>
+            </div>
         </div>
         
         <div style="margin-top: 30px; padding: 15px; background: rgba(0,0,0,0.3); border-radius: 10px;">
@@ -889,13 +894,26 @@
                     
                     // Comentário especial para Lucão
                     if (pessoa === 'LUCÃO') {
-                        comentarioEl.innerHTML = "ÓBVIO! Nem precisava girar! 🐷<br><br>📲 <strong>Envie no grupo:</strong> \"Galera, na roleta da verdade o " + pessoa + " foi escolhido! EU JÁ TÔ PRONTO! 🍺\"";
+                        comentarioEl.textContent = "ÓBVIO! Nem precisava girar! 🐷";
                     } else {
                         const comentario = perguntas[perguntaAtual].comentarios[
                             Math.floor(Math.random() * perguntas[perguntaAtual].comentarios.length)
                         ];
-                        comentarioEl.innerHTML = comentario + "<br><br>📲 <strong>Envie no grupo:</strong> \"Pessoal, na roleta da verdade o " + pessoa + " foi escolhido! EU JÁ TÔ PRONTO! 🍺\"";
+                        comentarioEl.textContent = comentario;
                     }
+                    
+                    // Configura o botão do WhatsApp
+                    const perguntaTexto = perguntas[perguntaAtual].pergunta.replace(/[💀🗑️🍺🤮🎣🤥📱🍖😴😭💸🍀🐔💦]/g, '').trim();
+                    let mensagemWhatsApp;
+                    
+                    if (pessoa === 'LUCÃO') {
+                        mensagemWhatsApp = `🎰 ROLETA DA VERDADE 🎰\n\nPergunta: ${perguntaTexto}\nEscolhido: ${pessoa}\n\nÓBVIO! Era óbvio que ia dar ele! 🐷\n\nEU JÁ TÔ PRONTO! Netinhos da Vó Sula 2025! 🍺🎣`;
+                    } else {
+                        mensagemWhatsApp = `🎰 ROLETA DA VERDADE 🎰\n\nPergunta: ${perguntaTexto}\nEscolhido: ${pessoa}\n\n${comentario}\n\nEU JÁ TÔ PRONTO! Netinhos da Vó Sula 2025! 🍺🎣`;
+                    }
+                    
+                    const linkWhatsApp = `https://api.whatsapp.com/send?text=${encodeURIComponent(mensagemWhatsApp)}`;
+                    document.getElementById('whatsapp-btn').href = linkWhatsApp;
                     
                     resultado.style.display = 'block';
                     
