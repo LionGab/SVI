@@ -1011,7 +1011,28 @@ EU JÁ TÔ PRONTO! Netinhos da Vó Sula 2025! 🍺🎣`;
 
         // Função para abrir grupo com mensagem
         function abrirGrupoComMensagem() {
-            const mensagem = `Eu to dentro nessa 10 edição, vamo pra cima 🎣`;
+            // Cria o ranking dinâmico
+            let ranking = "🏆 *RANKING DO QUIZ DA VERDADE* 🏆\n\n";
+            
+            const sortedVotes = Object.entries(votosQuiz)
+                .sort(([,a], [,b]) => b - a)
+                .filter(([nome, votos]) => votos > 0);
+            
+            if (sortedVotes.length === 0) {
+                ranking += "🤔 Ninguém votou ainda...";
+            } else {
+                sortedVotes.forEach(([nome, votos], index) => {
+                    let medal = '';
+                    if (index === 0) medal = '🥇';
+                    else if (index === 1) medal = '🥈'; 
+                    else if (index === 2) medal = '🥉';
+                    else medal = '📊';
+                    
+                    ranking += `${medal} ${nome}: ${votos} votos\n`;
+                });
+            }
+            
+            const mensagem = ranking;
             
             // Copia mensagem automaticamente
             if (navigator.clipboard) {
@@ -1023,7 +1044,7 @@ EU JÁ TÔ PRONTO! Netinhos da Vó Sula 2025! 🍺🎣`;
             
             // Mostra instrução após 1 segundo
             setTimeout(() => {
-                alert('A mensagem está copiada, é só você compartilhar no grupo! 📱\n\n"' + mensagem + '"');
+                alert('A mensagem está copiada, é só você compartilhar no grupo o ranking! 🏆');
             }, 1000);
         }
 
