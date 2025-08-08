@@ -1024,102 +1024,21 @@ Pantanal - MT
 
 BORA CARALHO! 🍻`;
 
-            // Copia mensagem para área de transferência
+            // Copia mensagem
             if (navigator.clipboard) {
                 navigator.clipboard.writeText(mensagem).then(() => {
-                    mostrarInstrucoes('confirmacao', mensagem);
+                    // Abre o grupo diretamente
+                    window.open('https://chat.whatsapp.com/KQrdxYbDGSJ29x6a5y7pxk', '_blank');
+                    // Mostra alerta simples
+                    setTimeout(() => {
+                        alert('📋 Mensagem copiada! Cole no grupo (Ctrl+V ou Cmd+V) e envie!');
+                    }, 1500);
                 }).catch(() => {
                     copiarTextoAlternativo(mensagem);
                 });
             } else {
                 copiarTextoAlternativo(mensagem);
             }
-        }
-
-        // Função para mostrar instruções
-        function mostrarInstrucoes(tipo, mensagem) {
-            const modal = document.createElement('div');
-            modal.style.cssText = `
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0,0,0,0.8);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                z-index: 9999;
-            `;
-            
-            const conteudo = document.createElement('div');
-            conteudo.style.cssText = `
-                background: linear-gradient(135deg, #8B0000, #2a1810);
-                border: 3px solid #FFD700;
-                border-radius: 15px;
-                padding: 30px;
-                max-width: 500px;
-                text-align: center;
-                color: #f4e4c1;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            `;
-            
-            conteudo.innerHTML = `
-                <h3 style="color: #FFD700; margin-bottom: 20px; font-size: 1.5rem;">
-                    📋 MENSAGEM COPIADA!
-                </h3>
-                <p style="margin-bottom: 25px; font-size: 1.1rem;">
-                    Agora escolha como enviar no grupo:
-                </p>
-                
-                <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 25px;">
-                    <button onclick="abrirGrupoWeb()" style="background: #25D366; color: white; padding: 15px 20px; border: none; border-radius: 10px; font-size: 1.1rem; font-weight: bold; cursor: pointer;">
-                        💻 WhatsApp Web
-                    </button>
-                    <button onclick="abrirGrupoApp()" style="background: #128C7E; color: white; padding: 15px 20px; border: none; border-radius: 10px; font-size: 1.1rem; font-weight: bold; cursor: pointer;">
-                        📱 App WhatsApp
-                    </button>
-                    <button onclick="copiarLink()" style="background: #DAA520; color: #000; padding: 15px 20px; border: none; border-radius: 10px; font-size: 1.1rem; font-weight: bold; cursor: pointer;">
-                        🔗 Copiar Link do Grupo
-                    </button>
-                </div>
-                
-                <div style="background: rgba(0,0,0,0.5); padding: 15px; border-radius: 10px; margin-bottom: 20px;">
-                    <p style="font-size: 0.9rem; color: #FFD700;">
-                        💡 <strong>Dica:</strong> Cole a mensagem com <strong>Ctrl+V</strong> (PC) ou <strong>Cmd+V</strong> (Mac)
-                    </p>
-                </div>
-                
-                <button onclick="fecharModal()" style="background: #dc3545; color: white; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer;">
-                    ❌ Fechar
-                </button>
-            `;
-            
-            modal.appendChild(conteudo);
-            document.body.appendChild(modal);
-            
-            // Adiciona funções ao modal
-            window.abrirGrupoWeb = function() {
-                window.open('https://web.whatsapp.com/', '_blank');
-                fecharModal();
-            };
-            
-            window.abrirGrupoApp = function() {
-                window.open('https://chat.whatsapp.com/KQrdxYbDGSJ29x6a5y7pxk', '_blank');
-                fecharModal();
-            };
-            
-            window.copiarLink = function() {
-                const link = 'https://chat.whatsapp.com/KQrdxYbDGSJ29x6a5y7pxk';
-                navigator.clipboard.writeText(link).then(() => {
-                    alert('🔗 Link do grupo copiado!');
-                });
-                fecharModal();
-            };
-            
-            window.fecharModal = function() {
-                document.body.removeChild(modal);
-            };
         }
 
         // Método alternativo para copiar
@@ -1131,7 +1050,11 @@ BORA CARALHO! 🍻`;
             document.execCommand('copy');
             document.body.removeChild(textarea);
             
-            mostrarInstrucoes('confirmacao', texto);
+            // Abre o grupo
+            window.open('https://chat.whatsapp.com/KQrdxYbDGSJ29x6a5y7pxk', '_blank');
+            setTimeout(() => {
+                alert('📋 Mensagem copiada! Cole no grupo (Ctrl+V ou Cmd+V) e envie!');
+            }, 1500);
         }
 
         // Função para resultados do quiz no grupo
@@ -1139,7 +1062,11 @@ BORA CARALHO! 🍻`;
             // Copia resultado para área de transferência
             if (navigator.clipboard) {
                 navigator.clipboard.writeText(mensagem).then(() => {
-                    mostrarInstrucoes('resultado', mensagem);
+                    // Abre o grupo diretamente
+                    window.open('https://chat.whatsapp.com/KQrdxYbDGSJ29x6a5y7pxk', '_blank');
+                    setTimeout(() => {
+                        alert('📋 Resultado copiado! Cole no grupo (Ctrl+V ou Cmd+V) e envie!');
+                    }, 1500);
                 }).catch(() => {
                     copiarResultadoAlternativo(mensagem);
                 });
@@ -1156,7 +1083,11 @@ BORA CARALHO! 🍻`;
             document.execCommand('copy');
             document.body.removeChild(textarea);
             
-            mostrarInstrucoes('resultado', texto);
+            // Abre o grupo
+            window.open('https://chat.whatsapp.com/KQrdxYbDGSJ29x6a5y7pxk', '_blank');
+            setTimeout(() => {
+                alert('📋 Resultado copiado! Cole no grupo (Ctrl+V ou Cmd+V) e envie!');
+            }, 1500);
         }
 
         // Inicializar quiz
