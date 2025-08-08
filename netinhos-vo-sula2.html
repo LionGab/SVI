@@ -971,19 +971,22 @@
             // Configura botão WhatsApp
             if (ranking.length > 0) {
                 const campeao = ranking[0];
-                const mensagemResultado = `🎯 QUIZ DA VERDADE - NETINHOS 2025 🎯
+                const mensagemResultado = `🎯 QUIZ DA VERDADE - RESULTADO OFICIAL! 🎯
 
-🏆 RESULTADO PARCIAL:
+Eu to dentro nessa 10 edição, vamo pra cima 🎣
+
+🏆 RANKING DOS MAIS PROBLEMÁTICOS:
 
 ${ranking.slice(0, 10).map((item, index) => 
-    `${medalhas[index] || `${index + 1}º`} ${item[0]} - ${item[1]} votos`
+    `${medalhas[index] || `${index + 1}º`} ${item[0]} - ${item[1]} votos (mereceu cada um)`
 ).join('\n')}
 
-🎉 LÍDER ATUAL: ${campeao[0]} com ${campeao[1]} votos!
+🎉 CAMPEÃO DA BAGUNÇA: ${campeao[0]} com ${campeao[1]} votos! 
+👑 Parabéns, você é oficialmente o mais inconveniente da turma!
 
-📊 ${perguntaAtualQuiz + (jaVotou ? 1 : 0)}/${perguntasQuiz.length} perguntas respondidas
+📊 ${perguntaAtualQuiz + (jaVotou ? 1 : 0)}/${perguntasQuiz.length} perguntas respondidas - A zueira continua...
 
-EU JÁ TÔ PRONTO! Netinhos da Vó Sula 2025! 🍺🎣`;
+🍺 Netinhos da Vó Sula 2025 - Desde 2015 fazendo nada e bebendo muito!`;
                 
                 document.getElementById('whatsapp-quiz-btn').onclick = function() {
                     abrirGrupoComResultado(mensagemResultado);
