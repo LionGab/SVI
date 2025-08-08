@@ -1053,13 +1053,11 @@ ${ranking.slice(0, 10).map((item, index) =>
                 navigator.clipboard.writeText(mensagem);
             }
             
-            // Abre o grupo específico
-            window.open('https://chat.whatsapp.com/KQrdxYbDGSJ29x6a5y7pxk', '_blank');
+            // Mostra instrução ANTES de abrir WhatsApp
+            alert('Seu ranking está pronto! 🏆\n\nVai abrir o WhatsApp agora, é só colar (Ctrl+V) e enviar no grupo!');
             
-            // Mostra instrução após 1 segundo
-            setTimeout(() => {
-                alert('O ranking está pronto, só feche e vai abrir direto no whatsapp, coloque seus resultados! 🏆');
-            }, 1000);
+            // Abre o grupo específico após a instrução
+            window.open('https://chat.whatsapp.com/KQrdxYbDGSJ29x6a5y7pxk', '_blank');
         }
 
         // Função para resultados do quiz no grupo
@@ -1069,13 +1067,11 @@ ${ranking.slice(0, 10).map((item, index) =>
                 navigator.clipboard.writeText(mensagem);
             }
             
-            // Abre o grupo específico
-            window.open('https://chat.whatsapp.com/KQrdxYbDGSJ29x6a5y7pxk', '_blank');
+            // Mostra instrução ANTES de abrir WhatsApp
+            alert('Seu resultado está pronto! 🏆\n\nVai abrir o WhatsApp agora, é só colar (Ctrl+V) e enviar no grupo!');
             
-            // Mostra instrução após 1 segundo
-            setTimeout(() => {
-                alert('O ranking está pronto, só feche e vai abrir direto no whatsapp, coloque seus resultados! 🏆');
-            }, 1000);
+            // Abre o grupo específico após a instrução
+            window.open('https://chat.whatsapp.com/KQrdxYbDGSJ29x6a5y7pxk', '_blank');
         }
 
         // Inicializar quiz
