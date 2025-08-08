@@ -567,16 +567,21 @@
             <!-- Opções serão geradas pelo JavaScript -->
         </div>
         
-        <div style="margin: 20px 0;">
-            <button onclick="proximaPergunta()" style="background: #8B4513; color: #FFD700; padding: 10px 20px; font-size: 1rem; font-weight: bold; border: 2px solid #FFD700; border-radius: 5px; cursor: pointer; margin: 0 5px;">
-                ➡️ PRÓXIMA PERGUNTA
-            </button>
-            <button onclick="verResultados()" style="background: linear-gradient(135deg, #FFD700, #DAA520); color: #000; padding: 15px 30px; font-size: 1.3rem; font-weight: bold; border: none; border-radius: 50px; cursor: pointer; box-shadow: 0 5px 20px rgba(0,0,0,0.5); margin: 0 5px;">
-                🏆 VER RESULTADOS 🏆
-            </button>
-            <button onclick="resetarQuiz()" style="background: #dc3545; color: #fff; padding: 8px 15px; font-size: 0.9rem; font-weight: bold; border: none; border-radius: 5px; cursor: pointer; margin: 0 5px;">
-                🔄 RESETAR
-            </button>
+        <div style="margin: 20px 0; display: flex; flex-direction: column; align-items: center; gap: 15px;">
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <button onclick="proximaPergunta()" style="background: #8B4513; color: #FFD700; padding: 12px 25px; font-size: 1.1rem; font-weight: bold; border: 2px solid #FFD700; border-radius: 8px; cursor: pointer; transition: all 0.3s;">
+                    ➡️ PRÓXIMA PERGUNTA
+                </button>
+                <button onclick="resetarQuiz()" style="background: #dc3545; color: #fff; padding: 10px 20px; font-size: 1rem; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; transition: all 0.3s;">
+                    🔄 RESETAR
+                </button>
+            </div>
+            
+            <div style="margin-top: 10px;">
+                <button onclick="verResultados()" style="background: linear-gradient(135deg, #FFD700, #DAA520); color: #000; padding: 18px 40px; font-size: 1.4rem; font-weight: bold; border: none; border-radius: 50px; cursor: pointer; box-shadow: 0 8px 25px rgba(0,0,0,0.6); transition: all 0.3s; text-transform: uppercase;">
+                    🏆 Ver Ranking Atual 🏆
+                </button>
+            </div>
         </div>
         
         <div id="resultado-quiz" style="margin-top: 50px; padding: 30px 20px; background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(139, 69, 19, 0.3) 100%); border-radius: 15px; border: 3px solid #FFD700; box-shadow: 0 10px 30px rgba(0,0,0,0.5); display: none;">
