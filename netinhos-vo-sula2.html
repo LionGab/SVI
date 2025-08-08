@@ -647,7 +647,7 @@
 
     <!-- CTA -->
     <div class="cta-container">
-        <a href="https://wa.me/?text=🎣%20NETINHOS%20DA%20V%C3%93%20SULA%202025%20🎣%0A%0A✅%20EU%20J%C3%81%20T%C3%94%20CONFIRMADO!%20%0A%0APantanal%20-%20MT%0A5,%206%20e%207%20de%20Setembro%0A%0A🍺%20Preparado%20pra%20beber%20at%C3%A9%20cair%0A🎣%20Preparado%20pra%20n%C3%A3o%20pescar%20nada%0A💸%20Preparado%20pra%20gastar%20uma%20grana%0A%0ABORA%20CARALHO!%20🍻" target="_blank" class="cta-button">
+        <a href="#" class="cta-button" onclick="abrirGrupoComMensagem()">
             <span>CONFIRMA PRESENÇA OU É FROUXO? 📱</span>
         </a>
         <p style="color: #8B4513; margin-top: 10px; font-size: 0.9rem;">
@@ -974,8 +974,10 @@ ${ranking.slice(0, 10).map((item, index) =>
 
 EU JÁ TÔ PRONTO! Netinhos da Vó Sula 2025! 🍺🎣`;
                 
-                document.getElementById('whatsapp-quiz-btn').href = 
-                    `https://wa.me/?text=${encodeURIComponent(mensagemResultado)}`;
+                document.getElementById('whatsapp-quiz-btn').onclick = function() {
+                    abrirGrupoComResultado(mensagemResultado);
+                    return false;
+                };
             }
         }
 
@@ -1005,6 +1007,89 @@ EU JÁ TÔ PRONTO! Netinhos da Vó Sula 2025! 🍺🎣`;
             gerarOpcoes();
             
             console.log('Quiz resetado!');
+        }
+
+        // Função para abrir grupo com mensagem
+        function abrirGrupoComMensagem() {
+            const mensagem = `🎣 NETINHOS DA VÓ SULA 2025 🎣
+
+✅ EU JÁ TÔ CONFIRMADO! 
+
+Pantanal - MT
+5, 6 e 7 de Setembro
+
+🍺 Preparado pra beber até cair
+🎣 Preparado pra não pescar nada
+💸 Preparado pra gastar uma grana
+
+BORA CARALHO! 🍻`;
+
+            // Copia mensagem para área de transferência
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(mensagem).then(() => {
+                    // Abre o grupo do WhatsApp
+                    window.open('https://chat.whatsapp.com/KQrdxYbDGSJ29x6a5y7pxk', '_blank');
+                    // Mostra instrução
+                    setTimeout(() => {
+                        alert('📋 Mensagem copiada! Cole no grupo e envie! (Ctrl+V ou Cmd+V)');
+                    }, 1000);
+                }).catch(() => {
+                    // Fallback se não conseguir copiar
+                    copiarTextoAlternativo(mensagem);
+                });
+            } else {
+                copiarTextoAlternativo(mensagem);
+            }
+        }
+
+        // Método alternativo para copiar
+        function copiarTextoAlternativo(texto) {
+            const textarea = document.createElement('textarea');
+            textarea.value = texto;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            
+            // Abre o grupo
+            window.open('https://chat.whatsapp.com/KQrdxYbDGSJ29x6a5y7pxk', '_blank');
+            // Mostra instrução
+            setTimeout(() => {
+                alert('📋 Mensagem copiada! Cole no grupo e envie! (Ctrl+V ou Cmd+V)');
+            }, 1000);
+        }
+
+        // Função para resultados do quiz no grupo
+        function abrirGrupoComResultado(mensagem) {
+            // Copia resultado para área de transferência
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(mensagem).then(() => {
+                    // Abre o grupo do WhatsApp
+                    window.open('https://chat.whatsapp.com/KQrdxYbDGSJ29x6a5y7pxk', '_blank');
+                    // Mostra instrução
+                    setTimeout(() => {
+                        alert('📋 Resultado copiado! Cole no grupo e envie! (Ctrl+V ou Cmd+V)');
+                    }, 1000);
+                }).catch(() => {
+                    copiarResultadoAlternativo(mensagem);
+                });
+            } else {
+                copiarResultadoAlternativo(mensagem);
+            }
+        }
+
+        function copiarResultadoAlternativo(texto) {
+            const textarea = document.createElement('textarea');
+            textarea.value = texto;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            
+            window.open('https://chat.whatsapp.com/KQrdxYbDGSJ29x6a5y7pxk', '_blank');
+            setTimeout(() => {
+                alert('📋 Resultado copiado! Cole no grupo e envie! (Ctrl+V ou Cmd+V)');
+            }, 1000);
         }
 
         // Inicializar quiz
