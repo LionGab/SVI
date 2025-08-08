@@ -1012,18 +1012,35 @@ EU JÁ TÔ PRONTO! Netinhos da Vó Sula 2025! 🍺🎣`;
         // Função para abrir grupo com mensagem
         function abrirGrupoComMensagem() {
             const mensagem = `Eu to dentro nessa 10 edição, vamo pra cima 🎣`;
-            const mensagemCodificada = encodeURIComponent(mensagem);
             
-            // Tenta abrir com mensagem pré-pronta usando wa.me
-            const linkComMensagem = `https://wa.me/?text=${mensagemCodificada}`;
-            window.open(linkComMensagem, '_blank');
+            // Copia mensagem automaticamente
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(mensagem);
+            }
+            
+            // Abre o grupo específico
+            window.open('https://chat.whatsapp.com/KQrdxYbDGSJ29x6a5y7pxk', '_blank');
+            
+            // Mostra instrução após 1 segundo
+            setTimeout(() => {
+                alert('📱 Cole a mensagem no grupo:\n\n"' + mensagem + '"\n\n(Ctrl+V ou Cmd+V para colar)');
+            }, 1000);
         }
 
         // Função para resultados do quiz no grupo
         function abrirGrupoComResultado(mensagem) {
-            const mensagemCodificada = encodeURIComponent(mensagem);
-            const linkComMensagem = `https://wa.me/?text=${mensagemCodificada}`;
-            window.open(linkComMensagem, '_blank');
+            // Copia resultado automaticamente
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(mensagem);
+            }
+            
+            // Abre o grupo específico
+            window.open('https://chat.whatsapp.com/KQrdxYbDGSJ29x6a5y7pxk', '_blank');
+            
+            // Mostra instrução após 1 segundo
+            setTimeout(() => {
+                alert('📊 Resultado copiado!\n\nCole no grupo (Ctrl+V ou Cmd+V) e envie! 🏆');
+            }, 1000);
         }
 
         // Inicializar quiz
