@@ -579,13 +579,23 @@
             </button>
         </div>
         
-        <div id="resultado-quiz" style="margin-top: 30px; padding: 20px; background: rgba(0,0,0,0.7); border-radius: 10px; display: none;">
-            <h3 style="color: #FFD700; font-size: 1.8rem; margin-bottom: 15px;">🏆 RESULTADOS FINAIS 🏆</h3>
-            <div id="ranking-final" style="color: #f4e4c1; font-size: 1.1rem; margin-bottom: 20px;"></div>
-            <div style="margin-top: 20px;">
-                <a id="whatsapp-quiz-btn" href="#" target="_blank" style="display: inline-block; background: #25D366; color: #fff; padding: 15px 25px; font-size: 1.1rem; font-weight: bold; text-decoration: none; border-radius: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: all 0.3s;">
-                    📲 MANDAR RESULTADO NO ZAP
+        <div id="resultado-quiz" style="margin-top: 50px; padding: 30px 20px; background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(139, 69, 19, 0.3) 100%); border-radius: 15px; border: 3px solid #FFD700; box-shadow: 0 10px 30px rgba(0,0,0,0.5); display: none;">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <h3 style="color: #FFD700; font-size: 2rem; margin-bottom: 10px; text-shadow: 3px 3px 0 #000;">
+                    🏆 RANKING DO QUIZ 🏆
+                </h3>
+                <div style="width: 80%; height: 2px; background: linear-gradient(90deg, transparent, #FFD700, transparent); margin: 15px auto;"></div>
+            </div>
+            
+            <div id="ranking-final" style="color: #f4e4c1; font-size: 1.1rem; margin-bottom: 30px; max-width: 500px; margin-left: auto; margin-right: auto;"></div>
+            
+            <div style="text-align: center; margin-top: 35px; padding-top: 20px; border-top: 2px dashed #8B4513;">
+                <a id="whatsapp-quiz-btn" href="#" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #25D366, #128C7E); color: #fff; padding: 18px 35px; font-size: 1.2rem; font-weight: bold; text-decoration: none; border-radius: 30px; box-shadow: 0 8px 25px rgba(0,0,0,0.4); transition: all 0.3s; text-transform: uppercase;">
+                    📲 Compartilhar Resultado
                 </a>
+                <p style="color: #8B4513; font-size: 0.9rem; margin-top: 15px; font-style: italic;">
+                    Clique para enviar o ranking no grupo!
+                </p>
             </div>
         </div>
         
@@ -908,12 +918,35 @@
                 ranking.forEach((item, index) => {
                     const [nome, votos] = item;
                     const medalha = medalhas[index] || `${index + 1}️⃣`;
-                    const destaque = nome === 'LUCÃO' ? 'background: #8B0000; border: 2px solid #FFD700;' : 'background: rgba(0,0,0,0.5);';
                     
-                    rankingHTML += `<div style="margin: 10px 0; padding: 15px; ${destaque} border-radius: 8px;">
+                    let destaque, textColor;
+                    if (nome === 'LUCÃO') {
+                        destaque = 'background: linear-gradient(135deg, #8B0000, #A52A2A); border: 3px solid #FFD700; box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);';
+                        textColor = '#FFD700';
+                    } else if (index === 0) {
+                        destaque = 'background: linear-gradient(135deg, #FFD700, #DAA520); border: 2px solid #FFF;';
+                        textColor = '#000';
+                    } else if (index === 1) {
+                        destaque = 'background: linear-gradient(135deg, #C0C0C0, #A0A0A0); border: 2px solid #FFF;';
+                        textColor = '#000';
+                    } else if (index === 2) {
+                        destaque = 'background: linear-gradient(135deg, #CD7F32, #B8860B); border: 2px solid #FFF;';
+                        textColor = '#FFF';
+                    } else {
+                        destaque = 'background: linear-gradient(135deg, rgba(61, 36, 24, 0.8), rgba(139, 69, 19, 0.6)); border: 2px solid #8B4513;';
+                        textColor = '#f4e4c1';
+                    }
+                    
+                    rankingHTML += `<div style="margin: 12px 0; padding: 18px 20px; ${destaque} border-radius: 12px; transition: transform 0.3s;">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <span>${medalha} <strong>${nome}</strong></span>
-                            <span style="color: #FFD700; font-weight: bold;">${votos} votos</span>
+                            <div style="display: flex; align-items: center; gap: 15px;">
+                                <span style="font-size: 1.5rem;">${medalha}</span>
+                                <span style="color: ${textColor}; font-weight: bold; font-size: 1.1rem;">${nome}</span>
+                            </div>
+                            <div style="text-align: right;">
+                                <div style="color: ${textColor}; font-weight: bold; font-size: 1.2rem;">${votos}</div>
+                                <div style="color: ${textColor}; font-size: 0.8rem; opacity: 0.8;">votos</div>
+                            </div>
                         </div>
                     </div>`;
                 });
